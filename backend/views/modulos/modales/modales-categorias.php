@@ -12,13 +12,13 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Categoria</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Categoria" required name="tituloCategorias">
+              <input type="text" id="titulo-categoria" class="form-control" placeholder="Categoria" required name="tituloCategorias">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Ruta</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Ruta" required name="rutaCategorias">
+              <input type="text"id="ruta-categoria"  class="form-control" placeholder="Ruta" onkeyup=""  required name="rutaCategorias">
             </div>
           </div>
 
