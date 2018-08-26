@@ -1,0 +1,164 @@
+.cabezal {
+	z-index: 100;
+	background: #fff;
+	position: fixed;
+	width: 100%;
+	top:0;
+	box-shadow: 0 0 5px #333;
+}
+.buscador {
+	padding-top: 15px;
+}
+.separarLeft {
+	margin-left: 10px;
+}
+.backColor {
+	background: #000;
+	color: #fff;
+}
+.buscador button {
+	border-color: #000;
+}
+.buscador input:focus {
+	box-shadow: none;
+}
+.accionesUsuario {
+	display: flex;
+}
+.carrito, .deseos, .cuenta {
+	padding-top: 10px;
+	border-left: 1px solid #999;
+	width: 33.3%;
+	font-size:14px;
+}
+.cuenta {
+	background: orange;
+	color: #fff;
+}
+.categorias {
+	z-index: 300;
+	display: none;
+	position: fixed;
+	left: 0;
+	right: 0;
+	border-radius: 8px;
+	margin-left: auto;
+	margin-right: auto;
+	top:80px;
+	padding:10px 20px;
+}
+.categorias h2 {
+	font-size: 20px;
+}
+.categorias ul {
+	list-style: none;
+	padding-left: 0;
+}
+.categorias hr {
+	border-bottom: 1px solid #999;
+}
+.categorias ul a {
+	color: #fff;
+	display: block;
+}
+#capa {
+	z-index:200;
+	display: none;
+	opacity: 0;
+	top: 0;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,.7);
+}
+
+.titProductos{
+	text-transform: uppercase; 
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.descuento{
+	position: absolute;
+	text-align: left;
+	background: green;
+	color: white;
+	font-size: 2em;
+}
+
+.precioAnterior{
+	text-align: right;
+	margin-right: 10px;
+	color: grey;
+	font-size: 1em;
+	text-decoration:line-through;
+
+}
+
+.precioOferta{
+	text-align: right;
+	margin-right: 10px;
+	color: black;
+	font-style: bold;
+	font-size: 1.5em;
+}
+.cardProductos {
+       margin-bottom: 30px;
+}
+.card:hover{
+	-webkit-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+	-moz-box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+	box-shadow: -1px 9px 40px -12px rgba(0,0,0,0.75);
+
+}
+
+.card-text{
+    text-align: justify;
+}
+
+.logoHeader a:link{
+    text-decoration: none;
+}
+.precioNormal{
+    text-align: right;
+    margin-right: 10px;
+    color: black;
+    font-style: bold;
+    font-size: 1.5em;    
+}
+
+.txtNormal{
+    font-size: 1em;
+    text-align: right;
+    margin-right: 3px;
+}
+
+.wish{
+    text-align: right;
+    color: red;
+}
+
+.carruaje{
+    text-align: right;
+    color: green;
+}
+
+@media(max-width: 991px) {
+	.carrito, .deseos, .cuenta {
+		border-top: 1px solid #999;
+	}
+	.logo {
+		text-align: center;
+	}
+}
+@media(max-width: 767px) {
+	.categorias ul a {
+		display: block;
+	}
+	.categorias {
+		position: absolute;
+		width: 90%;
+
+	}
+}
