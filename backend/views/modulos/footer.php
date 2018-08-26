@@ -4,5 +4,5 @@
       Backend del ecommerce
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="">Carlos Garcés</a>.</strong> Todos los derechos reservados.
+    <strong>Copyright &copy; 2018 <a href="">X-Force Technology</a>.</strong> Todos los derechos reservados.
   </footer>
