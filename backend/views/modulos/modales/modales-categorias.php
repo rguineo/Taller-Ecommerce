@@ -18,10 +18,16 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Ruta</label>
             <div class="col-sm-10">
-              <input type="text"id="ruta-categoria"  class="form-control" placeholder="Ruta" onkeyup=""  required name="rutaCategorias" readonly>
+              <input type="text"id="ruta-categoria"  class="form-control" placeholder="Ruta amigable" onkeyup=""  required name="rutaCategorias" readonly>
             </div>
           </div>
-
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Imagen</label>
+            <div class="col-sm-10 conteImagenCat">
+              <input type="file" class="form-control"  id="imagenCategoria" name="imagenCategoria">
+              <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200" style="display: none">
+            </div>
+          </div>
           <input type="hidden" name="tipoOperacion" value="insertarCategorias">
       </div>
       <div class="modal-footer">
