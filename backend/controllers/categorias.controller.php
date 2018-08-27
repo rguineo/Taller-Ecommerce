@@ -71,12 +71,9 @@ Class ControllerCategorias {
 
 	}
 
-	static public function ctrEditarSlider($id_slider) {
-
-		$tabla = "slider";
-		$respuesta = ModeloSlider::mdlEditarSlider($tabla, $id_slider);
-
-
+	static public function ctrEditarCategoria($_idCategoria) {
+		$tabla = "categorias";
+		$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $_idCategoria);
 		return $respuesta;
 	}
 

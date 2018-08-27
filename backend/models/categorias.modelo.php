@@ -43,10 +43,10 @@ Class ModeloCategorias {
 
 	}
 
-	static public function mdlEditarSlider($tabla, $id_slider) {
+	static public function mdlEditarCategoria($tabla, $idCategoria) {
 
 		$sql = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
-		$sql->bindParam(":id", $id_slider, PDO::PARAM_INT);
+		$sql->bindParam(":id", $idCategoria, PDO::PARAM_INT);
 
 		$sql -> execute();
 		return $sql -> fetch();

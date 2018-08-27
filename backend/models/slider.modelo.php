@@ -14,7 +14,8 @@ Class ModeloSlider {
 
 	static public function mdlCrearSlider($tabla, $datos, $rutaImagen) {
 
-		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() VALUES (NULL, :titulo, :descripcion, :imagen, :vinculo, NOW())");
+		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
+		VALUES (NULL, :titulo, :descripcion, :imagen, :vinculo, NOW())");
 		$sql->bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
 		$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$sql->bindParam(":vinculo", $datos["vinculo"], PDO::PARAM_STR);

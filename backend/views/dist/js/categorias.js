@@ -35,6 +35,62 @@ $("#titulo-categoria").on("keyup", function(){
     $("#ruta-categoria").val(cadena)
 })
 
+$("#formu-editar-categoria").submit(function (e) {
+    e.preventDefault()
+
+    var datos = new FormData($(this)[0])
+
+    $.ajax({
+        url: 'ajax/ajaxCategorias.php',
+        type: 'POST',
+        data: datos,
+        processData: false,
+        contentType: false,
+        success: function(respuesta) {
+            if (respuesta == "ok") {
+                swal({
+                  type: 'success',
+                  title: 'Actualizado',
+                  text: 'Categoria actualizado con éxito'
+                }).then((result) => {
+                  if (result.value) {
+                    window.location = "slider"
+                  }
+                })
+            }
+        }
+
+    })
+})
+
+$("body .table-dark").on("click", ".btnEditarCategoria", function(){
+    var idCategoria = $(this).attr("idSlider")
+    var datos = new FormData()
+    datos.append("id", idCategoria)
+    datos.append("tipoOperacion", "editarCategoria")
+
+    $.ajax({
+        url: 'ajax/ajaxCategorias.php',
+        type: 'POST',
+        data: datos,
+        processData: false,
+        contentType: false,
+        success: function(respuesta) {
+            var valor = JSON.parse(respuesta)
+            console.log(valor.id)
+            console.log(valor.titulo_slider)
+
+            $('#formu-editar-categoria input[name="tituloCategoria"]').val(valor.categoria)
+            $('#formu-editar-categoria input[name="rutaCategoria"]').val(valor.ruta)
+            $('#formu-editar-categoria #imagenSlider').attr("src", valor.imagen)
+            $('#formu-editar-categoria input[name="id_slider"]').val(valor.idCategoria)
+
+        }
+
+    })
+
+})
+
 function getCleanedString(cadena){
     // Definimos los caracteres que queremos eliminar
     var specialChars = "'´°¬!¡@#$^&%*()+=[]\/{}|:<>¿?,.";
