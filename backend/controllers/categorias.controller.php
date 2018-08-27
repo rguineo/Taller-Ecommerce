@@ -141,6 +141,8 @@ Class ControllerCategorias {
 		return $respuesta;
 
 	}
+
 }
+
 
 ?>

@@ -82,8 +82,12 @@ Class ModeloCategorias {
 		}
 
 	}
+	public function mdlMostrarCategorias(){
+        $table = $this->getTabla();
+        $sql = Conexion::conectar()->prepare("SELECT * FROM $table");
+        $sql -> execute();
+        return $sql->fetchAll();
+    }
 
 }
-
-
 ?>
