@@ -35,12 +35,6 @@ $("#titulo-categoria").on("keyup", function(){
     $("#ruta-categoria").val(cadena)
 })
 
-$("#titulo-subcategoria").on("keyup", function(){
-    var cadena = $("#titulo-subcategoria").val()
-    cadena = getCleanedString(cadena)
-    $("#ruta-subcategoria").val(cadena)
-})
-
 function getCleanedString(cadena){
     // Definimos los caracteres que queremos eliminar
     var specialChars = "'´°¬!¡@#$^&%*()+=[]\/{}|:<>¿?,.";
