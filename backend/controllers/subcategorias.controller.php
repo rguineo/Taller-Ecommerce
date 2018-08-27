@@ -3,7 +3,8 @@
 	
         public function listarSubCategoriasCtr() {
             $tabla = "subcategorias";
-            $respuesta = ModeloSubCategorias::listarSubCategoriasMdl($tabla);
+            $tabla2 = "categorias";
+            $respuesta = ModeloSubCategorias::listarSubCategoriasMdl($tabla, $tabla2);
             return $respuesta;
         }
     }

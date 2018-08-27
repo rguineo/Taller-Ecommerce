@@ -20,20 +20,23 @@
         <thead>
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Categoría</th>
             <th scope="col">SubCategoria</th>
             <th scope="col">Ruta</th>
             <th scope="col">Acciones</th>
+          </tr>
         </thead>
         <tbody>
 
           <?php 
           
           $Subcategorias = ControllerSubCategorias::listarSubCategoriasCtr();
-
+          
           foreach ($Subcategorias as $key => $value) {
             echo '
               <tr>
                 <td>'.$value["id"].'</td>
+                <td>'.$value["categoria"].'</td>
                 <td>'.$value["subcategoria"].'</td>
                 <td>'.$value["ruta"].'</td>
                 <td width="100">
