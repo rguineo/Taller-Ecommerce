@@ -35,12 +35,6 @@ $("#titulo-categoria").on("keyup", function(){
     $("#ruta-categoria").val(cadena)
 })
 
-<<<<<<< HEAD
-$("#titulo-subcategoria").on("keyup", function(){
-    var cadena = $("#titulo-subcategoria").val()
-    cadena = getCleanedString(cadena)
-    $("#ruta-subcategoria").val(cadena)
-=======
 $("#formu-editar-categoria").submit(function (e) {
     e.preventDefault()
 
@@ -95,7 +89,6 @@ $("body .table-dark").on("click", ".btnEditarCategoria", function(){
 
     })
 
->>>>>>> 461dfc86ec594d4d34e4db365dabfd3d722763c9
 })
 
 function getCleanedString(cadena){
