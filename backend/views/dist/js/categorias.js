@@ -1,3 +1,34 @@
+$(document).ready(function(){
+	$("#formu-nuevo-categorias").submit(function (e) {
+		e.preventDefault()
+
+		var datos = new FormData($(this)[0])
+
+		$.ajax({
+			url: 'ajax/ajaxCategorias.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				if (respuesta == "ok") {
+					swal({
+					  type: 'success',
+					  title: 'Excelente',
+					  text: 'Categoría creada con éxito'
+					}).then((result) => {
+					  if (result.value) {
+					    window.location = "categorias"
+					  }
+					})
+				}
+			}
+
+		})
+
+    })
+ })
+
 $("#titulo-categoria").on("keyup", function(){
     var cadena = $("#titulo-categoria").val()
     cadena = getCleanedString(cadena)
@@ -49,3 +80,4 @@ function getCleanedString(cadena){
 
     return cadena;
  }
+

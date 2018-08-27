@@ -28,7 +28,7 @@
               <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200" style="display: none">
             </div>
           </div>
-          <input type="hidden" name="tipoOperacion" value="insertarCategorias">
+          <input type="hidden" name="tipoOperacion" value="insertarCategoria">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

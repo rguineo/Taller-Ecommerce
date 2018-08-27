@@ -10,7 +10,7 @@ Class ControllerCategorias {
 	}
 
 	static public function ctrCrearCategoria($datos) {
-		$tabla = "categoria";
+		$tabla = "categorias";
 
 		list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
 
@@ -51,7 +51,7 @@ Class ControllerCategorias {
 		}
 
 
-		$respuesta = ModeloCategoria::mdlCrearCategoria($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloCategorias::mdlCrearCategoria($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
