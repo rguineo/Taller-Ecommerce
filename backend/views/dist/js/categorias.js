@@ -86,7 +86,7 @@ $("body .table-dark").on("click", ".btnEditarCategoria", function(){
             $('#formu-editar-categoria input[name="id_slider"]').val(valor.idCategoria)
         }
     })
-}
+})
 
 $("#titulo-subcategoria").on("keyup", function(){
     var cadena = $("#titulo-subcategoria").val()
@@ -136,5 +136,6 @@ function getCleanedString(cadena){
     cadena = cadena.replace(/ù/gi,"u");
 
     cadena = cadena.replace(/ñ/gi,"n");
-  return cadena;
-})
+  
+    return cadena;
+}
