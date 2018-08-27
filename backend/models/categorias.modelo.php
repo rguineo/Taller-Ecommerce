@@ -12,12 +12,13 @@ Class ModeloCategorias {
 
 	}
 
-	static public function mdlCrearSlider($tabla, $datos, $rutaImagen) {
+	static public function mdlCrearCategoria($tabla, $datos, $rutaImagen) {
 
-		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() VALUES (NULL, :titulo, :descripcion, :imagen, :vinculo, NOW())");
-		$sql->bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
-		$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
-		$sql->bindParam(":vinculo", $datos["vinculo"], PDO::PARAM_STR);
+		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
+				VALUES (NULL, :categoria, :ruta, :imagen, NOW())");
+		
+		$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+		$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 		$sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
 
 		if( $sql -> execute() ) {

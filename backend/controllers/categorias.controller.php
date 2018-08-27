@@ -9,15 +9,15 @@ Class ControllerCategorias {
 		return $respuesta;
 	}
 
-	static public function ctrCrearSlider($datos) {
-		$tabla = "slider";
+	static public function ctrCrearCategoria($datos) {
+		$tabla = "categoria";
 
 		list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
 
 		$nuevoAncho = 1024;
 		$nuevoAlto = 768;
 
-		$directorio = "../views/dist/img/slider";
+		$directorio = "../views/dist/img/categoria";
 
 		if($datos["imagen"]["type"] == "image/jpeg"){
 
@@ -51,7 +51,7 @@ Class ControllerCategorias {
 		}
 
 
-		$respuesta = ModeloSlider::mdlCrearSlider($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloCategoria::mdlCrearCategoria($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
