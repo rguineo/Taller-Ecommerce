@@ -27,7 +27,7 @@ $(document).ready(function(){
 		})
 
     })
- })
+})
 
 $("#titulo-categoria").on("keyup", function(){
     var cadena = $("#titulo-categoria").val()
@@ -138,4 +138,3 @@ function getCleanedString(cadena){
     cadena = cadena.replace(/ñ/gi,"n");
   return cadena;
 })
-hola mundo;
