@@ -3,11 +3,11 @@
 class Rutas {
 
 	public function urlFrontEnd () {
-		return "http://localhost/TallerEcommerce/";
+		return "http://localhost/Taller-Ecommerce/";
 	}
 
 	public function urlBackEnd () {
-		return "http://localhost/TallerEcommerce/backend/";
+		return "http://localhost/Taller-Ecommerce/backend/";
 	}
 
 }
