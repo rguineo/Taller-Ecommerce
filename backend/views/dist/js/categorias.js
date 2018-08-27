@@ -35,12 +35,6 @@ $("#titulo-categoria").on("keyup", function(){
     $("#ruta-categoria").val(cadena)
 })
 
-<<<<<<< HEAD
-$("#titulo-subcategoria").on("keyup", function(){
-    var cadena = $("#titulo-subcategoria").val()
-    cadena = getCleanedString(cadena)
-    $("#ruta-subcategoria").val(cadena)
-=======
 $("#formu-editar-categoria").submit(function (e) {
     e.preventDefault()
 
@@ -90,12 +84,8 @@ $("body .table-dark").on("click", ".btnEditarCategoria", function(){
             $('#formu-editar-categoria input[name="rutaCategoria"]').val(valor.ruta)
             $('#formu-editar-categoria #imagenSlider').attr("src", valor.imagen)
             $('#formu-editar-categoria input[name="id_slider"]').val(valor.idCategoria)
-
         }
-
     })
-
->>>>>>> d8423239e44204f8e3f955eabe2a1ae83eadc2f9
 })
 
 function getCleanedString(cadena){
