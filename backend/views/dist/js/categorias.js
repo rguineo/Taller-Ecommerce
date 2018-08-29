@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 // PREVISUALIZAR IMAGENES
 
-    $("#imagenNuevaCategoria").change(previsualizarImg)
+    $("#imagenNueva").change(previsualizarImg)
     $("#imagenEditarCategoria").change(previsualizarImg)
 
     function previsualizarImg(e) {
@@ -50,7 +50,7 @@ $(document).ready(function(){
                 })
             } 
             if ( imgSlider["type"] > 2000000) {
-                $("#imagenNewCategoria").val("")
+                $("#imagenCategoria").val("")
     
                 swal({
                     type: "Error al subir la imagen",
@@ -61,7 +61,7 @@ $(document).ready(function(){
             }
     
             else {
-                $("#imagenNewCategoria").css("display", "block")
+                $("#imagenCategoria").css("display", "block")
     
                 var datosImagen = new FileReader;
                   datosImagen.readAsDataURL(imgSlider);
@@ -70,7 +70,7 @@ $(document).ready(function(){
     
                       var rutaImagen = event.target.result;
     
-                      $("." + identificador +" #imagenNewCategoria").attr("src", rutaImagen);
+                      $("." + identificador +" #imagenCategoria").attr("src", rutaImagen);
                   })
             }
     
