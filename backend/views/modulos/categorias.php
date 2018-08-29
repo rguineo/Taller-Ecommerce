@@ -22,6 +22,7 @@
             <th scope="col">#</th>
             <th scope="col">Categoria</th>
             <th scope="col">Ruta</th>
+            <th scope="col">Thumbnail</th>
             <th scope="col">Acciones</th>
         </thead>
         <tbody>
@@ -36,6 +37,7 @@
                 <th scope="row">'.$value["id"].'</th>
                 <td>'.$value["categoria"].'</td>
                 <td>'.$value["ruta"].'</td>
+                <td><img src="'.$value["imagen"].'" id="imagenCategoria" alt="" class="thumbnail" width="100" style="display: none"></td>
                 <td width="100">
                   <button class="btn btn-sm btn-info btnEditarCategorias" idCategorias="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-categorias">
                     <i class="far fa-edit"></i>

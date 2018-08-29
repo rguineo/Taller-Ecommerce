@@ -27,6 +27,54 @@ $(document).ready(function(){
 		})
 
     })
+
+// PREVISUALIZAR IMAGENES
+
+    $("#imagenNuevaCategoria").change(previsualizarImg)
+    $("#imagenEditarCategoria").change(previsualizarImg)
+
+    function previsualizarImg(e) {
+        var contenedor = e.target.parentNode
+    
+        var identificador = contenedor.classList[1]
+    
+        imgSlider = this.files[0];
+    
+            if( imgSlider["type"] != "image/jpeg" && imgSlider["type"] != "image/png") {
+                $("#custom").val("")
+    
+                swal({
+                    type: 'error',
+                    title: 'No es una imagen!!',
+                    text: 'Debe subir imagenes en formato JPEG o PNG',
+                })
+            } 
+            if ( imgSlider["type"] > 2000000) {
+                $("#imagenNewCategoria").val("")
+    
+                swal({
+                    type: "Error al subir la imagen",
+                    text: "La imagen debe pesar MAX 2MB",
+                    icon: 'error',
+                    confirmButtonText: "¡Cerrar!",
+                })
+            }
+    
+            else {
+                $("#imagenNewCategoria").css("display", "block")
+    
+                var datosImagen = new FileReader;
+                  datosImagen.readAsDataURL(imgSlider);
+    
+                  $(datosImagen).on("load", function(event){
+    
+                      var rutaImagen = event.target.result;
+    
+                      $("." + identificador +" #imagenNewCategoria").attr("src", rutaImagen);
+                  })
+            }
+    
+    }
 })
 
 $("#titulo-categoria").on("keyup", function(){
@@ -139,3 +187,5 @@ function getCleanedString(cadena){
   
     return cadena;
 }
+
+
