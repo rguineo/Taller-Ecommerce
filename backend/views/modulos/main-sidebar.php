@@ -36,6 +36,7 @@
         <li><a href="categorias"><i class="fa fa-link"></i> <span>Categorías</span></a></li>
         <li><a href="subcategorias"><i class="fa fa-link"></i> <span>Sub Categorías</span></a></li>
         <li><a href="productos"><i class="fa fa-link"></i> <span>Productos</span></a></li>
+        <li><a href="usuarios"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
 
       </ul>
       <!-- /.sidebar-menu -->
