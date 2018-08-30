@@ -34,7 +34,7 @@ $(document).ready(function(){
     $("#imagenEditarCategoria").change(previsualizarImg)
 
     function previsualizarImg(e) {
-        
+actualizacion JSON        
         var contenedor = e.target.parentNode
     
         var identificador = contenedor.classList[1]
