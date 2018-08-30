@@ -30,57 +30,51 @@ $(document).ready(function(){
 
 // PREVISUALIZAR IMAGENES
 
-    $("#imagenNueva").change(previsualizarImg)
-    $("#imagenEditarCategoria").change(previsualizarImg)
+$("#imagenNueva").change(previsualizarImg)
+$("#imagenEditarCategoria").change(previsualizarImg)
 
-    function previsualizarImg(e) {
-actualizacion JSON        
-        var contenedor = e.target.parentNode
-    
-        var identificador = contenedor.classList[1]
-    
-        imgSlider = this.files[0];
-    
-            if( imgSlider["type"] != "image/jpeg" && imgSlider["type"] != "image/png") {
-                $("#custom").val("")
-    
-                swal({
-                    type: 'error',
-                    title: 'No es una imagen!!',
-                    text: 'Debe subir imagenes en formato JPEG o PNG',
-                })
-            } 
-            if ( imgSlider["type"] > 2000000) {
-                $("#imagenCategoria").val("")
-    
-                swal({
-                    type: "Error al subir la imagen",
-                    text: "La imagen debe pesar MAX 2MB",
-                    icon: 'error',
-                    confirmButtonText: "¡Cerrar!",
-                })
-            }
-    
-            else {
-                var img = $("#imagenCategoria")[0])
+function previsualizarImg(e) {
+    var contenedor = e.target.parentNode
 
-                console.log(img)
+    var identificador = contenedor.classList[1]
 
-                img.style.display = "block"
-    
-                var datosImagen = new FileReader;
-                  datosImagen.readAsDataURL(imgSlider);
-    
-                  $(datosImagen).on("load", function(event){
-    
-                      var rutaImagen = event.target.result;
-    
-                      $("." + identificador +" #imagenCategoria").attr("src", rutaImagen);
-                  })
-            }
-    
+    imgSlider = this.files[0];
+
+        if( imgSlider["type"] != "image/jpeg" && imgSlider["type"] != "image/png") {
+            $("#custom").val("")
+
+            swal({
+                type: 'error',
+                title: 'No es una imagen!!',
+                text: 'Debe subir imagenes en formato JPEG o PNG',
+            })
+        } 
+        if ( imgSlider["type"] > 2000000) {
+            $("#imagenCategoria").val("")
+
+            swal({
+                type: "Error al subir la imagen",
+                text: "La imagen debe pesar MAX 2MB",
+                icon: 'error',
+                confirmButtonText: "¡Cerrar!",
+            })
+        }
+
+        else {
+            $("#imagenCategoria").css("display", "block")
+
+            var datosImagen = new FileReader;
+              datosImagen.readAsDataURL(imgSlider);
+
+              $(datosImagen).on("load", function(event){
+
+                  var rutaImagen = event.target.result;
+
+                  $("." + identificador +" #imagenCategoria").attr("src", rutaImagen);
+              })
+        }
+
     }
-})
 
 $("#titulo-categoria").on("keyup", function(){
     var cadena = $("#titulo-categoria").val()
