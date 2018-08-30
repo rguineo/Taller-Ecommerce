@@ -18,25 +18,25 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Titulo</label>
             <div class="col-sm-10">
-              <input type="text"id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos" readonly>
+              <input type="text"id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Descripción</label>
             <div class="col-sm-10">
-              <input type="text"id="descripcion-productos"  class="form-control" placeholder="Descripcion Productos" onkeyup=""  required name="descripcionProductos" readonly>
+              <input type="text"id="descripcion-productos"  class="form-control" placeholder="Descripcion Productos" onkeyup=""  required name="descripcionProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Detalle</label>
             <div class="col-sm-10">
-              <input type="text"id="detalle-productos"  class="form-control" placeholder="Detalle Productos" onkeyup=""  required name="detalleProductos" readonly>
+              <input type="text"id="detalle-productos"  class="form-control" placeholder="Detalle Productos" onkeyup=""  required name="detalleProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Precio</label>
             <div class="col-sm-10">
-              <input type="text"id="precio-productos"  class="form-control" placeholder="Precio Productos" onkeyup=""  required name="precioProductos" readonly>
+              <input type="text"id="precio-productos"  class="form-control" placeholder="Precio Productos" onkeyup=""  required name="precioProductos">
             </div>
           </div>
           <div class="form-group row">
@@ -49,25 +49,25 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Oferta</label>
             <div class="col-sm-10">
-              <input type="text"id="oferta-productos"  class="form-control" placeholder="Oferta Productos" onkeyup=""  required name="ofertaProductos" readonly>
+              <input type="text"id="oferta-productos"  class="form-control" placeholder="Oferta Productos" onkeyup=""  required name="ofertaProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Precio Oferta</label>
             <div class="col-sm-10">
-              <input type="text"id="precioOferta-productos"  class="form-control" placeholder="Precio Oferta Productos" onkeyup=""  required name="precioOfertaProductos readonly>
+              <input type="text"id="precioOferta-productos"  class="form-control" placeholder="Precio Oferta Productos" onkeyup=""  required name="precioOfertaProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Descuento</label>
             <div class="col-sm-10">
-              <input type="text"id="descuento-productos"  class="form-control" placeholder="Descuento Productos" onkeyup=""  required name="descuentoProductos" readonly>
+              <input type="text"id="descuento-productos"  class="form-control" placeholder="Descuento Productos" onkeyup=""  required name="descuentoProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Fin Oferta</label>
             <div class="col-sm-10">
-              <input type="text"id="finOferta-productos"  class="form-control" placeholder="Fin Oferta Productos" onkeyup=""  required name="finOfertaProductos" readonly>
+              <input type="text"id="finOferta-productos"  class="form-control" placeholder="Fin Oferta Productos" onkeyup=""  required name="finOfertaProductos">
             </div>
           </div>
           <input type="hidden" name="tipoOperacion" value="insertarProductos">

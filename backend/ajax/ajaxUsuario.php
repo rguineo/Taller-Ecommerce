@@ -36,6 +36,15 @@ Class ajaxUsuario{
 
 		echo json_encode($datos);
 
+    }
+    public function eliminarUsuario(){
+		$id_slider = $this->id_admin;
+		$ruta = $this->avatar_admin;
+
+		$respuesta = ControllerUsuario::ctrEliminarUsuario($id_slider, $ruta);
+
+		echo $respuesta;
+
 	}
 }
     

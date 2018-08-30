@@ -12,8 +12,8 @@ Class ControllerUsuario {
 	static public function ctrEliminarUsuario($id_admin, $ruta) {
 
 		$tabla = "administrador";
-
-		if ( unlink($ruta) ) {
+		
+		if ( unlink("../".$ruta) ) {
 		
 			$respuesta = ModeloUsuario::mdlEliminarUsuario($tabla, $id_admin);	
 		

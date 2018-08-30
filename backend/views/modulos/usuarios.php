@@ -38,12 +38,12 @@
                 <td>'.$value["nombre_admin"].'</td>
                 <td>'.$value["correo_admin"].'</td>
                 <td>'.$value["password_admin"].'</td>
-                <td><img src="'.$value["avatar_admin"].'" id="imagenUsuarios" alt="" class="thumbnail" width="100" style="display: none"></td>
+                <td><img src="'.$value["avatar_admin"].'" id="imagenUsuarios" alt="" class="thumbnail" width="100"></td>
                 <td width="100">
                   <button class="btn btn-sm btn-info btnEditarUsuario" idUsuario="'.$value["id_admin"].'" data-toggle="modal" data-target="#modal-editar-usuario">
                     <i class="far fa-edit"></i>
                   </button>
-                  <button class="btn btn-sm btn-danger btnEliminarUsuario" id="'.$value["id_admin"].'">
+                  <button class="btn btn-sm btn-danger btnEliminarUsuario" idUsuario="'.$value["id_admin"].'" rutaImagen="'.$value["avatar_admin"].'">
                     <i class="far fa-trash-alt"></i>
                   </button>
                 </td>
