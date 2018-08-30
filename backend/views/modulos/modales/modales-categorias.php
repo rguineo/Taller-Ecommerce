@@ -24,8 +24,8 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10 conteImagenCat">
-              <input type="file" class="form-control"  id="imagenNuevaCategoria" name="imagenNewCategoria"><br>
-              <img src="" id="imagenNewCategoria" alt="" class="thumbnail" width="100" style="display: none">
+              <input type="file" class="form-control" id="imagenNueva" name="imagenCategoria"><br>
+              <img src="" id="imagenCategoria" alt="" class="thumbnail" width="100">
             </div>
           </div>
           <input type="hidden" name="tipoOperacion" value="insertarCategoria">
