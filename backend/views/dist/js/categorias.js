@@ -34,6 +34,7 @@ $(document).ready(function(){
     $("#imagenEditarCategoria").change(previsualizarImg)
 
     function previsualizarImg(e) {
+        
         var contenedor = e.target.parentNode
     
         var identificador = contenedor.classList[1]
@@ -61,7 +62,11 @@ $(document).ready(function(){
             }
     
             else {
-                $("#imagenCategoria").css("display", "block")
+                var img = $("#imagenCategoria")[0])
+
+                console.log(img)
+
+                img.style.display = "block"
     
                 var datosImagen = new FileReader;
                   datosImagen.readAsDataURL(imgSlider);
