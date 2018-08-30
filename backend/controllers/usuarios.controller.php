@@ -3,7 +3,7 @@
 Class ControllerUsuarios {
 	
 	public function listarUsuariosCtr() {
-		$tabla = "usuarios";
+		$tabla = "administrador";
 		$respuesta = ModeloUsuarios::listarUsuariosMdl($tabla);
 
 		return $respuesta;
