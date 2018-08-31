@@ -57,7 +57,7 @@ Class ModeloUsuario {
 	static public function mdlActualizarUsuario($tabla, $datos, $rutaImagen) {
 
 		if( is_null($rutaImagen)) {
-			$sql = Conexion::conectar()->prepare("UPDATE $tabla 
+			$sql = (new Conexion)->conectar()->prepare("UPDATE $tabla 
 			SET nombre_admin = :nombre_admin, correo_admin = :correo_admin, 
 			password_admin = :password_admin, fecha = NOW() WHERE id_admin = :id");
 
@@ -67,11 +67,11 @@ Class ModeloUsuario {
 			$sql->bindParam(":id", $datos["id_admin"], PDO::PARAM_INT);
 
 		} else {
-			$sql = Conexion::conectar()->prepare("UPDATE $tabla 
+			$sql = (new Conexion)->conectar()->prepare("UPDATE $tabla 
 			SET nombre_admin = :nombre_admin, correo_admin = :correo_admin, 
 			password_admin = :password_admin, avatar_admin = :avatar_admin, 
 			fecha = NOW() WHERE id_admin = :id");
-
+			echo $rutaImagen;
 			$sql->bindParam(":nombre_admin", $datos["nombre_admin"], PDO::PARAM_STR);
 			$sql->bindParam(":correo_admin", $datos["correo_admin"], PDO::PARAM_STR);
 			$sql->bindParam(":password_admin", $datos["password_admin"], PDO::PARAM_STR);
