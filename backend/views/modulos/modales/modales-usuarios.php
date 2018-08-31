@@ -45,7 +45,7 @@
   </div>
 </div>
 
-<!-- EDITAR SLIDER -->
+<!-- EDITAR USUARIO -->
 <div class="modal fade" id="modal-editar-usuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -58,34 +58,33 @@
       <div class="modal-body">
         <form id="formu-editar-usuario">
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Título</label>
+            <label class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Titulo" required name="tituloCategoria">
+              <input type="text" class="form-control" placeholder="Nombre" required name="nombre_admin">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Imagen</label>
+            <label class="col-sm-2 col-form-label">Correo</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" placeholder="Correo" required name="correo_admin">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Password</label>
+            <div class="col-sm-10">
+              <input type="text"  class="form-control" placeholder="Password" required name="password_admin">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Avatar</label>
             <div class="col-sm-10 conteEditarImagen">
-              <input type="file" class="form-control"  id="imagenEditarCategoria" name="imagenCategoria">
+              <input type="file" class="form-control"  id="imagenEditarUsuario" name="avatar_admin">
               <br>
-              <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200">
-
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Vínculo</label>
-            <div class="col-sm-10">
-              <input type="text"  class="form-control" placeholder="vínculo" required name="rutaCategoria">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Descripcion</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" placeholder="Texto descriptivo" required rows="5" name="descripcionSlider"></textarea>
+              <img src="" id="avatar_admin" alt="" class="thumbnail" width="200">
             </div>
           </div>
        
-          <input type="hidden" name="tipoOperacion" value="actualizarCategoria">
+          <input type="hidden" name="tipoOperacion" value="actualizarUsuario">
           <input type="hidden" name="rutaActual">
           <input type="hidden" name="id_slider">
       </div>

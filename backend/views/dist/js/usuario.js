@@ -26,9 +26,67 @@ $(document).ready(function(){
 
 		})
 
-    })
+	})
+	
+	$("#formu-editar-usuario").submit(function (e) {
+		e.preventDefault()
 
-    $("body .table-dark").on("click", ".btnEliminarUsuario", function(){
+		var datos = new FormData($(this)[0])
+
+		$.ajax({
+			url: 'ajax/ajaxUsuario.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				if (respuesta == "ok") {
+					swal({
+					  type: 'success',
+					  title: 'Actualizado',
+					  text: 'Usuario actualizado con éxito'
+					}).then((result) => {
+					  if (result.value) {
+					    window.location = "usuarios"
+					  }
+					})
+				}
+			}
+
+		})
+	})
+
+	$("body .table-dark").on("click", ".btnEditarUsuario", function(){
+		var idUsuario = $(this).attr("idUsuario")
+		var datos = new FormData()
+		datos.append("id_admin", idUsuario)
+		datos.append("tipoOperacion", "editarUsuario")
+
+		$.ajax({
+			url: 'ajax/ajaxUsuario.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				var valor = JSON.parse(respuesta)
+				console.log(valor.id_admin)
+				console.log(valor.titulo_slider)
+
+				$('#formu-editar-slider input[name="tituloSlider"]').val(valor.titulo_slider)
+				$('#formu-editar-slider input[name="urlSlider"]').val(valor.vinculo)
+				$('#formu-editar-slider textarea[name="descripcionSlider"]').val(valor.descripcion)
+				$('#formu-editar-slider #imagenSlider').attr("src", valor.imagen)
+				$('#formu-editar-slider input[name="id_slider"]').val(valor.id_slider)
+				$('#formu-editar-slider input[name="rutaActual"]').val(valor.imagen)
+
+			}
+
+		})
+
+	})
+
+	$("body .table-dark").on("click", ".btnEliminarUsuario", function(){
 		var idUsuario = $(this).attr("idUsuario")
 		var rutaImagen = $(this).attr("rutaImagen")
 		var datos = new FormData()
