@@ -15,11 +15,12 @@ Class ModeloUsuario {
 	static public function mdlCrearUsuario($tabla, $datos, $rutaImagen) {
 
 		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
-				VALUES (NULL, :categoria, :ruta, :imagen, NOW())");
+				VALUES (NULL, :nombre_admin, :correo_admin, :password_admin, :avatar_admin, NOW())");
 		
-		$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
-		$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
-		$sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
+		$sql->bindParam(":nombre_admin", $datos["nombre_admin"], PDO::PARAM_STR);
+		$sql->bindParam(":correo_admin", $datos["correo_admin"], PDO::PARAM_STR);
+		$sql->bindParam(":password_admin", $datos["password_admin"], PDO::PARAM_STR);
+		$sql->bindParam(":avatar_admin", $rutaImagen, PDO::PARAM_STR);
 
 		if( $sql -> execute() ) {
 			return "ok";

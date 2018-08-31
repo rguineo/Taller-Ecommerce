@@ -46,7 +46,7 @@
                 <td>'.$value["descripcion"].'</td>
                 <td>'.$value["detalle"].'</td>
                 <td>'.$value["precio"].'</td>
-                <td><img src="'.$value["imagen"].'" id="imagenProductos" alt="" class="thumbnail" width="100" style="display: none"></td>
+                <td><img src="'.$value["imagen"].'" id="imagenProductos" alt="" class="thumbnail" width="100"></td>
                 <td>'.$value["oferta"].'</td>
                 <td>'.$value["precioOferta"].'</td>
                 <td>'.$value["descuento"].'</td>

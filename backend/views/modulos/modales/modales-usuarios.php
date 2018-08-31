@@ -18,13 +18,13 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Correo</label>
             <div class="col-sm-10">
-              <input type="text"id="correo-usuarios"  class="form-control" placeholder="Correo Usuarios" onkeyup=""  required name="correoUsuarios" readonly>
+              <input type="text"id="correo-usuarios"  class="form-control" placeholder="Correo Usuarios" onkeyup=""  required name="correoUsuarios">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="text"id="password-usuarios"  class="form-control" placeholder="Password Usuarios" onkeyup=""  required name="passwordUsuarios" readonly>
+              <input type="text"id="password-usuarios"  class="form-control" placeholder="Password Usuarios" onkeyup=""  required name="passwordUsuarios">
             </div>
           </div>
           <div class="form-group row">
