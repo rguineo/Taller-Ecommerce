@@ -8,6 +8,7 @@ Class ajaxUsuario{
 	public $_correo_admin;
 	public $_password_admin;
     public $_avatar_admin;
+    public $_rutaActual;
 
     public function crearUsuario(){
 		$datos = array(	"nombre_admin"=>$this->_nombre_admin,
@@ -40,7 +41,8 @@ Class ajaxUsuario{
 						"nombre_admin"=>$this->_nombre_admin,
 						"correo_admin"=>$this->_correo_admin,
 						"password_admin"=>$this->_password_admin,
-						"avatar_admin"=>$this->_avatar_admin,
+                        "avatar_admin"=>$this->_avatar_admin,
+                        "rutaActual"=>$this->_rutaActual
 						);
 
 		$respuesta = ControllerUsuario::ctrActualizarUsuario($datos);
@@ -83,6 +85,8 @@ Class ajaxUsuario{
         $actualizarUsuario -> _correo_admin = $_POST["correo_admin"];
         $actualizarUsuario -> _password_admin = $_POST["password_admin"];
         $actualizarUsuario -> _avatar_admin = $_FILES["avatar_admin"];
+        $actualizarUsuario -> _rutaActual = $_POST["rutaActual"];
+        
         $actualizarUsuario -> actualizarUsuario();
     }
     if ($tipoOperacion == "eliminarUsuario") {

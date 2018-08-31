@@ -74,12 +74,9 @@ Class ModeloUsuario {
 
 			$sql->bindParam(":nombre_admin", $datos["nombre_admin"], PDO::PARAM_STR);
 			$sql->bindParam(":correo_admin", $datos["correo_admin"], PDO::PARAM_STR);
-			$sql->bindParam(":avatar_admin", $rutaImagen, PDO::PARAM_STR);
 			$sql->bindParam(":password_admin", $datos["password_admin"], PDO::PARAM_STR);
+			$sql->bindParam(":avatar_admin", $rutaImagen, PDO::PARAM_STR);
 			$sql->bindParam(":id", $datos["id_slider"], PDO::PARAM_INT);
-
-
-
 		} 
 
 		if($sql->execute()) {

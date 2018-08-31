@@ -61,7 +61,7 @@ Class ControllerUsuario {
 
 		$tabla = "administrador";
 		
-		if ( unlink("../".$ruta) ) {
+		if ( unlink($ruta) ) {
 		
 			$respuesta = ModeloUsuario::mdlEliminarUsuario($tabla, $id_admin);	
 		
@@ -90,15 +90,15 @@ Class ControllerUsuario {
 		} 
 		// LA ACTUALIZACIÓN VIENE CON IMAGEN
 		else {
-
-			unlink($datos["rutaActual"]);
+			
+			unlink("../".$datos["rutaActual"]);
 			
 			list($ancho, $alto) = getimagesize($datos["avatar_admin"]["tmp_name"]);	
 
 			$nuevoAncho = 1024;
 			$nuevoAlto = 768;
 
-			$directorio = "../views/dist/img/slider";
+			$directorio = "../views/dist/img/avatar";
 
 			if($datos["avatar_admin"]["type"] == "image/jpeg"){
 
@@ -130,9 +130,6 @@ Class ControllerUsuario {
 				imagepng($destino, $rutaImagen);
 
 			}
-
-
-			
 			
 		}
 
