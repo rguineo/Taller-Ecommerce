@@ -10,8 +10,7 @@ Class ajaxUsuario{
     public $_avatar_admin;
 
     public function crearUsuario(){
-		$datos = array("id_admin"=>$this->_id_admin,
-						"nombre_admin"=>$this->_nombre_admin,
+		$datos = array(	"nombre_admin"=>$this->_nombre_admin,
                         "correo_admin"=>$this->_correo_admin,
                         "password_admin"=>$this->_password_admin,
                         "avatar_admin"=>$this->_avatar_admin);
