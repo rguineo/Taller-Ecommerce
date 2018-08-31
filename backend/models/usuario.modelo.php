@@ -14,7 +14,7 @@ Class ModeloUsuario {
 
 	static public function mdlCrearUsuario($tabla, $datos, $rutaImagen) {
 
-		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
+		$sql = (new Conexion)->conectar()->prepare("INSERT INTO $tabla() 
 				VALUES (NULL, :nombre, :correo, :pass, :avatar, NOW())");
 		
 		$sql->bindParam(":nombre", $datos["nombre_admin"], PDO::PARAM_STR);

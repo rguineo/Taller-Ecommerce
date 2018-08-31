@@ -51,7 +51,7 @@ Class ControllerUsuario {
 		}
 
 
-		$respuesta = ModeloUsuario::mdlCrearUsuario($tabla, $datos, $rutaImagen);
+		$respuesta = (new ModeloUsuario)->mdlCrearUsuario($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
