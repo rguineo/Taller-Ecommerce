@@ -38,7 +38,7 @@
                 <td>'.$value["nombre_admin"].'</td>
                 <td>'.$value["correo_admin"].'</td>
                 <td>'.$value["password_admin"].'</td>
-                <td><img src="'.$value["avatar_admin"].'" id="imagenUsuarios" alt="" class="thumbnail" width="100"></td>
+                <td><img src="'.substr($value["avatar_admin"],3).'" id="imagenUsuarios" alt="" class="thumbnail" width="100"></td>
                 <td width="100">
                   <button class="btn btn-sm btn-info btnEditarUsuario" idUsuario="'.$value["id_admin"].'" data-toggle="modal" data-target="#modal-editar-usuario">
                     <i class="far fa-edit"></i>

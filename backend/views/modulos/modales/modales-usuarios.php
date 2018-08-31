@@ -31,7 +31,7 @@
             <label class="col-sm-2 col-form-label">Avatar</label>
             <div class="col-sm-10 conteImagenCat">
               <input type="file" class="form-control"  id="imagenNuevaUsuario" name="avatar_admin"><br>
-              <img src="" id="avatar_admin" alt="" class="thumbnail" width="100" style="display: none">
+              <img src="" id="avatar_admin" alt="" class="thumbnail" width="100">
             </div>
           </div>
           <input type="hidden" name="tipoOperacion" value="insertarUsuario">
