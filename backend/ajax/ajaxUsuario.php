@@ -23,16 +23,15 @@ Class ajaxUsuario{
 	public function editarUsuario(){
 		$id_admin = $this->_id_admin;
 
-		$respuesta = ControllerUsuario::ctrEditarUsuario($id_admin);
-
-		$datos = array("id_admin"=>$respuesta["id_admin"],
+        $datos = array("id_admin"=>$respuesta["id_admin"],
 						"nombre_admin"=>$respuesta["nombre_admin"],
                         "correo_admin"=>$respuesta["correo_admin"],
                         "password_admin"=>$respuesta["password_admin"],
 						"avatar_admin"=>substr($respuesta["avatar_admin"], 3)
 						);
+        $respuesta = ControllerUsuario::ctrEditarUsuario($id_admin);
 
-		echo json_encode($datos);
+        echo json_encode($datos);
 
     }
 
