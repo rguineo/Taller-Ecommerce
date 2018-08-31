@@ -71,9 +71,6 @@ Class ModeloSlider {
 			$sql->bindParam(":rutaNueva", $rutaImagen, PDO::PARAM_STR);
 			$sql->bindParam(":vinculo", $datos["vinculo"], PDO::PARAM_STR);
 			$sql->bindParam(":id", $datos["id_slider"], PDO::PARAM_INT);
-
-
-
 		} 
 
 		if($sql->execute()) {
