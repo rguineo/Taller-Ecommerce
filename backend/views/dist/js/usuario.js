@@ -70,15 +70,13 @@ $(document).ready(function(){
 			contentType: false,
 			success: function(respuesta) {
 				var valor = JSON.parse(respuesta)
-				console.log(valor.id_admin)
-				console.log(valor.nombre_admin)
 
-				$('#formu-editar-slider input[name="nombre_admin"]').val(valor.nombre_admin)
-				$('#formu-editar-slider input[name="correo_admin"]').val(valor.correo_admin)
-				$('#formu-editar-slider textarea[name="password_admin"]').val(valor.password_admin)
-				$('#formu-editar-slider #avatar_admin').attr("src", valor.avatar_admin)
-				$('#formu-editar-slider input[name="id_admin"]').val(valor.id_admin)
-				$('#formu-editar-slider input[name="rutaActual"]').val(valor.avatar_admin)
+				$('#formu-editar-usuario input[name="nombre_admin"]').val(valor.nombre_admin)
+				$('#formu-editar-usuario input[name="correo_admin"]').val(valor.correo_admin)
+				$('#formu-editar-usuario textarea[name="password_admin"]').val(valor.password_admin)
+				$('#formu-editar-usuario #avatar_admin').attr("src", valor.avatar_admin)
+				$('#formu-editar-usuario input[name="id_admin"]').val(valor.id_admin)
+				$('#formu-editar-usuario input[name="rutaActual"]').val(valor.avatar_admin)
 
 			}
 
@@ -128,4 +126,55 @@ $(document).ready(function(){
 		  }
 		})	
 	})
+
+
+
+		// PREVISUALIZAR IMAGENES
+
+		$("#imagenNuevaUsuario").change(previsualizarImg)
+		$("#imagenEditarUsuario").change(previsualizarImg)
+	
+	
+		function previsualizarImg(e) {
+			var contenedor = e.target.parentNode
+	
+			var identificador = contenedor.classList[1]
+	
+			imgSlider = this.files[0];
+	
+				if( imgSlider["type"] != "image/jpeg" && imgSlider["type"] != "image/png") {
+					$("#custom").val("")
+	
+					swal({
+						type: 'error',
+						title: 'No es una imagen!!',
+						text: 'Debe subir imagenes en formato JPEG o PNG',
+					})
+				} 
+				if ( imgSlider["type"] > 2000000) {
+					$("#avatar_admin").val("")
+	
+					swal({
+						type: "Error al subir la imagen",
+						text: "La imagen debe pesar MAX 2MB",
+						icon: 'error',
+						confirmButtonText: "¡Cerrar!",
+					})
+				}
+	
+				else {
+					$("#avatar_admin").css("display", "block")
+	
+					var datosImagen = new FileReader;
+						datosImagen.readAsDataURL(imgSlider);
+	
+						$(datosImagen).on("load", function(event){
+	
+							var rutaImagen = event.target.result;
+	
+							$("." + identificador +" #avatar_admin").attr("src", rutaImagen);
+						})
+				}
+	
+		}
 })
