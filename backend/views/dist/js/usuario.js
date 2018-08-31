@@ -71,14 +71,14 @@ $(document).ready(function(){
 			success: function(respuesta) {
 				var valor = JSON.parse(respuesta)
 				console.log(valor.id_admin)
-				console.log(valor.titulo_slider)
+				console.log(valor.nombre_admin)
 
-				$('#formu-editar-slider input[name="tituloSlider"]').val(valor.titulo_slider)
-				$('#formu-editar-slider input[name="urlSlider"]').val(valor.vinculo)
-				$('#formu-editar-slider textarea[name="descripcionSlider"]').val(valor.descripcion)
-				$('#formu-editar-slider #imagenSlider').attr("src", valor.imagen)
-				$('#formu-editar-slider input[name="id_slider"]').val(valor.id_slider)
-				$('#formu-editar-slider input[name="rutaActual"]').val(valor.imagen)
+				$('#formu-editar-slider input[name="nombre_admin"]').val(valor.nombre_admin)
+				$('#formu-editar-slider input[name="correo_admin"]').val(valor.correo_admin)
+				$('#formu-editar-slider textarea[name="password_admin"]').val(valor.password_admin)
+				$('#formu-editar-slider #avatar_admin').attr("src", valor.avatar_admin)
+				$('#formu-editar-slider input[name="id_admin"]').val(valor.id_admin)
+				$('#formu-editar-slider input[name="rutaActual"]').val(valor.avatar_admin)
 
 			}
 

@@ -21,7 +21,9 @@ Class ajaxUsuario{
 	}
 
 	public function editarUsuario(){
-		$id_admin = $this->_id_admin;
+        $id_admin = $this->id_admin;
+        
+        $respuesta = ControllerSlider::ctrEditarUsuario($_id_admin);
 
         $datos = array("id_admin"=>$respuesta["id_admin"],
 						"nombre_admin"=>$respuesta["nombre_admin"],
@@ -29,11 +31,22 @@ Class ajaxUsuario{
                         "password_admin"=>$respuesta["password_admin"],
 						"avatar_admin"=>substr($respuesta["avatar_admin"], 3)
 						);
-        $respuesta = ControllerUsuario::ctrEditarUsuario($id_admin);
 
         echo json_encode($datos);
 
     }
+    public function actualizarUsuario(){
+		$datos = array( "id_admin"=>$this->id_admin,
+						"nombre_admin"=>$this->nombre_admin,
+						"correo_admin"=>$this->correo_admin,
+						"password_admin"=>$this->password_admin,
+						"avatar_admin"=>$this->avatar_admin,
+						);
+
+		$respuesta = ControllerSlider::ctrActualizarUsuario($datos);
+
+		echo $respuesta;
+	}
 
     public function eliminarUsuario(){
 		$id_admin = $this->id_admin;
