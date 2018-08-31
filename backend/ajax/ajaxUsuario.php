@@ -21,7 +21,6 @@ Class ajaxUsuario{
 		echo $respuesta;
 	}
 
-
 	public function editarUsuario(){
 		$id_admin = $this->_id_admin;
 
@@ -37,11 +36,12 @@ Class ajaxUsuario{
 		echo json_encode($datos);
 
     }
+
     public function eliminarUsuario(){
-		$id_slider = $this->id_admin;
+		$id_admin = $this->id_admin;
 		$ruta = $this->avatar_admin;
 
-		$respuesta = ControllerUsuario::ctrEliminarUsuario($id_slider, $ruta);
+		$respuesta = ControllerUsuario::ctrEliminarUsuario($id_admin, $ruta);
 
 		echo $respuesta;
 

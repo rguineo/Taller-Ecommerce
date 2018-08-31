@@ -12,26 +12,26 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Nombre</label>
             <div class="col-sm-10">
-              <input type="text" id="nombre-usuarios" class="form-control" placeholder="Nombre" required name="nombreUsuarios">
+              <input type="text" id="nombre_admin" class="form-control" placeholder="Nombre" required name="nombre_admin">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Correo</label>
             <div class="col-sm-10">
-              <input type="text"id="correo-usuarios"  class="form-control" placeholder="Correo Usuarios" onkeyup=""  required name="correoUsuarios">
+              <input type="text"id="correo_admin"  class="form-control" placeholder="Correo Usuarios" onkeyup=""  required name="correo_admin">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="text"id="password-usuarios"  class="form-control" placeholder="Password Usuarios" onkeyup=""  required name="passwordUsuarios">
+              <input type="text"id="password_admin"  class="form-control" placeholder="Password Usuarios" onkeyup=""  required name="password_admin">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Avatar</label>
             <div class="col-sm-10 conteImagenCat">
-              <input type="file" class="form-control"  id="imagenNuevaUsuario" name="imagenNewUsuario"><br>
-              <img src="" id="imagenNewUsuario" alt="" class="thumbnail" width="100" style="display: none">
+              <input type="file" class="form-control"  id="imagenNuevaUsuario" name="avatar_admin"><br>
+              <img src="" id="avatar_admin" alt="" class="thumbnail" width="100" style="display: none">
             </div>
           </div>
           <input type="hidden" name="tipoOperacion" value="insertarUsuario">
