@@ -16,6 +16,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="views/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="views/dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" href="views/dist/plugins/iCheck/square/blue.css">
+    <!-- CCS para taba dinamica avanzada -->
+    <link href='views/dist/css/dataTables.bootstrap.css' rel='stylesheet'>
+    <link href='views/dist/css/dataTables.responsive.css' rel='stylesheet'>
+
   <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -66,5 +70,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="views/dist/js/slider.js"></script>
 <script src="views/dist/js/categorias.js"></script>
 <script src="views/dist/js/usuario.js"></script>
+
+<script src="views/dist/js/jquery.dataTables.min.js"></script>
+<script src="views/dist/js/dataTables.bootstrap.min.js"></script>
+<script src="views/dist/js/recursos.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.11/dist/sweetalert2.all.min.js"></script></body>
 </html>

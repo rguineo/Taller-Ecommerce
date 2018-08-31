@@ -8,6 +8,7 @@ Class ajaxUsuario{
 	public $_correo_admin;
 	public $_password_admin;
     public $_avatar_admin;
+    public $_rutaActual;
 
     public function crearUsuario(){
 		$datos = array(	"nombre_admin"=>$this->_nombre_admin,
@@ -21,9 +22,9 @@ Class ajaxUsuario{
 	}
 
 	public function editarUsuario(){
-        $id_admin = $this->id_admin;
+        $id_admin = $this->_id_admin;
         
-        $respuesta = ControllerSlider::ctrEditarUsuario($_id_admin);
+        $respuesta = (new ControllerUsuario)->ctrEditarUsuario($id_admin);
 
         $datos = array("id_admin"=>$respuesta["id_admin"],
 						"nombre_admin"=>$respuesta["nombre_admin"],
@@ -36,14 +37,15 @@ Class ajaxUsuario{
 
     }
     public function actualizarUsuario(){
-		$datos = array( "id_admin"=>$this->id_admin,
-						"nombre_admin"=>$this->nombre_admin,
-						"correo_admin"=>$this->correo_admin,
-						"password_admin"=>$this->password_admin,
-						"avatar_admin"=>$this->avatar_admin,
+		$datos = array( "id_admin"=>$this->_id_admin,
+						"nombre_admin"=>$this->_nombre_admin,
+						"correo_admin"=>$this->_correo_admin,
+						"password_admin"=>$this->_password_admin,
+                        "avatar_admin"=>$this->_avatar_admin,
+                        "rutaActual"=>$this->_rutaActual
 						);
 
-		$respuesta = ControllerSlider::ctrActualizarUsuario($datos);
+		$respuesta = ControllerUsuario::ctrActualizarUsuario($datos);
 
 		echo $respuesta;
 	}
@@ -70,7 +72,7 @@ Class ajaxUsuario{
         $crearNuevoUsuario -> crearUsuario();
     }
     
-    if ($tipoOperacion == "tituloUsuario") {
+    if ($tipoOperacion == "editarUsuario") {
         $editarUsuario = new ajaxUsuario();
         $editarUsuario -> _id_admin = $_POST["id_admin"];
         $editarUsuario -> editarUsuario();
@@ -78,11 +80,13 @@ Class ajaxUsuario{
     
     if ($tipoOperacion == "actualizarUsuario") {
         $actualizarUsuario = new ajaxUsuario();
-        $actualizarUsuario -> id_admin = $_POST["id_admin"];
-        $actualizarUsuario -> nombre_admin = $_POST["nombre_admin"];
-        $actualizarUsuario -> correo_admin = $_POST["correo_admin"];
-        $actualizarUsuario -> password_admin = $_POST["password_admin"];
-        $actualizarUsuario -> avatar_admin = $_FILES["avatar_admin"];
+        $actualizarUsuario -> _id_admin = $_POST["id_admin"];
+        $actualizarUsuario -> _nombre_admin = $_POST["nombre_admin"];
+        $actualizarUsuario -> _correo_admin = $_POST["correo_admin"];
+        $actualizarUsuario -> _password_admin = $_POST["password_admin"];
+        $actualizarUsuario -> _avatar_admin = $_FILES["avatar_admin"];
+        $actualizarUsuario -> _rutaActual = $_POST["rutaActual"];
+        
         $actualizarUsuario -> actualizarUsuario();
     }
     if ($tipoOperacion == "eliminarUsuario") {

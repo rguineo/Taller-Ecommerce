@@ -72,7 +72,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Password</label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" placeholder="Password" required name="password_admin">
+              <input type="password"  class="form-control" placeholder="Password" required name="password_admin">
             </div>
           </div>
           <div class="form-group row">
@@ -86,7 +86,7 @@
        
           <input type="hidden" name="tipoOperacion" value="actualizarUsuario">
           <input type="hidden" name="rutaActual">
-          <input type="hidden" name="id_slider">
+          <input type="hidden" name="id_admin">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
