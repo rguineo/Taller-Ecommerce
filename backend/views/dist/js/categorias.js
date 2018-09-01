@@ -241,7 +241,13 @@ $("#titulo-subcategoria").on("keyup", function(){
 $("#titulo-categoria").on("keyup", function(){
     var cadena = $("#titulo-categoria").val()
     cadena = getCleanedString(cadena)
-    $("#vinculoCategoria").val(cadena)
+    $("#ruta-categoria").val(cadena)
+})
+
+$("#editTituloCategora").on("keyup", function(){
+    var cadena = $("#editTituloCategora").val()
+    cadena = getCleanedString(cadena)
+    $("#EditvinculoCategoria").val(cadena)
 })
 
 $("#titulo-productos").on("keyup", function(){

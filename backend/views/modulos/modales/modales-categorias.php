@@ -18,7 +18,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Ruta</label>
             <div class="col-sm-10">
-              <input type="text"id="ruta-categoria"  class="form-control" placeholder="Ruta amigable" onkeyup=""  required name="rutaCategorias" readonly>
+              <input type="text" id="ruta-categoria"  class="form-control" placeholder="Ruta amigable" onkeyup=""  required name="rutaCategorias" readonly>
             </div>
           </div>
           <div class="form-group row">
@@ -54,7 +54,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Título</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Titulo" required name="tituloCategoria">
+              <input type="text" id="editTituloCategora" class="form-control" placeholder="Titulo" required name="tituloCategoria">
             </div>
           </div>
           <div class="form-group row">
@@ -68,7 +68,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Vínculo</label>
             <div class="col-sm-10">
-              <input type="text" id="vinculoCategoria" class="form-control" placeholder="vínculo" required name="rutaCategoria" readonly>
+              <input type="text" id="EditvinculoCategoria" class="form-control" placeholder="vínculo" required name="rutaCategoria" readonly>
             </div>
           </div>
        
