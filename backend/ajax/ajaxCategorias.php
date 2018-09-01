@@ -26,8 +26,7 @@ Class ajaxCategorias{
 		$datos = array("id"=>$respuesta["id"],
 						"categoria"=>$respuesta["categoria"],
 						"ruta"=>$respuesta["ruta"],
-						"imagen"=>substr($respuesta["imagen"], 3)
-						);
+						"imagen"=>substr($respuesta["imagen"], 3));
 
 		echo json_encode($datos);
 
@@ -38,8 +37,7 @@ Class ajaxCategorias{
 						"categoria"=>$this->_categoria,
 						"ruta"=>$this->_ruta,
                         "imagen"=>$this->_imagen,
-                        "rutaActual"=>$this->_rutaActual
-						);
+                        "rutaActual"=>$this->_rutaActual);
 
 		$respuesta = ControllerCategorias::ctrActualizarCategoria($datos);
 
@@ -57,18 +55,18 @@ Class ajaxCategorias{
 		$crearNuevaCategoria -> crearCategorias();
 	}
 
-	if ($tipoOperacion == "editarCategorias") {
+	if ($tipoOperacion == "editarCategoria") {
 		$editarCategoria = new ajaxCategorias();
 		$editarCategoria -> _idCategoria = $_POST["id"];
 		$editarCategoria -> editarCategorias();
 	}
 
-	if ($tipoOperacion == "actualizarCategorias") {
+	if ($tipoOperacion == "actualizarCategoria") {
 		$actualizarCategoria = new ajaxCategorias();
 		$actualizarCategoria -> _idCategoria = $_POST["id"];
-		$actualizarCategoria -> _categoria = $_POST["categoria"];
-		$actualizarCategoria -> _ruta = $_POST["ruta"];
-		$actualizarCategoria -> _imagen = $_FILES["imagen"];
+		$actualizarCategoria -> _categoria = $_POST["tituloCategoria"];
+		$actualizarCategoria -> _ruta = $_POST["rutaCategoria"];
+		$actualizarCategoria -> _imagen = $_FILES["imagenCategoria"];
 		$actualizarCategoria -> _rutaActual = $_POST["rutaActual"];
 		$actualizarCategoria -> actualizarCategorias();
 	}

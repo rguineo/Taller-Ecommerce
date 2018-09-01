@@ -45,12 +45,11 @@ Class ModeloCategorias {
 
 	static public function mdlEditarCategorias($tabla, $idCategoria) {
 
-		$sql = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
+		$sql = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
 		$sql->bindParam(":id", $idCategoria, PDO::PARAM_INT);
 
 		$sql -> execute();
 		return $sql -> fetch();
-
 	}
 
 	static public function mdlActualizarCategoria($tabla, $datos, $rutaImagen) {

@@ -3,7 +3,7 @@ $(document).ready(function(){
 		e.preventDefault()
 
 		var datos = new FormData($(this)[0])
-        console.log("paso por aqui JS")
+
 		$.ajax({
 			url: 'ajax/ajaxCategorias.php',
 			type: 'POST',
@@ -27,104 +27,6 @@ $(document).ready(function(){
 		})
 
     })
-
-    $("#modal-editar-categorias").submit(function (e) {
-		e.preventDefault()
-
-		var datos = new FormData($(this)[0])
-
-		$.ajax({
-			url: 'ajax/ajaxCategorias.php',
-			type: 'POST',
-			data: datos,
-			processData: false,
-			contentType: false,
-			success: function(respuesta) {
-				if (respuesta == "ok") {
-					swal({
-					  type: 'success',
-					  title: 'Actualizado',
-					  text: 'Categoria actualizada con éxito'
-					}).then((result) => {
-					  if (result.value) {
-					    window.location = "categorias"
-					  }
-					})
-				}
-			}
-
-		})
-	})
-
-	$("body .table-dark").on("click", ".btnEditarCategorias", function(){
-		var idCategoria = $(this).attr("idCategorias")
-		var datos = new FormData()
-		datos.append("id", idCategoria)
-		datos.append("tipoOperacion", "editarCategorias")
-
-		$.ajax({
-			url: 'ajax/ajaxCategorias.php',
-			type: 'POST',
-			data: datos,
-			processData: false,
-			contentType: false,
-			success: function(respuesta) {
-				var valor = JSON.parse(respuesta)
-
-				$('#formu-editar-categoria input[name="tituloCategoria"]').val(valor.categoria)
-				$('#formu-editar-categoria input[name="rutaCategoria"]').val(valor.ruta)
-				$('#formu-editar-categoria #imagenCategoria').attr("src", valor.imagen)
-				$('#formu-editar-categoria input[name="id"]').val(valor.id)
-				$('#formu-editar-categoria input[name="rutaActual"]').val(valor.imagen)
-
-			}
-
-        })
-
-	})
-
-	$("body .table-dark").on("click", ".btnEliminarCategorias", function(){
-		var idCategoria = $(this).attr("id")
-		var rutaImagen = $(this).attr("imagen")
-		var datos = new FormData()
-		datos.append("id", idCategoria)
-		datos.append("tipoOperacion", "eliminarCategorias")
-		datos.append("imagen", rutaImagen)
-        console.log("pasoporaca")
-		swal({
-		  title: '¿Estás seguro de eliminar?',
-		  text: "Los cambios no son reversibles!",
-		  type: 'warning',
-		  showCancelButton: true,
-		  confirmButtonColor: '#3085d6',
-		  cancelButtonColor: '#d33',
-		  confirmButtonText: 'Si, Elimina!'
-		}).then((result) => {
-		  if (result.value) {
-		  	$.ajax({
-				url: 'ajax/ajaxCategorias.php',
-				type: 'POST',
-				data: datos,
-				processData: false,
-				contentType: false,
-				success: function(respuesta) {
-					if ( respuesta == "ok") {
-						swal(
-					      'Eliminado!',
-					      'Su archivo a sido eliminado.',
-					      'success'
-					    ).then((result) => {
-						  if (result.value) {
-						    window.location = "categorias"
-						  }
-						})
-					}
-				}
-
-			})
-		  }
-		})	
-	})
 
 // PREVISUALIZAR IMAGENES
 
@@ -174,11 +76,7 @@ function previsualizarImg(e) {
 
     }
 
-$("#titulo-categoria").on("keyup", function(){
-    var cadena = $("#titulo-categoria").val()
-    cadena = getCleanedString(cadena)
-    $("#ruta-categoria").val(cadena)
-})
+
 
 $("#formu-editar-categoria").submit(function (e) {
     e.preventDefault()
@@ -199,7 +97,7 @@ $("#formu-editar-categoria").submit(function (e) {
                   text: 'Categoria actualizado con éxito'
                 }).then((result) => {
                   if (result.value) {
-                    window.location = "slider"
+                    window.location = "categoria"
                   }
                 })
             }
@@ -208,8 +106,8 @@ $("#formu-editar-categoria").submit(function (e) {
     })
 })
 
-$("body .table-dark").on("click", ".btnEditarCategoria", function(){
-    var idCategoria = $(this).attr("idSlider")
+$("body .table-dark").on("click", ".btnEditarCategorias", function(){
+    var idCategoria = $(this).attr("idCategorias")
     var datos = new FormData()
     datos.append("id", idCategoria)
     datos.append("tipoOperacion", "editarCategoria")
@@ -222,16 +120,16 @@ $("body .table-dark").on("click", ".btnEditarCategoria", function(){
         contentType: false,
         success: function(respuesta) {
             var valor = JSON.parse(respuesta)
-            console.log(valor.id)
-            console.log(valor.titulo_slider)
 
             $('#formu-editar-categoria input[name="tituloCategoria"]').val(valor.categoria)
             $('#formu-editar-categoria input[name="rutaCategoria"]').val(valor.ruta)
-            $('#formu-editar-categoria #imagenSlider').attr("src", valor.imagen)
-            $('#formu-editar-categoria input[name="id_slider"]').val(valor.idCategoria)
+            $('#formu-editar-categoria #EdimagenCategoria').attr("src", valor.imagen)
+            $('#formu-editar-categoria input[name="id"]').val(valor.id)
         }
     })
 })
+
+
 $("#titulo-subcategoria").on("keyup", function(){
     var cadena = $("#titulo-subcategoria").val()
     cadena = getCleanedString(cadena)
@@ -244,10 +142,10 @@ $("#titulo-categoria").on("keyup", function(){
     $("#ruta-categoria").val(cadena)
 })
 
-$("#editTituloCategora").on("keyup", function(){
-    var cadena = $("#editTituloCategora").val()
+$("#tituloCategoria").on("keyup", function(){
+    var cadena = $("#tituloCategoria").val()
     cadena = getCleanedString(cadena)
-    $("#EditvinculoCategoria").val(cadena)
+    $("#ErutaCategoria").val(cadena)
 })
 
 $("#titulo-productos").on("keyup", function(){

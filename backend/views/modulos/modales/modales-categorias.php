@@ -54,21 +54,21 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Título</label>
             <div class="col-sm-10">
-              <input type="text" id="editTituloCategora" class="form-control" placeholder="Titulo" required name="tituloCategoria">
+              <input type="text" id="tituloCategoria" class="form-control" placeholder="Titulo" required name="tituloCategoria">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10 conteEditarImagen">
-              <input type="file" class="form-control"  id="imagenEditarCategoria" name="imagenCategoria">
+              <input type="file" class="form-control"  id="imagenEditarCategoria" name="EdimagenCategoria">
               <br>
-              <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200">
+              <img src="" id="EdimagenCategoria" alt="" class="thumbnail" width="200">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Vínculo</label>
             <div class="col-sm-10">
-              <input type="text" id="EditvinculoCategoria" class="form-control" placeholder="vínculo" required name="rutaCategoria" readonly>
+              <input type="text" id="ErutaCategoria" class="form-control" placeholder="vínculo" required name="rutaCategoria" readonly>
             </div>
           </div>
        
