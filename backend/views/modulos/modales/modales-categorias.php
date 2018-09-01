@@ -39,7 +39,7 @@
   </div>
 </div>
 
-<!-- EDITAR SLIDER -->
+<!-- EDITAR Categorias -->
 <div class="modal fade" id="modal-editar-categorias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -63,7 +63,6 @@
               <input type="file" class="form-control"  id="imagenEditarCategoria" name="imagenCategoria">
               <br>
               <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200">
-
             </div>
           </div>
           <div class="form-group row">
@@ -81,7 +80,7 @@
        
           <input type="hidden" name="tipoOperacion" value="actualizarCategoria">
           <input type="hidden" name="rutaActual">
-          <input type="hidden" name="id_slider">
+          <input type="hidden" name="id">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

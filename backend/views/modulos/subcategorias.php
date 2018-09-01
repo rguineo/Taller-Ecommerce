@@ -40,10 +40,10 @@
                 <td>'.$value["subcategoria"].'</td>
                 <td>'.$value["ruta"].'</td>
                 <td width="100">
-                  <button class="btn btn-sm btn-info btnEditarSubCategorias" idSubCategorias="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
+                  <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
                     <i class="far fa-edit"></i>
                   </button>
-                  <button class="btn btn-sm btn-danger btnEliminarCategorias" idSubCategorias="'.$value["id"].'">
+                  <button class="btn btn-sm btn-danger btnEliminarCategorias" id="'.$value["id"].'">
                     <i class="far fa-trash-alt"></i>
                   </button>
                 </td>

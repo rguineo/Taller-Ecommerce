@@ -9,7 +9,7 @@ Class ControllerCategorias {
 		return $respuesta;
 	}
 
-	static public function ctrCrearCategoria($datos) {
+	static public function ctrCrearCategorias($datos) {
 		$tabla = "categorias";
 
 		list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
@@ -51,19 +51,19 @@ Class ControllerCategorias {
 		}
 
 
-		$respuesta = ModeloCategorias::mdlCrearCategoria($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloCategorias::mdlCrearCategorias($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
 	}
 
-	static public function ctrEliminarSlider($id_slider, $ruta) {
+	static public function ctrEliminarCategorias($_idCategoria, $ruta) {
 
-		$tabla = "slider";
+		$tabla = "categorias";
 
 		if ( unlink($ruta) ) {
 		
-			$respuesta = ModeloSlider::mdlEliminarSlider($tabla, $id_slider);	
+			$respuesta = ModeloCategorias::mdlEliminarCategorias($tabla, $_idCategoria);	
 		
 		}
 		
@@ -71,15 +71,15 @@ Class ControllerCategorias {
 
 	}
 
-	static public function ctrEditarCategoria($_idCategoria) {
+	static public function ctrEditarCategorias($_idCategoria) {
 		$tabla = "categorias";
-		$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $_idCategoria);
+		$respuesta = ModeloCategorias::mdlEditarCategorias($tabla, $_idCategoria);
 		return $respuesta;
 	}
 
-	static public function ctrActualizarSlider($datos) {
+	static public function ctrActualizarCategorias($datos) {
 		//Validamos si no viene imagen para actualizar solo la tabla
-		$tabla = "slider";
+		$tabla = "categorias";
 
 		if ($datos["imagen"]["error"] == 4) {
 			$rutaImagen = null;
@@ -133,7 +133,7 @@ Class ControllerCategorias {
 			
 		}
 
-		$respuesta = ModeloSlider::mdlActualizarSlider($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloCategorias::mdlActualizarCategorias($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 

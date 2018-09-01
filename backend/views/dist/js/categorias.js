@@ -28,6 +28,104 @@ $(document).ready(function(){
 
     })
 
+    $("#formu-editar-categorias").submit(function (e) {
+		e.preventDefault()
+
+		var datos = new FormData($(this)[0])
+
+		$.ajax({
+			url: 'ajax/ajaxCategorias.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				if (respuesta == "ok") {
+					swal({
+					  type: 'success',
+					  title: 'Actualizado',
+					  text: 'Categoria actualizada con éxito'
+					}).then((result) => {
+					  if (result.value) {
+					    window.location = "categorias"
+					  }
+					})
+				}
+			}
+
+		})
+	})
+
+	$("body .table-dark").on("click", ".btnEditarCategorias", function(){
+		var idCategoria = $(this).attr("id")
+		var datos = new FormData()
+		datos.append("id", idCategoria)
+		datos.append("tipoOperacion", "editarCategorias")
+
+		$.ajax({
+			url: 'ajax/ajaxCategorias.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				var valor = JSON.parse(respuesta)
+
+				$('#formu-editar-categorias input[name="categoria"]').val(valor.categoria)
+				$('#formu-editar-categorias textarea[name="ruta"]').val(valor.ruta)
+				$('#formu-editar-categorias #imagen').attr("src", valor.imagen)
+				$('#formu-editar-categorias input[name="id"]').val(valor.id)
+				$('#formu-editar-categorias input[name="rutaActual"]').val(valor.imagen)
+
+			}
+
+		})
+
+	})
+
+	$("body .table-dark").on("click", ".btnEliminarCategorias", function(){
+		var idCategoria = $(this).attr("id")
+		var rutaImagen = $(this).attr("imagen")
+		var datos = new FormData()
+		datos.append("id", idCategoria)
+		datos.append("tipoOperacion", "eliminarCategorias")
+		datos.append("imagen", rutaImagen)
+        console.log("pasoporaca")
+		swal({
+		  title: '¿Estás seguro de eliminar?',
+		  text: "Los cambios no son reversibles!",
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Si, Elimina!'
+		}).then((result) => {
+		  if (result.value) {
+		  	$.ajax({
+				url: 'ajax/ajaxCategorias.php',
+				type: 'POST',
+				data: datos,
+				processData: false,
+				contentType: false,
+				success: function(respuesta) {
+					if ( respuesta == "ok") {
+						swal(
+					      'Eliminado!',
+					      'Su archivo a sido eliminado.',
+					      'success'
+					    ).then((result) => {
+						  if (result.value) {
+						    window.location = "categorias"
+						  }
+						})
+					}
+				}
+
+			})
+		  }
+		})	
+	})
+
 // PREVISUALIZAR IMAGENES
 
 $("#imagenNueva").change(previsualizarImg)
