@@ -59,7 +59,7 @@ Class ajaxCategorias{
 	if ($tipoOperacion == "editarCategoria") {
 		$editarCategoria = new ajaxCategorias();
 		$editarCategoria -> _idCategoria = $_POST["id_categoria"];
-		$editarSeditarCategorialider -> editarCategorias();
+		$editarCategoria -> editarCategorias();
 	}
 
 	if ($tipoOperacion == "actualizarCategorias") {

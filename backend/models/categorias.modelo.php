@@ -60,7 +60,7 @@ Class ModeloCategorias {
 
 			$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
 			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
-			$sql->bindParam(":id", $datos["id_slider"], PDO::PARAM_INT);
+			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
 
 		} else {
 			$sql = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria, ruta = :ruta, imagen = :imagen, fecha = NOW() WHERE id = :id");
@@ -68,7 +68,7 @@ Class ModeloCategorias {
 			$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
 			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 			$sql->bindParam(":imagen", $imagen, PDO::PARAM_STR);
-			$sql->bindParam(":id", $datos["id_slider"], PDO::PARAM_INT);
+			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
 
 
 
