@@ -32,7 +32,7 @@ Class ajaxCategorias{
 		echo json_encode($datos);
 
 	}
-	
+
 	public function actualizarCategorias(){
 		$datos = array( "id"=>$this->_idCategoria,
 						"categoria"=>$this->_categoria,
@@ -59,11 +59,7 @@ Class ajaxCategorias{
 
 	if ($tipoOperacion == "editarCategorias") {
 		$editarCategoria = new ajaxCategorias();
-<<<<<<< HEAD
 		$editarCategoria -> _idCategoria = $_POST["id"];
-=======
-		$editarCategoria -> _idCategoria = $_POST["id_categoria"];
->>>>>>> de1d686051306fdfb449e3cfd85a0fcfa03d37ce
 		$editarCategoria -> editarCategorias();
 	}
 
