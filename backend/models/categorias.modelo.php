@@ -81,7 +81,8 @@ Class ModeloCategorias {
 		}
 
 	}
-	public function mdlMostrarCategorias(){
+	
+	public function mdlMostrarCategoria(){
         $table = $this->getTabla();
         $sql = Conexion::conectar()->prepare("SELECT * FROM $table");
         $sql -> execute();

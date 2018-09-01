@@ -21,7 +21,7 @@ Class ajaxCategorias{
 	public function editarCategoria(){
 		$id_categoria = $this->_idCategoria;
 
-		$respuesta = (new ControllerCategorias)->ctrEditarCategorias($id_categoria);
+		$respuesta = (new ControllerCategorias)->ctrEditarCategoria($id_categoria);
 
 		$datos = array("id"=>$respuesta["id"],
 						"categoria"=>$respuesta["categoria"],
@@ -40,7 +40,7 @@ Class ajaxCategorias{
                         "rutaActual"=>$this->_rutaActual
 						);
 
-		$respuesta = ControllerCategorias::ctrActualizarCategorias($datos);
+		$respuesta = ControllerCategorias::ctrActualizarCategoria($datos);
 
 		echo $respuesta;
 	}
@@ -69,7 +69,7 @@ Class ajaxCategorias{
 		$actualizarCategoria -> _ruta = $_POST["ruta"];
 		$actualizarCategoria -> _imagen = $_FILES["imagen"];
 		$actualizarCategoria -> _rutaActual = $_POST["rutaActual"];
-		$actualizarCategoria -> actualizarCategorias();
+		$actualizarCategoria -> actualizarCategoria();
 	}
 
 ?>
