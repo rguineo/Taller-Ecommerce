@@ -95,7 +95,7 @@ Class ControllerCategorias {
 			$nuevoAncho = 1024;
 			$nuevoAlto = 768;
 
-			$directorio = "../views/dist/img/slider";
+			$directorio = "../views/dist/img/categoria";
 
 			if($datos["imagen"]["type"] == "image/jpeg"){
 

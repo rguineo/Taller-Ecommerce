@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$('#dataTables-example').DataTable().fnDestroy()
     $('#dataTables-example').DataTable({
-            responsive: true
+        responsive: true
     })
 
     $("#titulo-subcategoria").on("keyup", function(){

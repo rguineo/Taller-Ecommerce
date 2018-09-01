@@ -17,7 +17,7 @@ Class ControllerProductos {
 		$nuevoAncho = 1024;
 		$nuevoAlto = 768;
 
-		$directorio = "../views/dist/img/categoria";
+		$directorio = "../views/dist/img/Producto";
 
 		if($datos["imagen"]["type"] == "image/jpeg"){
 
@@ -51,19 +51,19 @@ Class ControllerProductos {
 		}
 
 
-		$respuesta = ModeloCategorias::mdlCrearCategoria($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloProducto::mdlCrearProducto($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
 	}
 
-	static public function ctrEliminarSlider($id_slider, $ruta) {
+	static public function ctrEliminarProducto($id_Producto, $ruta) {
 
-		$tabla = "slider";
+		$tabla = "Producto";
 
 		if ( unlink($ruta) ) {
 		
-			$respuesta = ModeloSlider::mdlEliminarSlider($tabla, $id_slider);	
+			$respuesta = ModeloProducto::mdlEliminarProducto($tabla, $id_Producto);	
 		
 		}
 		
@@ -71,15 +71,15 @@ Class ControllerProductos {
 
 	}
 
-	static public function ctrEditarCategoria($_idCategoria) {
-		$tabla = "categorias";
-		$respuesta = ModeloCategorias::mdlEditarCategoria($tabla, $_idCategoria);
+	static public function ctrEditarProducto($_idProducto) {
+		$tabla = "Producto";
+		$respuesta = ModeloProducto::mdlEditarProducto($tabla, $_idProducto);
 		return $respuesta;
 	}
 
-	static public function ctrActualizarSlider($datos) {
+	static public function ctrActualizarProducto($datos) {
 		//Validamos si no viene imagen para actualizar solo la tabla
-		$tabla = "slider";
+		$tabla = "Producto";
 
 		if ($datos["imagen"]["error"] == 4) {
 			$rutaImagen = null;
@@ -95,7 +95,7 @@ Class ControllerProductos {
 			$nuevoAncho = 1024;
 			$nuevoAlto = 768;
 
-			$directorio = "../views/dist/img/slider";
+			$directorio = "../views/dist/img/Producto";
 
 			if($datos["imagen"]["type"] == "image/jpeg"){
 
@@ -133,7 +133,7 @@ Class ControllerProductos {
 			
 		}
 
-		$respuesta = ModeloSlider::mdlActualizarSlider($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloProducto::mdlActualizarProducto($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
