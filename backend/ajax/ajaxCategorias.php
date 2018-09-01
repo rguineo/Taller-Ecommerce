@@ -18,7 +18,7 @@ Class ajaxCategorias{
 
 		echo $respuesta;
 	}
-	public function editarCategoria(){
+	public function editarCategorias(){
 		$id_categoria = $this->_idCategoria;
 
 		$respuesta = (new ControllerCategorias)->ctrEditarCategoria($id_categoria);
@@ -32,6 +32,7 @@ Class ajaxCategorias{
 		echo json_encode($datos);
 
 	}
+
 	public function actualizarCategorias(){
 		$datos = array( "id"=>$this->_idCategoria,
 						"categoria"=>$this->_categoria,
@@ -56,9 +57,9 @@ Class ajaxCategorias{
 		$crearNuevaCategoria -> crearCategorias();
 	}
 
-	if ($tipoOperacion == "editarCategoria") {
+	if ($tipoOperacion == "editarCategorias") {
 		$editarCategoria = new ajaxCategorias();
-		$editarCategoria -> _idCategoria = $_POST["id_categoria"];
+		$editarCategoria -> _idCategoria = $_POST["id"];
 		$editarCategoria -> editarCategorias();
 	}
 
@@ -69,7 +70,7 @@ Class ajaxCategorias{
 		$actualizarCategoria -> _ruta = $_POST["ruta"];
 		$actualizarCategoria -> _imagen = $_FILES["imagen"];
 		$actualizarCategoria -> _rutaActual = $_POST["rutaActual"];
-		$actualizarCategoria -> actualizarCategoria();
+		$actualizarCategoria -> actualizarCategorias();
 	}
 
 ?>

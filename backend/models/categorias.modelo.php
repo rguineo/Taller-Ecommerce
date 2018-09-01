@@ -12,7 +12,7 @@ Class ModeloCategorias {
 
 	}
 
-	static public function mdlCrearCategoria($tabla, $datos, $rutaImagen) {
+	static public function ctrCrearCategorias($tabla, $datos, $rutaImagen) {
 
 		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
 				VALUES (NULL, :categoria, :ruta, :imagen, NOW())");
@@ -43,7 +43,7 @@ Class ModeloCategorias {
 
 	}
 
-	static public function mdlEditarCategoria($tabla, $idCategoria) {
+	static public function mdlEditarCategorias($tabla, $idCategoria) {
 
 		$sql = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
 		$sql->bindParam(":id", $idCategoria, PDO::PARAM_INT);
@@ -81,7 +81,7 @@ Class ModeloCategorias {
 		}
 
 	}
-	
+
 	public function mdlMostrarCategoria(){
         $table = $this->getTabla();
         $sql = Conexion::conectar()->prepare("SELECT * FROM $table");
