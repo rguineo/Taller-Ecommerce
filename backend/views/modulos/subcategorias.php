@@ -15,7 +15,7 @@
     <section class="content container-fluid">
     <div id='page-wrapper'>
           <div class='container-fluid'>
-          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-productos">Agregar Subcategoria <i class="fas fa-plus"></i></button>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-subcategorias">Agregar Subcategoria <i class="fas fa-plus"></i></button>
             <br><br>
               <div class='row'>
                   <div class='col-lg-offset-1 col-lg-10'>

@@ -68,9 +68,6 @@ Class ModeloCategorias {
 			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 			$sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
 			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
-
-
-
 		} 
 
 		if($sql->execute()) {

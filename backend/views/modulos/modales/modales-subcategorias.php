@@ -22,12 +22,14 @@
                         <option selected>Elija una Categoria</option>
                         <?php
                             foreach ($respuesta as $key => $value) {
-                            echo "<option value=".$value["id"].">".$value["categoria"]."</option>";
+                            echo "<option value=".$value["id"]." rutaImagenCat=".$value["imagen"].">".$value["categoria"]."</option>";
                             }
                         ?>           
                     </select>
                     </div>
-
+                    <div class="col-sm-8 conteImagenCat">
+                        <img src="" id="imagenCategoria" alt="" class="thumbnail" width="100">
+                    </div>
                 </div>
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Nombre Sub Categoria</label>
@@ -45,8 +47,8 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Imagen</label>
                     <div class="col-sm-8 conteImagenCat">
-                        <input type="file" class="form-control"  id="imagenCategoria" name="imagenCategoria">
-                        <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200" style="display: none">
+                        <input type="file" class="form-control"  id="imagSubCategoria" name="imagenSubCategoria"><br>
+                        <img src="" id="imagenSubCategoria" alt="" class="thumbnail" width="200" style="display: none">
                     </div>
                 </div>
                 <input type="hidden" name="tipoOperacion" value="insertarCategorias">
