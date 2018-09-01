@@ -48,15 +48,16 @@ Class ajaxCategorias{
 
 	$tipoOperacion = $_POST["tipoOperacion"];
 
-	if($tipoOperacion == "insertarCategorias") {
+	if($tipoOperacion == "insertarCategoria") {
 		$crearNuevaCategoria = new ajaxCategoria();
 		$crearNuevaCategoria -> _categoria = $_POST["tituloCategorias"];
 		$crearNuevaCategoria -> _ruta = $_POST["rutaCategorias"];
 		$crearNuevaCategoria -> _imagen = $_FILES["imagenCategoria"];
+		echo "paso por aqui ";
 		$crearNuevaCategoria -> crearCategorias();
 	}
 
-	if ($tipoOperacion == "tituloCategorias") {
+	if ($tipoOperacion == "editarCategoria") {
 		$editarCategoria = new ajaxCategoria();
 		$editarCategoria -> _idCategoria = $_POST["id_categoria"];
 		$editarSeditarCategorialider -> editarCategorias();

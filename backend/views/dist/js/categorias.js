@@ -3,13 +3,13 @@ $(document).ready(function(){
 		e.preventDefault()
 
 		var datos = new FormData($(this)[0])
-
+        console.log("paso por aqui JS")
 		$.ajax({
 			url: 'ajax/ajaxCategorias.php',
 			type: 'POST',
 			data: datos,
 			processData: false,
-			contentType: false,
+            contentType: false,
 			success: function(respuesta) {
 				if (respuesta == "ok") {
 					swal({
