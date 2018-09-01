@@ -13,47 +13,56 @@
 
     <!-- Main content -->
     <section class="content container-fluid">
+    <div id='page-wrapper'>
+          <div class='container-fluid'>
+          <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-productos">Agregar Subcategoria <i class="fas fa-plus"></i></button>
+            <br><br>
+              <div class='row'>
+                  <div class='col-lg-offset-1 col-lg-10'>
+                      <div class='table-responsive table_productos'>
+                          <table class='table table-striped table-bordered table-hover tabla-usuarios table-dark' id='dataTables-example'>
 
-      <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-subcategorias">Agregar SubCategoria <i class="fas fa-plus"></i></button>
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Categoría</th>
+                    <th scope="col">SubCategoria</th>
+                    <th scope="col">Ruta</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
 
-      <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Categoría</th>
-            <th scope="col">SubCategoria</th>
-            <th scope="col">Ruta</th>
-            <th scope="col">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <?php 
-          
-          $Subcategorias = ControllerSubCategorias::listarSubCategoriasCtr();
-          
-          foreach ($Subcategorias as $key => $value) {
-            echo '
-              <tr>
-                <td>'.$value["id"].'</td>
-                <td>'.$value["categoria"].'</td>
-                <td>'.$value["subcategoria"].'</td>
-                <td>'.$value["ruta"].'</td>
-                <td width="100">
-                  <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
-                    <i class="far fa-edit"></i>
-                  </button>
-                  <button class="btn btn-sm btn-danger btnEliminarCategorias" id="'.$value["id"].'">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
-                </td>
-              </tr>
-            ';
-          }
-          ?>
-        </tbody>
-      </table>
-
+                  <?php 
+                  
+                  $Subcategorias = ControllerSubCategorias::listarSubCategoriasCtr();
+                  
+                  foreach ($Subcategorias as $key => $value) {
+                    echo '
+                      <tr>
+                        <td>'.$value["id"].'</td>
+                        <td>'.$value["categoria"].'</td>
+                        <td>'.$value["subcategoria"].'</td>
+                        <td>'.$value["ruta"].'</td>
+                        <td width="100">
+                          <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
+                            <i class="far fa-edit"></i>
+                          </button>
+                          <button class="btn btn-sm btn-danger btnEliminarCategorias" id="'.$value["id"].'">
+                            <i class="far fa-trash-alt"></i>
+                          </button>
+                        </td>
+                      </tr>
+                    ';
+                  }
+                  ?>
+                </tbody>
+              </table>
+              </diV>
+          </diV>
+      </diV>
+  </diV>
+</diV>
     </section>
     <!-- /.content -->
   </div>

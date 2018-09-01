@@ -14,41 +14,52 @@
     <!-- Main content -->
     <section class="content container-fluid">
 
-      <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-categorias">Agregar Categoria <i class="fas fa-plus"></i></button>
+<div id='page-wrapper'>
+  <div class='container-fluid'>
+  <button class="btn btn-primary" data-toggle="modal" data-target="#modal-insertar-productos">Agregar Producto <i class="fas fa-plus"></i></button>
+    <br><br>
+      <div class='row'>
+          <div class='col-lg-offset-1 col-lg-10'>
+              <div class='table-responsive table_productos'>
+                  <table class='table table-striped table-bordered table-hover tabla-usuarios table-dark' id='dataTables-example'>
 
-      <table class="table table-dark">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Categoria</th>
-            <th scope="col">Ruta</th>
-            <th scope="col">Thumbnail</th>
-            <th scope="col">Acciones</th>
-        </thead>
-        <tbody>
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Categoria</th>
+                        <th scope="col">Ruta</th>
+                        <th scope="col">Thumbnail</th>
+                        <th scope="col">Acciones</th>
+                    </thead>
+                    <tbody>
 
-          <?php 
-          
-          $categorias = ControllerCategorias::listarCategoriasCtr();
+                      <?php 
+                      
+                      $categorias = ControllerCategorias::listarCategoriasCtr();
 
-          foreach ($categorias as $key => $value) {
-            echo '
-              <tr>
-                <th scope="row">'.$value["id"].'</th>
-                <td>'.$value["categoria"].'</td>
-                <td>'.$value["ruta"].'</td>
-                <td><img src="'.substr($value["imagen"], 3).'" id="imagenCategoria" alt="" class="thumbnail" width="75px" /></td>
-                <td width="100">
-                  <button class="btn btn-sm btn-info btnEditarCategorias" idCategorias="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-categorias">
-                    <i class="far fa-edit"></i>
-                  </button>
-                </td>
-              </tr>
-            ';
-          }
-          ?>
-        </tbody>
-      </table>
+                      foreach ($categorias as $key => $value) {
+                        echo '
+                          <tr>
+                            <th scope="row">'.$value["id"].'</th>
+                            <td>'.$value["categoria"].'</td>
+                            <td>'.$value["ruta"].'</td>
+                            <td><img src="'.substr($value["imagen"], 3).'" id="imagenCategoria" alt="" class="thumbnail" width="75px" /></td>
+                            <td width="100">
+                              <button class="btn btn-sm btn-info btnEditarCategorias" idCategorias="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-categorias">
+                                <i class="far fa-edit"></i>
+                              </button>
+                            </td>
+                          </tr>
+                        ';
+                      }
+                      ?>
+                    </tbody>
+                  </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
     </section>
     <!-- /.content -->
