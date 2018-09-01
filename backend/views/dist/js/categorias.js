@@ -121,8 +121,8 @@ $("body .table-dark").on("click", ".btnEditarCategorias", function(){
         success: function(respuesta) {
             var valor = JSON.parse(respuesta)
 
-            $('#formu-editar-categoria input[name="tituloCategoria"]').val(valor.categoria)
-            $('#formu-editar-categoria input[name="rutaCategoria"]').val(valor.ruta)
+            $('#formu-editar-categoria input[name="EtituloCategoria"]').val(valor.categoria)
+            $('#formu-editar-categoria input[name="ErutaCategoria"]').val(valor.ruta)
             $('#formu-editar-categoria #EdimagenCategoria').attr("src", valor.imagen)
             $('#formu-editar-categoria input[name="id"]').val(valor.id)
         }
@@ -142,8 +142,8 @@ $("#titulo-categoria").on("keyup", function(){
     $("#ruta-categoria").val(cadena)
 })
 
-$("#tituloCategoria").on("keyup", function(){
-    var cadena = $("#tituloCategoria").val()
+$("#EtituloCategoria").on("keyup", function(){
+    var cadena = $("#EtituloCategoria").val()
     cadena = getCleanedString(cadena)
     $("#ErutaCategoria").val(cadena)
 })

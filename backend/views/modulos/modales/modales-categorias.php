@@ -54,7 +54,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Título</label>
             <div class="col-sm-10">
-              <input type="text" id="tituloCategoria" class="form-control" placeholder="Titulo" required name="tituloCategoria">
+              <input type="text" id="EtituloCategoria" class="form-control" placeholder="Titulo" required name="EtituloCategoria">
             </div>
           </div>
           <div class="form-group row">
@@ -68,7 +68,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Vínculo</label>
             <div class="col-sm-10">
-              <input type="text" id="ErutaCategoria" class="form-control" placeholder="vínculo" required name="rutaCategoria" readonly>
+              <input type="text" id="ErutaCategoria" class="form-control" placeholder="vínculo" required name="ErutaCategoria" readonly>
             </div>
           </div>
        
