@@ -71,16 +71,11 @@
               <input type="text"  class="form-control" placeholder="vínculo" required name="rutaCategoria">
             </div>
           </div>
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Descripcion</label>
-            <div class="col-sm-10">
-              <textarea class="form-control" placeholder="Texto descriptivo" required rows="5" name="descripcionSlider"></textarea>
-            </div>
-          </div>
        
           <input type="hidden" name="tipoOperacion" value="actualizarCategoria">
           <input type="hidden" name="rutaActual">
           <input type="hidden" name="id">
+          
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

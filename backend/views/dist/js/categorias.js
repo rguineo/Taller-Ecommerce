@@ -28,7 +28,7 @@ $(document).ready(function(){
 
     })
 
-    $("#formu-editar-categorias").submit(function (e) {
+    $("#modal-editar-categorias").submit(function (e) {
 		e.preventDefault()
 
 		var datos = new FormData($(this)[0])
@@ -57,7 +57,7 @@ $(document).ready(function(){
 	})
 
 	$("body .table-dark").on("click", ".btnEditarCategorias", function(){
-		var idCategoria = $(this).attr("id")
+		var idCategoria = $(this).attr("idCategorias")
 		var datos = new FormData()
 		datos.append("id", idCategoria)
 		datos.append("tipoOperacion", "editarCategorias")
@@ -71,15 +71,15 @@ $(document).ready(function(){
 			success: function(respuesta) {
 				var valor = JSON.parse(respuesta)
 
-				$('#formu-editar-categorias input[name="categoria"]').val(valor.categoria)
-				$('#formu-editar-categorias textarea[name="ruta"]').val(valor.ruta)
-				$('#formu-editar-categorias #imagen').attr("src", valor.imagen)
-				$('#formu-editar-categorias input[name="id"]').val(valor.id)
-				$('#formu-editar-categorias input[name="rutaActual"]').val(valor.imagen)
+				$('#formu-editar-categoria input[name="tituloCategoria"]').val(valor.categoria)
+				$('#formu-editar-categoria input[name="rutaCategoria"]').val(valor.ruta)
+				$('#formu-editar-categoria #imagenCategoria').attr("src", valor.imagen)
+				$('#formu-editar-categoria input[name="id"]').val(valor.id)
+				$('#formu-editar-categoria input[name="rutaActual"]').val(valor.imagen)
 
 			}
 
-		})
+        })
 
 	})
 
