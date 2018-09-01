@@ -66,7 +66,7 @@ Class ajaxCategorias{
 		$actualizarCategoria -> _idCategoria = $_POST["id"];
 		$actualizarCategoria -> _categoria = $_POST["EtituloCategoria"];
 		$actualizarCategoria -> _ruta = $_POST["ErutaCategoria"];
-		$actualizarCategoria -> _imagen = $_FILES["EdimagenCategoria"];
+		$actualizarCategoria -> _imagen = $_FILES["imagenCategoria"];
 		$actualizarCategoria -> _rutaActual = $_POST["rutaActual"];
 		$actualizarCategoria -> actualizarCategorias();
 	}

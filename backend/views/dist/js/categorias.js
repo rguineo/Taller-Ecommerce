@@ -31,7 +31,7 @@ $(document).ready(function(){
 // PREVISUALIZAR IMAGENES
 
 $("#imagenNueva").change(previsualizarImg)
-$("#imagenEditarCategoria").change(previsualizarImg)
+$("#imagen").change(previsualizarImg)
 
 function previsualizarImg(e) {
     var contenedor = e.target.parentNode
@@ -123,8 +123,11 @@ $("body .table-dark").on("click", ".btnEditarCategorias", function(){
 
             $('#formu-editar-categoria input[name="EtituloCategoria"]').val(valor.categoria)
             $('#formu-editar-categoria input[name="ErutaCategoria"]').val(valor.ruta)
-            $('#formu-editar-categoria #EdimagenCategoria').attr("src", valor.imagen)
+            $('#formu-editar-categoria #imagenCategoria').attr("src", valor.imagen)
             $('#formu-editar-categoria input[name="id"]').val(valor.id)
+            $('#formu-editar-categoria input[name="rutaActual"]').val(valor.imagen)
+
+
         }
     })
 })

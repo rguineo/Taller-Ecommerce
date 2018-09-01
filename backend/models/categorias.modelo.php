@@ -12,7 +12,7 @@ Class ModeloCategorias {
 
 	}
 
-	static public function ctrCrearCategorias($tabla, $datos, $rutaImagen) {
+	static public function mdlCrearCategoria($tabla, $datos, $rutaImagen) {
 
 		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
 				VALUES (NULL, :categoria, :ruta, :imagen, NOW())");
@@ -66,7 +66,7 @@ Class ModeloCategorias {
 
 			$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
 			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
-			$sql->bindParam(":imagen", $imagen, PDO::PARAM_STR);
+			$sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
 			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
 
 

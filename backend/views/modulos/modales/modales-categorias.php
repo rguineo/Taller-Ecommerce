@@ -60,9 +60,9 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10 conteEditarImagen">
-              <input type="file" class="form-control"  id="imagenEditarCategoria" name="EdimagenCategoria">
+              <input type="file" class="form-control"  id="imagen" name="imagenCategoria">
               <br>
-              <img src="" id="EdimagenCategoria" alt="" class="thumbnail" width="200">
+              <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200">
             </div>
           </div>
           <div class="form-group row">

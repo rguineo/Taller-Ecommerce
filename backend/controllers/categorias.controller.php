@@ -88,7 +88,7 @@ Class ControllerCategorias {
 		// LA ACTUALIZACIÓN VIENE CON IMAGEN
 		else {
 
-			unlink($datos["rutaActual"]);
+			unlink( "../".$datos["rutaActual"] );
 			
 			list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
 
