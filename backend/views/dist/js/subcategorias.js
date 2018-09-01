@@ -1,11 +1,11 @@
 $(document).ready(function(){
+
     $("body .table-dark").on("click", ".btnEliminarSubCategorias", function(){
 		var id = $(this).attr("id")
 		var datos = new FormData()
 		datos.append("id", id)
 		datos.append("tipoOperacion", "eliminarSubCategorias")
 
-    console.log("pasoporaca")
 		swal({
 		  title: '¿Estás seguro de eliminar?',
 		  text: "Los cambios no son reversibles!",
@@ -43,13 +43,9 @@ $(document).ready(function(){
 
 	$("#inputCategorias").change(function() {
 
-
 		if ($("#inputCategorias").val() != "" ) {
-
 			var posicion = $("#inputCategorias").val()
-			
 			var RutaSelect  = $('#inputCategorias [value="'+posicion+'"]').attr("rutaImagenCat")
-
 			rutaImagen = RutaSelect.substr(3)
 	
 			$("#imagenCategoria").css("display", "block")
@@ -57,55 +53,82 @@ $(document).ready(function(){
 		}	
 	})
 
-// PREVISUALIZAR IMAGENES
+	$("#formu-nuevo-subcategorias").submit(function (e) {
+		e.preventDefault()
+		
+		console.log("Pora aqui paso subcategoria")
 
-$("#imagSubCategoria").change(previsualizarImg)
-$("#imagen").change(previsualizarImg)
+		var datos = new FormData($(this)[0])
+	
+		$.ajax({
+			url: 'ajax/ajaxSubCategorias.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				if (respuesta == "ok") {
+					swal({
+						type: 'success',
+						title: 'Excelente',
+						text: 'Categoría creada con éxito'
+					}).then((result) => {
+						if (result.value) {
+							window.location = "subcategorias"
+						}
+					})
+				}
+			}
 
-function previsualizarImg(e) {
-    var contenedor = e.target.parentNode
+		})
 
-    var identificador = contenedor.classList[1]
+	})
+	// PREVISUALIZAR IMAGENES
 
-    imgSlider = this.files[0];
+	$("#imagSubCategoria").change(previsualizarImg)
+	$("#imagen").change(previsualizarImg)
 
-        if( imgSlider["type"] != "image/jpeg" && imgSlider["type"] != "image/png") {
-            $("#custom").val("")
+	function previsualizarImg(e) {
+		var contenedor = e.target.parentNode
 
-            swal({
-                type: 'error',
-                title: 'No es una imagen!!',
-                text: 'Debe subir imagenes en formato JPEG o PNG',
-            })
-        } 
-        if ( imgSlider["type"] > 2000000) {
-            $("#imagenSubCategoria").val("")
+		var identificador = contenedor.classList[1]
 
-            swal({
-                type: "Error al subir la imagen",
-                text: "La imagen debe pesar MAX 2MB",
-                icon: 'error',
-                confirmButtonText: "¡Cerrar!",
-            })
-        }
+		imgSlider = this.files[0];
 
-        else {
-            $("#imagenSubCategoria").css("display", "block")
+		if( imgSlider["type"] != "image/jpeg" && imgSlider["type"] != "image/png") {
+			$("#custom").val("")
 
-            var datosImagen = new FileReader;
-              datosImagen.readAsDataURL(imgSlider);
+			swal({
+				type: 'error',
+				title: 'No es una imagen!!',
+				text: 'Debe subir imagenes en formato JPEG o PNG',
+			})
+		} 
+		if ( imgSlider["type"] > 2000000) {
+			$("#imagenSubCategoria").val("")
 
-              $(datosImagen).on("load", function(event){
+			swal({
+				type: "Error al subir la imagen",
+				text: "La imagen debe pesar MAX 2MB",
+				icon: 'error',
+				confirmButtonText: "¡Cerrar!",
+			})
+		}
 
-                  var rutaImagen = event.target.result;
+		else {
+			$("#imagenSubCategoria").css("display", "block")
 
-                  $("." + identificador +" #imagenSubCategoria").attr("src", rutaImagen);
-              })
-        }
+			var datosImagen = new FileReader;
+			datosImagen.readAsDataURL(imgSlider);
 
-    }
+			$(datosImagen).on("load", function(event){
 
+				var rutaImagen = event.target.result;
 
+				$("." + identificador +" #imagenSubCategoria").attr("src", rutaImagen);
+			})
+		}
 
+	}
 
 })

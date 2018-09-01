@@ -18,7 +18,7 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Categoria</label>
                     <div class="col-sm-8">
-                    <select class="form-control col-sm-10" id="inputCategorias" name="Categorias" required>
+                    <select class="form-control col-sm-10" id="inputCategorias" name="idCategorias" required>
                         <option selected>Elija una Categoria</option>
                         <?php
                             foreach ($respuesta as $key => $value) {
@@ -41,7 +41,7 @@
                 <div class="form-group row">
                     <label class="col-sm-4 col-form-label">Ruta</label>
                     <div class="col-sm-8">
-                        <input type="text" id="ruta-subcategoria" class="form-control" placeholder="Ruta amigable" onkeyup=""  required name="rutaCategorias" readonly>
+                        <input type="text" id="ruta-subcategoria" class="form-control" placeholder="Ruta amigable" onkeyup=""  required name="rutaSubCategorias" readonly>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -51,7 +51,7 @@
                         <img src="" id="imagenSubCategoria" alt="" class="thumbnail" width="200" style="display: none">
                     </div>
                 </div>
-                <input type="hidden" name="tipoOperacion" value="insertarCategorias">
+                <input type="hidden" name="tipoOperacion" value="insertarSubCategoria">
             </form>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

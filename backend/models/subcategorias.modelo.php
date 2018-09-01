@@ -28,6 +28,24 @@ require_once "conexion.php";
             }
         }
 
+        static public function mdlCrearSubCategoria($tabla, $datos, $rutaImagen) {
+
+            $sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
+                    VALUES (NULL, :subcategoria, :ruta, :id_categoria, :imagen, NOW())");
+            
+            $sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+            $sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
+            $sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_STR);
+            $sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
+    
+            if( $sql -> execute() ) {
+                return "ok";
+            } else {
+                return "error";
+            }
+    
+        }
+
 	}
 
 ?>
