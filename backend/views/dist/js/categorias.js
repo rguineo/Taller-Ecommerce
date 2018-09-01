@@ -97,7 +97,7 @@ $("#formu-editar-categoria").submit(function (e) {
                   text: 'Categoria actualizado con éxito'
                 }).then((result) => {
                   if (result.value) {
-                    window.location = "categoria"
+                    window.location = "categorias"
                   }
                 })
             }
