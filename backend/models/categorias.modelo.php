@@ -29,11 +29,11 @@ Class ModeloCategorias {
 
 	}
 
-	static public function mdlEliminarSlider($tabla, $id_slider) {
+	static public function mdlEliminarCategoria($tabla, $idCategoria) {
 
 		$sql = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
 
-		$sql->bindParam(":id", $id_slider, PDO::PARAM_INT);
+		$sql->bindParam(":id", $idCategoria, PDO::PARAM_INT);
 
 		if( $sql->execute()) {
 			return "ok";
@@ -53,23 +53,21 @@ Class ModeloCategorias {
 
 	}
 
-	static public function mdlActualizarSlider($tabla, $datos, $rutaImagen) {
+	static public function mdlActualizarCategoria($tabla, $datos, $rutaImagen) {
 
 		if( is_null($rutaImagen)) {
-			$sql = Conexion::conectar()->prepare("UPDATE $tabla SET titulo = :titulo, descripcion = :descripcion, url = :vinculo, fecha = NOW() WHERE id = :id");
+			$sql = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria, ruta = :ruta, fecha = NOW() WHERE id = :id");
 
-			$sql->bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
-			$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
-			$sql->bindParam(":vinculo", $datos["vinculo"], PDO::PARAM_STR);
+			$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
 			$sql->bindParam(":id", $datos["id_slider"], PDO::PARAM_INT);
 
 		} else {
-			$sql = Conexion::conectar()->prepare("UPDATE $tabla SET titulo = :titulo, descripcion = :descripcion, rutaImg = :rutaNueva, url = :vinculo, fecha = NOW() WHERE id = :id");
+			$sql = Conexion::conectar()->prepare("UPDATE $tabla SET categoria = :categoria, ruta = :ruta, imagen = :imagen, fecha = NOW() WHERE id = :id");
 
-			$sql->bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
-			$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
-			$sql->bindParam(":rutaNueva", $rutaImagen, PDO::PARAM_STR);
-			$sql->bindParam(":vinculo", $datos["vinculo"], PDO::PARAM_STR);
+			$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
+			$sql->bindParam(":imagen", $imagen, PDO::PARAM_STR);
 			$sql->bindParam(":id", $datos["id_slider"], PDO::PARAM_INT);
 
 

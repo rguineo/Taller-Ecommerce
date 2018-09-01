@@ -42,9 +42,6 @@
                   <button class="btn btn-sm btn-info btnEditarCategorias" idCategorias="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-categorias">
                     <i class="far fa-edit"></i>
                   </button>
-                  <button class="btn btn-sm btn-danger btnEliminarCategorias" idCategorias="'.$value["id"].'">
-                    <i class="far fa-trash-alt"></i>
-                  </button>
                 </td>
               </tr>
             ';

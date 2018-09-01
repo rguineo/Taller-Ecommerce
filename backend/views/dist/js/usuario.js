@@ -91,7 +91,7 @@ $(document).ready(function(){
 		datos.append("id_admin", idUsuario)
 		datos.append("tipoOperacion", "eliminarUsuario")
 		datos.append("avatar_admin", rutaImagen)
-        console.log("pasoporaca")
+    console.log("pasoporaca")
 		swal({
 		  title: '¿Estás seguro de eliminar?',
 		  text: "Los cambios no son reversibles!",
