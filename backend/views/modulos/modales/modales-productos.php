@@ -9,18 +9,21 @@
       </div>
       <div class="modal-body">
         <form id="formu-nuevo-productos">
-          <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Ruta</label>
-            <div class="col-sm-10">
-              <input type="text" id="ruta-productos" class="form-control" placeholder="Ruta amigable" required name="rutaProductos">
-            </div>
-          </div>
+
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Titulo</label>
             <div class="col-sm-10">
               <input type="text"id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
             </div>
           </div>
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Ruta</label>
+            <div class="col-sm-10">
+              <input type="text" id="ruta-productos" class="form-control" placeholder="Ruta amigable" name="rutaProductos" readonly>
+            </div>
+          </div>
+
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Descripción</label>
             <div class="col-sm-10">
