@@ -51,7 +51,7 @@ Class ControllerCategorias {
 		}
 
 
-		$respuesta = ModeloCategorias::mdlCrearCategorias($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloCategorias::mdlCrearCategoria($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
@@ -63,7 +63,7 @@ Class ControllerCategorias {
 
 		if ( unlink($ruta) ) {
 		
-			$respuesta = ModeloCategorias::mdlEliminarCategorias($tabla, $_idCategoria);	
+			$respuesta = ModeloCategorias::mdlEliminarCategoria($tabla, $_idCategoria);	
 		
 		}
 		
@@ -71,13 +71,13 @@ Class ControllerCategorias {
 
 	}
 
-	static public function ctrEditarCategorias($_idCategoria) {
+	static public function ctrEditarCategoria($_idCategoria) {
 		$tabla = "categorias";
 		$respuesta = ModeloCategorias::mdlEditarCategorias($tabla, $_idCategoria);
 		return $respuesta;
 	}
 
-	static public function ctrActualizarCategorias($datos) {
+	static public function ctrActualizarCategoria($datos) {
 		//Validamos si no viene imagen para actualizar solo la tabla
 		$tabla = "categorias";
 
@@ -133,7 +133,7 @@ Class ControllerCategorias {
 			
 		}
 
-		$respuesta = ModeloCategorias::mdlActualizarCategorias($tabla, $datos, $rutaImagen);
+		$respuesta = ModeloCategorias::mdlActualizarCategoria($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 
