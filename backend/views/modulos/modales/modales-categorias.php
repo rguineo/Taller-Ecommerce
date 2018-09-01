@@ -68,14 +68,14 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Vínculo</label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" placeholder="vínculo" required name="rutaCategoria">
+              <input type="text" id="vinculoCategoria" class="form-control" placeholder="vínculo" required name="rutaCategoria" readonly>
             </div>
           </div>
        
           <input type="hidden" name="tipoOperacion" value="actualizarCategoria">
           <input type="hidden" name="rutaActual">
           <input type="hidden" name="id">
-          
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

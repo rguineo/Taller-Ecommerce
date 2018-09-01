@@ -238,6 +238,12 @@ $("#titulo-subcategoria").on("keyup", function(){
     $("#ruta-subcategoria").val(cadena)
 })
 
+$("#titulo-categoria").on("keyup", function(){
+    var cadena = $("#titulo-categoria").val()
+    cadena = getCleanedString(cadena)
+    $("#vinculoCategoria").val(cadena)
+})
+
 $("#titulo-productos").on("keyup", function(){
     var cadena = $("#titulo-productos").val()
     cadena = getCleanedString(cadena)
