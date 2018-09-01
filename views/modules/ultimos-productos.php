@@ -2,6 +2,8 @@
 $lastProductos = ControllerProductos::ctrMostrarLastProductos();
 $nProductos = 0;
 
+$ruta = (new Rutas)->urlBackEnd();
+
 foreach ($lastProductos as $key => $value) {
 	$nProductos = $nProductos + 1;
 }
@@ -14,7 +16,7 @@ echo '
     foreach ($lastProductos as $key => $value) {
         echo '<div class="col-lg-3 col-md-6 col-sm-12 cardProductos">
                 <div class="card h-100" style="width: 18rem;">
-                    <img class="cardImg" src="'.$value["imagen"].'">';
+                    <img class="cardImg" src="'.$ruta.substr($value["imagen"], 3).'">';
                         if ($value["oferta"] == 1){
                             echo ' 
                             <span class="descuento">'.$value["descuento"].'%</span>

@@ -20,10 +20,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link href='views/dist/css/dataTables.bootstrap.css' rel='stylesheet'>
     <link href='views/dist/css/dataTables.responsive.css' rel='stylesheet'>
 
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini login-page">
   <?php
     session_start();
