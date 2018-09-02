@@ -11,7 +11,9 @@ $(document).ready(function(){
 			processData: false,
 			contentType: false,
 			success: function(respuesta){
-				if (respuesta == "ok") {
+				var cadena = respuesta
+				console.log(cadena)
+				if (cadena == "ok") {
 					swal({				
 						type: 'success',
 						title: 'Excelente',

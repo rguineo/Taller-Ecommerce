@@ -15,7 +15,7 @@ require_once "conexion.php";
             return $sql -> fetchAll();
     
         }
-        
+
         static public function mdlEliminarSubCategorias($tabla, $id) {
 
 		    $sql = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");

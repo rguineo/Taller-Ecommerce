@@ -14,7 +14,7 @@ Class ajaxSubCategorias{
         $id = $this->id;
         $ruta = $this->id;
 
-		$respuesta = ControllerSubCategorias::ctrEliminarSubCategorias($id, $ruta);
+		$respuesta = (new ControllerSubCategorias)->ctrEliminarSubCategorias($id, $ruta);
 
         echo $respuesta;
     }
