@@ -11,7 +11,7 @@ $(document).ready(function(){
 			processData: false,
 			contentType: false,
 			success: function(respuesta){
-				if (respuesta == "yes") {
+				if (respuesta == "ok") {
 					swal({				
 						type: 'success',
 						title: 'Excelente',

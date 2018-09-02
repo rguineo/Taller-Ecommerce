@@ -22,49 +22,47 @@
                       <div class='table-responsive table_productos'>
                           <table class='table table-striped table-bordered table-hover tabla-usuarios table-dark' id='dataTables-example'>
 
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Categoría</th>
-                    <th scope="col">SubCategoria</th>
-                    <th scope="col">Ruta</th>
-                    <th scope="col">Imagen SubC</th>
-                    <th scope="col">Acciones</th>
-                  </tr>
-                </thead>
-                <tbody>
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Categoría</th>
+                                <th scope="col">SubCategoria</th>
+                                <th scope="col">Ruta</th>
+                                <th scope="col">Imagen SubC</th>
+                                <th scope="col">Acciones</th>
+                              </tr>
+                            </thead>
+                            <tbody>
 
-                  <?php 
-                  
-                  $Subcategorias = ControllerSubCategorias::listarSubCategoriasCtr();
-                  
-                  foreach ($Subcategorias as $key => $value) {
-                    echo '
-                      <tr>
-                        <td>'.$value["id"].'</td>
-                        <td>'.$value["categoria"].'</td>
-                        <td>'.$value["subcategoria"].'</td>
-                        <td>'.$value["ruta"].'</td>
-                        <td><img src="'.substr($value["imagen"], 3).'" id="imgSubCategoria" alt="" class="thumbnail" width="50px" /></td>
-                        <td width="100">
-                          <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
-                            <i class="far fa-edit"></i>
-                          </button>
-                          <button class="btn btn-sm btn-danger btnEliminarCategorias" id="'.$value["id"].'">
-                            <i class="far fa-trash-alt"></i>
-                          </button>
-                        </td>
-                      </tr>
-                    ';
-                  }
-                  ?>
-                </tbody>
-              </table>
+                              <?php 
+                              
+                              $Subcategorias = (new ControllerSubCategorias)->listarSubCategoriasCtr();
+                              
+                              foreach ($Subcategorias as $key => $value) {
+                                echo '<tr>
+                                    <td>'.$value["id"].'</td>
+                                    <td>'.$value["categoria"].'</td>
+                                    <td>'.$value["subcategoria"].'</td>
+                                    <td>'.$value["ruta"].'</td>
+                                    <td><img src="'.substr($value["imagen"], 3).'" id="imgSubCategoria" alt="" class="thumbnail" width="50px" /></td>
+                                    <td width="100">
+                                      <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
+                                        <i class="far fa-edit"></i>
+                                      </button>
+                                      <button class="btn btn-sm btn-danger btnEliminarCategorias" id="'.$value["id"].'">
+                                        <i class="far fa-trash-alt"></i>
+                                      </button>
+                                    </td>
+                                  </tr>';
+                              }
+                              ?>
+                            </tbody>
+                          </table>
+                    </diV>
               </diV>
           </diV>
       </diV>
-  </diV>
-</diV>
+    </diV>
     </section>
     <!-- /.content -->
-  </div>
+</div>
