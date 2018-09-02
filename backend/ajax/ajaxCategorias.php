@@ -18,6 +18,7 @@ Class ajaxCategorias{
 
 		echo $respuesta;
 	}
+	
 	public function editarCategorias(){
 		$id_categoria = $this->_idCategoria;
 
@@ -40,7 +41,7 @@ Class ajaxCategorias{
                         "rutaActual"=>$this->_rutaActual);
 
 		$respuesta = ControllerCategorias::ctrActualizarCategoria($datos);
-
+		
 		echo $respuesta;
 	}
 }

@@ -20,15 +20,16 @@ Class ajaxSubCategorias{
     }
 
     public function crearSubCategorias(){
-		$datos = array("categoria"=>$this->_categoria,
-                        "ruta"=>$this->_ruta,
+		$datos = array("subcategoria"=>$this->_subCategoria,
+                        "ruta"=>$this->_rutaSubcategoria,
                         "id_categoria"=>$this->_idCategoria,
-						"imagen"=>$this->_imagen);
+						"imagen"=>$this->_imagenSubcategoria);
 
-		$respuesta = (new ControllerCategorias)->ctrCrearCategorias($datos);
+		$respuesta = (new ControllerSubCategorias)->ctrCrearSubCategorias($datos);
 
 		echo $respuesta;
 	}
+
 }
 
     $tipoOperacion = $_POST["tipoOperacion"];

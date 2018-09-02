@@ -1,4 +1,32 @@
 $(document).ready(function(){
+	$("#formu-nuevo-subcategorias").submit(function (e) {
+		e.preventDefault()
+
+    	var datos = new FormData($(this)[0])
+	
+		$.ajax({
+			url: 'ajax/ajaxSubCategorias.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta){
+				if (respuesta == "yes") {
+					swal({				
+						type: 'success',
+						title: 'Excelente',
+						text: 'SubCategoría creada con éxito'
+					}).then((result) => {
+						if (result.value) {
+							window.location = "subcategorias"
+						}
+					})
+				}
+			}
+
+		})
+		
+	})
 
     $("body .table-dark").on("click", ".btnEliminarSubCategorias", function(){
 		var id = $(this).attr("id")
@@ -53,36 +81,7 @@ $(document).ready(function(){
 		}	
 	})
 
-	$("#formu-nuevo-subcategorias").submit(function (e) {
-		e.preventDefault()
-		
-		console.log("Pora aqui paso subcategoria")
 
-		var datos = new FormData($(this)[0])
-	
-		$.ajax({
-			url: 'ajax/ajaxSubCategorias.php',
-			type: 'POST',
-			data: datos,
-			processData: false,
-			contentType: false,
-			success: function(respuesta) {
-				if (respuesta == "ok") {
-					swal({
-						type: 'success',
-						title: 'Excelente',
-						text: 'Categoría creada con éxito'
-					}).then((result) => {
-						if (result.value) {
-							window.location = "subcategorias"
-						}
-					})
-				}
-			}
-
-		})
-
-	})
 	// PREVISUALIZAR IMAGENES
 
 	$("#imagSubCategoria").change(previsualizarImg)

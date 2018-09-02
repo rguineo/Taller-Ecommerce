@@ -21,7 +21,7 @@
     
         }
 
-        static public function ctrCrearCategorias($datos) {
+        static public function ctrCrearSubCategorias($datos) {
             $tabla = "subcategorias";
     
             list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
@@ -63,8 +63,8 @@
             }
     
     
-            $respuesta = ModeloSubCategorias::mdlCrearSubCategoria($tabla, $datos, $rutaImagen);
-    
+            $respuesta = (new ModeloSubCategorias)->mdlCrearSubCategoria($tabla, $datos, $rutaImagen);
+            
             return $respuesta;
     
         }

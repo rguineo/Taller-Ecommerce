@@ -13,13 +13,13 @@ $(document).ready(function(){
 			success: function(respuesta) {
 				if (respuesta == "ok") {
 					swal({
-					  type: 'success',
-					  title: 'Excelente',
-					  text: 'Categoría creada con éxito'
+                        type: 'success',
+                        title: 'Excelente',
+                        text: 'Categoría creada con éxito'
 					}).then((result) => {
-					  if (result.value) {
-					    window.location = "categorias"
-					  }
+                        if (result.value) {
+                            window.location = "categorias"
+                        }
 					})
 				}
 			}

@@ -28,6 +28,7 @@
                     <th scope="col">Categoría</th>
                     <th scope="col">SubCategoria</th>
                     <th scope="col">Ruta</th>
+                    <th scope="col">Imagen SubC</th>
                     <th scope="col">Acciones</th>
                   </tr>
                 </thead>
@@ -44,6 +45,7 @@
                         <td>'.$value["categoria"].'</td>
                         <td>'.$value["subcategoria"].'</td>
                         <td>'.$value["ruta"].'</td>
+                        <td><img src="'.substr($value["imagen"], 3).'" id="imgSubCategoria" alt="" class="thumbnail" width="50px" /></td>
                         <td width="100">
                           <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
                             <i class="far fa-edit"></i>

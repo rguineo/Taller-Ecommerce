@@ -6,7 +6,7 @@ require_once "conexion.php";
 
         static public function listarSubCategoriasMdl($tabla, $tabla2) {
     
-            $sql = Conexion::conectar()->prepare("SELECT subcategorias.id, subcategorias.subcategoria, subcategorias.ruta, categorias.categoria
+            $sql = Conexion::conectar()->prepare("SELECT subcategorias.id, subcategorias.subcategoria, subcategorias.ruta, subcategorias.imagen,categorias.categoria
             FROM subcategorias
             INNER JOIN categorias
             ON subcategorias.id_categoria = categorias.id
@@ -15,6 +15,7 @@ require_once "conexion.php";
             return $sql -> fetchAll();
     
         }
+        
         static public function mdlEliminarSubCategorias($tabla, $id) {
 
 		    $sql = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
@@ -31,11 +32,11 @@ require_once "conexion.php";
         static public function mdlCrearSubCategoria($tabla, $datos, $rutaImagen) {
 
             $sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
-                    VALUES (NULL, :subcategoria, :ruta, :id_categoria, :imagen, NOW())");
+                    VALUES (NULL, :subcategoria, :ruta, :imagen, :id_categoria, NOW())");
             
-            $sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
+            $sql->bindParam(":subcategoria", $datos["subcategoria"], PDO::PARAM_STR);
             $sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
-            $sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_STR);
+            $sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
             $sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
     
             if( $sql -> execute() ) {
