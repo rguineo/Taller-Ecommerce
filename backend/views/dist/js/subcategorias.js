@@ -12,7 +12,8 @@ $(document).ready(function(){
 			contentType: false,
 			success: function(respuesta){
 				var cadena = respuesta
-				console.log(cadena)
+				console.log("hola"+cadena+"Hola")
+
 				if (cadena == "ok") {
 					swal({				
 						type: 'success',
