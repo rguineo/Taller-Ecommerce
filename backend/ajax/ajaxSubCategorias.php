@@ -42,7 +42,7 @@ Class ajaxSubCategorias{
 						"imagen"		=>$respuesta["imagen"],
 						"id_categoria"	=>$respuesta["id_categoria"]);
 		
-		print_r($datos);
+		echo json_encode($datos);
 	}
 
 }
