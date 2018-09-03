@@ -133,6 +133,7 @@ $("body .table-dark").on("click", ".btnEditarCategorias", function(){
 })
 
 
+
 $("#titulo-subcategoria").on("keyup", function(){
     var cadena = $("#titulo-subcategoria").val()
     cadena = getCleanedString(cadena)
@@ -149,6 +150,13 @@ $("#EtituloCategoria").on("keyup", function(){
     var cadena = $("#EtituloCategoria").val()
     cadena = getCleanedString(cadena)
     $("#ErutaCategoria").val(cadena)
+})
+
+
+$("#EtituloSubCategoria").on("keyup", function(){
+    var cadena = $("#EtituloSubCategoria").val()
+    cadena = getCleanedString(cadena)
+    $("#urlEditSubCat").val(cadena)
 })
 
 $("#titulo-productos").on("keyup", function(){

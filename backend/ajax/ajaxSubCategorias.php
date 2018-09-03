@@ -32,14 +32,14 @@ Class ajaxSubCategorias{
 	}
 
 	public function editarSubCategoria(){
-		$id = $this->_idSubCategoria;
+		$id = $this->_id;
 
 		$respuesta = (new ControllerSubCategorias)->ctrEditarSubCategoria($id);
 		
 		$datos = array(	"id"			=>$respuesta["id"],
 						"subcategoria"	=>$respuesta["subcategoria"],
-						"vinculo"		=>$respuesta["ruta"],
-						"imagen"		=>$respuesta["imagen"],
+						"ruta"		=>$respuesta["ruta"],
+						"imagen"		=>substr($respuesta["imagen"], 3),
 						"id_categoria"	=>$respuesta["id_categoria"]);
 		
 		echo json_encode($datos);
@@ -67,7 +67,7 @@ Class ajaxSubCategorias{
 
 	if ($tipoOperacion == "editarSubcategoria") {
 		$editarCategoria = new ajaxSubCategorias();
-		$editarCategoria -> _idSubCategoria = $_POST["id_subcategoria"];
+		$editarCategoria -> _id = $_POST["id_subcategoria"];
 		$editarCategoria -> editarSubCategoria();
 	}
 

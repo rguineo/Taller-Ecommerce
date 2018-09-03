@@ -78,7 +78,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Título</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Titulo" required name="subcategorias">
+              <input type="text" id="EtituloSubCategoria" class="form-control" placeholder="Titulo" required name="subcategorias">
             </div>
           </div>
           <div class="form-group row">
@@ -93,7 +93,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Vínculo</label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" placeholder="vínculo" required name="urlSubcategoria">
+              <input type="text" id="urlEditSubCat" class="form-control" placeholder="vínculo" required name="urlSubcategoria" readonly>
             </div>
           </div>
    

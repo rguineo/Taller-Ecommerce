@@ -80,24 +80,22 @@ $(document).ready(function(){
 		var datos = new FormData()
 		datos.append("id_subcategoria", idSubcategoria)
 		datos.append("tipoOperacion", "editarSubcategoria")
-		console.log(idSubcategoria)
 
 		$.ajax({
-			url: 'ajax/ajaxSlider.php',
+			url: 'ajax/ajaxSubCategorias.php',
 			type: 'POST',
 			data: datos,
 			processData: false,
 			contentType: false,
 			success: function(respuesta) {
-				console.log(JSON.stringify(respuesta))
 				var valor = JSON.parse(respuesta)
 				
-				$('#formu-editar-slider input[name="idSub"]').val(valor.id)
-				$('#formu-editar-slider input[name="subcategorias"]').val(valor.subcategoria)
-				$('#formu-editar-slider input[name="urlSubcategoria"]').val(valor.ruta)
-				$('#formu-editar-slider #imagenSubcategorias').attr("src", valor.imagen)
-				$('#formu-editar-slider input[name="id_categoria"]').val(valor.id_categoria)
-				$('#formu-editar-slider input[name="rutaActual"]').val(valor.imagen)
+				$('#formu-editar-subcategorias input[name="idSub"]').val(valor.id)
+				$('#formu-editar-subcategorias input[name="subcategorias"]').val(valor.subcategoria)
+				$('#formu-editar-subcategorias input[name="urlSubcategoria"]').val(valor.ruta)
+				$('#formu-editar-subcategorias #imagenSubcategorias').attr("src", valor.imagen)
+				$('#formu-editar-subcategorias input[name="id_categoria"]').val(valor.id_categoria)
+				$('#formu-editar-subcategorias input[name="rutaActual"]').val(valor.imagen)
 
 			}
 
