@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-09-2018 a las 03:37:02
+-- Tiempo de generación: 03-09-2018 a las 06:38:04
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -138,9 +138,9 @@ CREATE TABLE `subcategorias` (
 --
 
 INSERT INTO `subcategorias` (`id`, `subcategoria`, `ruta`, `imagen`, `id_categoria`, `fecha`) VALUES
-(95, 'chuteadores nike', 'chuteadores-nike', '../views/dist/img/subcategoria/7f6a5c6c0fdaedbf3f8d6b465649b929.png', 29, '2018-09-02'),
-(96, 'buzo hombre', 'buzo-hombre', '../views/dist/img/subcategoria/c4fd4b0285d203d9bd0a59b3586d81b9.jpeg', 30, '2018-09-02'),
-(98, 'Telefonos inteligentes', 'telefonos-inteligentes', '../views/dist/img/subcategoria/9961f9bb78384aec12e0f91805990dba.jpeg', 26, '2018-09-02');
+(99, 'celular mujer adulta', 'celular-mujer-adulta', '../views/dist/img/subcategoria/72f33bd7d9c0b74b0dda6313ecef578c.jpeg', 26, '2018-09-03'),
+(100, 'celular niño varon', 'celular-nino-varon', '../views/dist/img/subcategoria/a17f54f0c697bfb0c49191bd46e17177.jpeg', 26, '2018-09-03'),
+(101, 'chuteadores nike', 'chuteadores-nike', '../views/dist/img/subcategoria/7f6a5c6c0fdaedbf3f8d6b465649b929.png', 29, '2018-09-03');
 
 --
 -- Índices para tablas volcadas
@@ -211,7 +211,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT de la tabla `subcategorias`
 --
 ALTER TABLE `subcategorias`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
 
 --
 -- Restricciones para tablas volcadas
