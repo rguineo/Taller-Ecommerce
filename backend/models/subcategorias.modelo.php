@@ -49,12 +49,45 @@ require_once "conexion.php";
 
 
         static public function mdlEditarSubCategoria($tabla, $id){
-            
+
             $sql = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
 
             $sql->bindParam(":id", $id, PDO::PARAM_INT);
             $sql -> execute();
             return $sql -> fetch();
+
+        }
+
+        static public function mdlActualizarSubcategoria($tabla, $datos, $rutaImagen){
+
+            if( is_null($rutaImagen)) {
+                $sql =(new Conexion)->conectar()->prepare("UPDATE $tabla 
+                SET subcategoria = :subcategoria, ruta = :ruta, id_categoria = :id_categoria, fecha = NOW() 
+                WHERE id = :id");
+    
+                $sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
+                $sql->bindParam(":subcategoria", $datos["subcategoria"], PDO::PARAM_STR);
+                $sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
+                $sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
+    
+            } else {
+                $sql = (new Conexion)->conectar()->prepare("UPDATE $tabla 
+                SET subcategoria = :subcategoria, ruta = :ruta, imagen = :imagen, 
+                id_categoria = :id_categoria, fecha = NOW() 
+                WHERE id = :id");
+                
+                $sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
+                $sql->bindParam(":subcategoria", $datos["subcategoria"], PDO::PARAM_STR);
+                $sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
+                $sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
+                $sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
+            } 
+    
+            if($sql->execute()) {
+                return "ok";
+            } else {
+                return "error";
+            }
 
         }
 

@@ -93,7 +93,7 @@ $(document).ready(function(){
 				$('#formu-editar-subcategorias input[name="idSub"]').val(valor.id)
 				$('#formu-editar-subcategorias input[name="subcategorias"]').val(valor.subcategoria)
 				$('#formu-editar-subcategorias input[name="urlSubcategoria"]').val(valor.ruta)
-				$('#formu-editar-subcategorias #imagenSubcategorias').attr("src", valor.imagen)
+				$('#formu-editar-subcategorias #imagenSubCategoria').attr("src", valor.imagen)
 				$('#formu-editar-subcategorias input[name="id_categoria"]').val(valor.id_categoria)
 				$('#formu-editar-subcategorias input[name="rutaActual"]').val(valor.imagen)
 
@@ -103,9 +103,35 @@ $(document).ready(function(){
 
 	})
 
-
-
-
+	$("#formu-editar-subcategorias").submit(function (e) {
+		e.preventDefault()
+	
+		var datos = new FormData($(this)[0])
+	
+		$.ajax({
+			url: 'ajax/ajaxSubCategorias.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				var cadena = respuesta.substr(0,2)
+				console.log(cadena)
+				if (cadena == "ok") {
+					swal({
+					  type: 'success',
+					  title: 'Actualizado',
+					  text: 'Categoria actualizado con éxito'
+					}).then((result) => {
+					  if (result.value) {
+						window.location = "subcategorias"
+					  }
+					})
+				}
+			}
+	
+		})
+	})
 
 
 	$("#inputCategorias").change(function() {

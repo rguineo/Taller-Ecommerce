@@ -45,6 +45,21 @@ Class ajaxSubCategorias{
 		echo json_encode($datos);
 	}
 
+	public function actualizarSubCategorias(){
+		$datos = array(	"id" => $this->_id,
+						"subcategoria"=> $this->_subCategoria,
+						"ruta" => $this->_rutaSubcategoria,
+						"imagen" => $this->_imagenSubcategoria,
+						"id_categoria" => $this->_idCategoria,
+						"rutaActual" => $this->_rutaActual);
+
+		$respuesta = (new ControllerSubCategorias)->ctrActualizarSubcategoria($datos);
+
+		echo $respuesta;
+
+	}
+
+
 }
 
     $tipoOperacion = $_POST["tipoOperacion"];
@@ -66,19 +81,20 @@ Class ajaxSubCategorias{
 	}
 
 	if ($tipoOperacion == "editarSubcategoria") {
-		$editarCategoria = new ajaxSubCategorias();
-		$editarCategoria -> _id = $_POST["id_subcategoria"];
-		$editarCategoria -> editarSubCategoria();
+		$editarSubCategoria = new ajaxSubCategorias();
+		$editarSubCategoria -> _id = $_POST["id_subcategoria"];
+		$editarSubCategoria -> editarSubCategoria();
 	}
 
-	if ($tipoOperacion == "actualizarCategoria") {
-		$actualizarCategoria = new ajaxSubCategorias();
-		$actualizarCategoria -> _idCategoria = $_POST["id"];
-		$actualizarCategoria -> _categoria = $_POST["EtituloCategoria"];
-		$actualizarCategoria -> _ruta = $_POST["ErutaCategoria"];
-		$actualizarCategoria -> _imagen = $_FILES["imagenCategoria"];
-		$actualizarCategoria -> _rutaActual = $_POST["rutaActual"];
-		$actualizarCategoria -> actualizarCategorias();
+	if ($tipoOperacion == "actualizarSubcategorias") {
+		$actualizarSubCategoria = new ajaxSubCategorias();
+		$actualizarSubCategoria -> _id = $_POST["idSub"];
+		$actualizarSubCategoria -> _subCategoria = $_POST["subcategorias"];
+		$actualizarSubCategoria -> _rutaSubcategoria = $_POST["urlSubcategoria"];
+		$actualizarSubCategoria -> _imagenSubcategoria = $_FILES["imagenSubCategoria"];
+		$actualizarSubCategoria -> _rutaActual = $_POST["rutaActual"];
+		$actualizarSubCategoria -> _idCategoria = $_POST["id_categoria"];
+		$actualizarSubCategoria -> actualizarSubCategorias();
 	}
 ?>
 
