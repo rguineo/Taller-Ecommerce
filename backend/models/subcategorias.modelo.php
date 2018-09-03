@@ -47,6 +47,17 @@ require_once "conexion.php";
     
         }
 
+
+        static public function mdlEditarSubCategoria($tabla, $id){
+            
+            $sql = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
+
+            $sql->bindParam(":id", $id, PDO::PARAM_INT);
+            $sql -> execute();
+            return $sql -> fetch();
+
+        }
+
 	}
 
 ?>

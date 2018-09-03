@@ -75,6 +75,41 @@ $(document).ready(function(){
 		})	
 	})
 
+	$("body .table-dark").on("click", ".btnEditarSubCategorias", function(){
+		var idSubcategoria = $(this).attr("idsubcategoria")
+		var datos = new FormData()
+		datos.append("id_subcategoria", idSubcategoria)
+		datos.append("tipoOperacion", "editarSubcategoria")
+		console.log(idSubcategoria)
+
+		$.ajax({
+			url: 'ajax/ajaxSlider.php',
+			type: 'POST',
+			data: datos,
+			processData: false,
+			contentType: false,
+			success: function(respuesta) {
+				console.log(JSON.stringify(respuesta))
+				var valor = JSON.parse(respuesta)
+				
+				$('#formu-editar-slider input[name="idSub"]').val(valor.id)
+				$('#formu-editar-slider input[name="subcategorias"]').val(valor.subcategoria)
+				$('#formu-editar-slider input[name="urlSubcategoria"]').val(valor.ruta)
+				$('#formu-editar-slider #imagenSubcategorias').attr("src", valor.imagen)
+				$('#formu-editar-slider input[name="id_categoria"]').val(valor.id_categoria)
+				$('#formu-editar-slider input[name="rutaActual"]').val(valor.imagen)
+
+			}
+
+		})
+
+	})
+
+
+
+
+
+
 	$("#inputCategorias").change(function() {
 
 		if ($("#inputCategorias").val() != "" ) {
@@ -91,7 +126,7 @@ $(document).ready(function(){
 	// PREVISUALIZAR IMAGENES
 
 	$("#imagSubCategoria").change(previsualizarImg)
-	$("#imagen").change(previsualizarImg)
+	$("#imagenEditarSubC").change(previsualizarImg)
 
 	function previsualizarImg(e) {
 		var contenedor = e.target.parentNode

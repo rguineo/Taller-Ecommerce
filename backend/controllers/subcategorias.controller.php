@@ -70,6 +70,13 @@
     
         }
 
+        public function ctrEditarSubCategoria($id){
+            $tabla = "subcategorias";
+
+            $respuesta = (new ModeloSubCategorias)->mdlEditarSubCategoria($tabla, $id);
+            return $respuesta;
+
+        }
 
     }
 ?>

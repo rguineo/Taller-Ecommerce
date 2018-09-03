@@ -4,7 +4,8 @@ require_once "../models/subcategorias.modelo.php";
 
 Class ajaxSubCategorias{
     public $_id;
-    public $_idCategoria;
+	public $_idCategoria;
+	public $_idSubCategoria;
     public $_subCategoria;
     public $_rutaSubcategoria;
     public $_imagenSubcategoria;
@@ -30,6 +31,20 @@ Class ajaxSubCategorias{
 		echo $respuesta;
 	}
 
+	public function editarSubCategoria(){
+		$id = $this->_idSubCategoria;
+
+		$respuesta = (new ControllerSubCategorias)->ctrEditarSubCategoria($id);
+		
+		$datos = array(	"id"			=>$respuesta["id"],
+						"subcategoria"	=>$respuesta["subcategoria"],
+						"vinculo"		=>$respuesta["ruta"],
+						"imagen"		=>$respuesta["imagen"],
+						"id_categoria"	=>$respuesta["id_categoria"]);
+		
+		print_r($datos);
+	}
+
 }
 
     $tipoOperacion = $_POST["tipoOperacion"];
@@ -50,14 +65,14 @@ Class ajaxSubCategorias{
 		$crearNuevaSubCategoria -> crearSubCategorias();
 	}
 
-	if ($tipoOperacion == "editarCategoria") {
-		$editarCategoria = new ajaxCategorias();
-		$editarCategoria -> _idCategoria = $_POST["id"];
-		$editarCategoria -> editarCategorias();
+	if ($tipoOperacion == "editarSubcategoria") {
+		$editarCategoria = new ajaxSubCategorias();
+		$editarCategoria -> _idSubCategoria = $_POST["id_subcategoria"];
+		$editarCategoria -> editarSubCategoria();
 	}
 
 	if ($tipoOperacion == "actualizarCategoria") {
-		$actualizarCategoria = new ajaxCategorias();
+		$actualizarCategoria = new ajaxSubCategorias();
 		$actualizarCategoria -> _idCategoria = $_POST["id"];
 		$actualizarCategoria -> _categoria = $_POST["EtituloCategoria"];
 		$actualizarCategoria -> _ruta = $_POST["ErutaCategoria"];

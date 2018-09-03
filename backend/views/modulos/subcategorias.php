@@ -46,7 +46,7 @@
                                     <td>'.$value["ruta"].'</td>
                                     <td><img src="'.substr($value["imagen"], 3).'" id="imgSubCategoria" alt="" class="thumbnail" width="50px" /></td>
                                     <td width="100">
-                                      <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
+                                      <button class="btn btn-sm btn-info btnEditarSubCategorias" idSubcategoria="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-subcategorias">
                                         <i class="far fa-edit"></i>
                                       </button>
                                       <button class="btn btn-sm btn-danger btnEliminarSubCategorias" id="'.$value["id"].'" rutaImagenSub="'.$value["imagen"].'">

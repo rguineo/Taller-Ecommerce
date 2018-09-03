@@ -76,7 +76,6 @@ Class ControllerSlider {
 		$tabla = "slider";
 		$respuesta = ModeloSlider::mdlEditarSlider($tabla, $id_slider);
 
-
 		return $respuesta;
 	}
 
