@@ -11,9 +11,29 @@
         <form id="formu-nuevo-productos">
 
           <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Categoría</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="" id="">
+                <option value="">Elija la Categoría</option>
+                <option value="">Opcion 1</option>
+                <option value="">Opcion 2</option>
+              </select>
+            </div>
+            <label class="col-sm-2 col-form-label">SubCategoría</label>
+            <div class="col-sm-4">
+              <select class="form-control" name="" id="">
+                <option value="">Elija la Sub-Categoría</option>
+                <option value="">Opcion 1</option>
+                <option value="">Opcion 2</option>
+              </select>
+            </div>
+          </div>
+
+
+          <div class="form-group row">
             <label class="col-sm-2 col-form-label">Titulo</label>
             <div class="col-sm-10">
-              <input type="text"id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
+              <input type="text" id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
             </div>
           </div>
 
@@ -27,19 +47,19 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Descripción</label>
             <div class="col-sm-10">
-              <input type="text"id="descripcion-productos"  class="form-control" placeholder="Descripcion Productos" onkeyup=""  required name="descripcionProductos">
+              <input type="text" id="descripcion-productos"  class="form-control" placeholder="Descripcion Productos" onkeyup=""  required name="descripcionProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Detalle</label>
             <div class="col-sm-10">
-              <input type="text"id="detalle-productos"  class="form-control" placeholder="Detalle Productos" onkeyup=""  required name="detalleProductos">
+              <input type="text" id="detalle-productos"  class="form-control" placeholder="Detalle Productos" onkeyup=""  required name="detalleProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Precio</label>
             <div class="col-sm-10">
-              <input type="text"id="precio-productos"  class="form-control" placeholder="Precio Productos" onkeyup=""  required name="precioProductos">
+              <input type="text" id="precio-productos"  class="form-control" placeholder="Precio Productos" onkeyup=""  required name="precioProductos">
             </div>
           </div>
           <div class="form-group row">
@@ -52,25 +72,25 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Oferta</label>
             <div class="col-sm-10">
-              <input type="text"id="oferta-productos"  class="form-control" placeholder="Oferta Productos" onkeyup=""  required name="ofertaProductos">
+              <input type="text" id="oferta-productos"  class="form-control" placeholder="Oferta Productos" onkeyup=""  required name="ofertaProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Precio Oferta</label>
             <div class="col-sm-10">
-              <input type="text"id="precioOferta-productos"  class="form-control" placeholder="Precio Oferta Productos" onkeyup=""  required name="precioOfertaProductos">
+              <input type="text" id="precioOferta-productos"  class="form-control" placeholder="Precio Oferta Productos" onkeyup=""  required name="precioOfertaProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Descuento</label>
             <div class="col-sm-10">
-              <input type="text"id="descuento-productos"  class="form-control" placeholder="Descuento Productos" onkeyup=""  required name="descuentoProductos">
+              <input type="text" id="descuento-productos"  class="form-control" placeholder="Descuento Productos" onkeyup=""  required name="descuentoProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Fin Oferta</label>
             <div class="col-sm-10">
-              <input type="text"id="finOferta-productos"  class="form-control" placeholder="Fin Oferta Productos" onkeyup=""  required name="finOfertaProductos">
+              <input type="date" id="finOferta-productos"  class="form-control" placeholder="Fin Oferta Productos" onkeyup=""  required name="finOfertaProductos">
             </div>
           </div>
           <input type="hidden" name="tipoOperacion" value="insertarProductos">
@@ -96,6 +116,31 @@
       </div>
       <div class="modal-body">
         <form id="formu-editar-categoria">
+
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Categoría</label>
+            <div class="col-sm-10">
+              <select name="" id="">
+                <option value="">Elija la Categoría</option>
+                <option value="">Opcion 1</option>
+                <option value="">Opcion 2</option>
+              </select>
+            </div>
+          </div>
+
+           <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Sub-Categoría</label>
+            <div class="col-sm-10">
+              <select name="" id="">
+                <option value="">Elija la Sub-Categoría</option>
+                <option value="">Opcion 1</option>
+                <option value="">Opcion 2</option>
+              </select>
+            </div>
+          </div>
+
+
+
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Título</label>
             <div class="col-sm-10">
