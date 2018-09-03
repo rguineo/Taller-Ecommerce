@@ -11,9 +11,8 @@ $(document).ready(function(){
 			processData: false,
 			contentType: false,
 			success: function(respuesta){
-				var cadena = respuesta
-				console.log("hola"+cadena+"Hola")
-
+				var cadena = respuesta.substr(0,2)
+				
 				if (cadena == "ok") {
 					swal({				
 						type: 'success',
