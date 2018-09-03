@@ -3,7 +3,7 @@ require_once "../controllers/subcategorias.controller.php";
 require_once "../models/subcategorias.modelo.php";
 
 Class ajaxSubCategorias{
-    public $id;
+    public $_id;
     public $_idCategoria;
     public $_subCategoria;
     public $_rutaSubcategoria;
@@ -11,8 +11,8 @@ Class ajaxSubCategorias{
 
 
     public function eliminarSubCategorias(){
-        $id = $this->id;
-        $ruta = $this->id;
+        $id = $this->_id;
+        $ruta = $this->_imagenSubcategoria;
 
 		$respuesta = (new ControllerSubCategorias)->ctrEliminarSubCategorias($id, $ruta);
 
@@ -36,7 +36,8 @@ Class ajaxSubCategorias{
 
     if ($tipoOperacion == "eliminarSubCategorias") {
         $eliminarSubCategorias = new ajaxSubCategorias();
-        $eliminarSubCategorias -> id = $_POST["id"];
+		$eliminarSubCategorias -> _id = $_POST["id"];
+		$eliminarSubCategorias -> _imagenSubcategoria = $_POST["rutaImagen"];
         $eliminarSubCategorias -> eliminarSubCategorias();
     }
 

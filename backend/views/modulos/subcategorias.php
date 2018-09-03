@@ -49,7 +49,7 @@
                                       <button class="btn btn-sm btn-info btnEditarSubCategorias" id="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-Subcategorias">
                                         <i class="far fa-edit"></i>
                                       </button>
-                                      <button class="btn btn-sm btn-danger btnEliminarCategorias" id="'.$value["id"].'">
+                                      <button class="btn btn-sm btn-danger btnEliminarSubCategorias" id="'.$value["id"].'" rutaImagenSub="'.$value["imagen"].'">
                                         <i class="far fa-trash-alt"></i>
                                       </button>
                                     </td>

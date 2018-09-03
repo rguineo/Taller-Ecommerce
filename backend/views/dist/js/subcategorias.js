@@ -12,7 +12,7 @@ $(document).ready(function(){
 			contentType: false,
 			success: function(respuesta){
 				var cadena = respuesta.substr(0,2)
-				
+
 				if (cadena == "ok") {
 					swal({				
 						type: 'success',
@@ -32,9 +32,11 @@ $(document).ready(function(){
 
     $("body .table-dark").on("click", ".btnEliminarSubCategorias", function(){
 		var id = $(this).attr("id")
+		var rutaImagen = $(this).attr("rutaImagenSub")
 		var datos = new FormData()
 		datos.append("id", id)
 		datos.append("tipoOperacion", "eliminarSubCategorias")
+		datos.append("rutaImagen", rutaImagen)
 
 		swal({
 		  title: '¿Estás seguro de eliminar?',
@@ -53,7 +55,9 @@ $(document).ready(function(){
 				processData: false,
 				contentType: false,
 				success: function(respuesta) {
-					if ( respuesta == "ok") {
+					var cadena = respuesta.substr(0,2)
+					
+					if ( cadena == "ok") {
 						swal(
 					      'Eliminado!',
 					      'Su archivo a sido eliminado.',
