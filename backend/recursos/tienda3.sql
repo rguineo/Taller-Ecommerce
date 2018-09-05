@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 03-09-2018 a las 06:38:04
+-- Tiempo de generación: 05-09-2018 a las 14:47:39
 -- Versión del servidor: 10.1.30-MariaDB
 -- Versión de PHP: 7.2.2
 
@@ -83,16 +83,23 @@ CREATE TABLE `productos` (
   `titulo` text COLLATE utf8_spanish_ci NOT NULL,
   `descripcion` text COLLATE utf8_spanish_ci NOT NULL,
   `detalle` text COLLATE utf8_spanish_ci NOT NULL,
-  `precio` text COLLATE utf8_spanish_ci NOT NULL,
+  `precio` int(11) NOT NULL,
   `imagen` text COLLATE utf8_spanish_ci NOT NULL,
-  `oferta` tinyint(1) NOT NULL,
-  `precioOferta` text COLLATE utf8_spanish_ci NOT NULL,
-  `descuento` text COLLATE utf8_spanish_ci NOT NULL,
+  `oferta` int(11) NOT NULL,
+  `precioOferta` int(11) NOT NULL,
+  `descuento` int(11) NOT NULL,
   `finOferta` date NOT NULL,
   `fecha` date NOT NULL,
   `id_categoria` int(11) NOT NULL,
   `id_subcategoria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `productos`
+--
+
+INSERT INTO `productos` (`id`, `ruta`, `titulo`, `descripcion`, `detalle`, `precio`, `imagen`, `oferta`, `precioOferta`, `descuento`, `finOferta`, `fecha`, `id_categoria`, `id_subcategoria`) VALUES
+(12, 'primer-producto', 'Primer Producto', 'Descripcion', 'Detalle', 50000, '../views/dist/img/productos/933c332b66df98f4f3054920ef87040d.jpeg', 1, 25000, 50, '2018-09-20', '2018-09-05', 28, 99);
 
 -- --------------------------------------------------------
 
@@ -199,7 +206,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `productos`
 --
 ALTER TABLE `productos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `slider`
