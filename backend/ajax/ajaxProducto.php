@@ -87,14 +87,14 @@ Class ajaxProducto{
         $crearNuevoproducto -> _descripcion_producto = $_POST["descripcionProductos"];
         $crearNuevoproducto -> _detalle_producto = $_POST["detalleProductos"];
         $crearNuevoproducto -> _precio_producto = $_POST["precioProductos"];
-        $crearNuevoproducto -> _imagen = $_POST["imagenNewProducto"];
+        $crearNuevoproducto -> _imagen = $_FILES["imagenNewProducto"];
         $crearNuevoproducto -> _oferta_producto = $_POST["ofertaProductos"];
         $crearNuevoproducto -> _precioOferta_producto = $_POST["precioOfertaProductos"];
         $crearNuevoproducto -> _descuento_producto = $_POST["descuentoProductos"];
         $crearNuevoproducto -> _FinOferta_producto = $_POST["finOfertaProductos"];
         $crearNuevoproducto -> _idCategoria_producto = $_POST["idCategorias"];
         $crearNuevoproducto -> _idSubCategoria_producto = $_POST["idSubCategorias"];        
-        $crearNuevoproducto -> crearPproducto();
+        $crearNuevoproducto -> crearProducto();
     }
     
     if ($tipoOperacion == "editarProducto") {

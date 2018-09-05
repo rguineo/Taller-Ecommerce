@@ -17,7 +17,7 @@ Class ControllerProducto {
 		$nuevoAncho = 1024;
 		$nuevoAlto = 768;
 
-		$directorio = "../views/dist/img/Producto";
+		$directorio = "../views/dist/img/productos";
 
 		if($datos["imagen"]["type"] == "image/jpeg"){
 
@@ -95,7 +95,7 @@ Class ControllerProducto {
 			$nuevoAncho = 1024;
 			$nuevoAlto = 768;
 
-			$directorio = "../views/dist/img/Producto";
+			$directorio = "../views/dist/img/productos";
 
 			if($datos["imagen"]["type"] == "image/jpeg"){
 

@@ -22,7 +22,7 @@ Class ModeloProducto {
 		$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 		$sql->bindParam(":detalle", $datos["detalle"], PDO::PARAM_INT);
 		$sql->bindParam(":precio", $datos["precio"], PDO::PARAM_STR);
-		$sql->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
+		$sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
 		$sql->bindParam(":oferta", $datos["oferta"], PDO::PARAM_STR);
 		$sql->bindParam(":precioOferta", $datos["precioOferta"], PDO::PARAM_INT);
 		$sql->bindParam(":descuento", $datos["descuento"], PDO::PARAM_STR);
