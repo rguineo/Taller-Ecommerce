@@ -26,8 +26,8 @@ Class ModeloProducto {
 		$sql->bindParam(":oferta", $datos["oferta"], PDO::PARAM_STR);
 		$sql->bindParam(":precioOferta", $datos["precioOferta"], PDO::PARAM_INT);
 		$sql->bindParam(":descuento", $datos["descuento"], PDO::PARAM_STR);
-		$sql->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
-		$sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_STR);
+		$sql->bindParam(":finOferta", strtotime(date ($datos["finOferta"])), PDO::PARAM_STR);
+		$sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_INT);
 		$sql->bindParam(":id_subcategoria", $datos["id_subcategoria"], PDO::PARAM_INT);
 
 		if( $sql -> execute() ) {
