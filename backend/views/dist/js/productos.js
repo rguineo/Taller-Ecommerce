@@ -1,11 +1,11 @@
 $(document).ready(function(){
-	$("#formu-nuevo-usuario").submit(function (e) {
+	$("#formu-nuevo-productos").submit(function (e) {
 		e.preventDefault()
 
 		var datos = new FormData($(this)[0])
 
 		$.ajax({
-			url: 'ajax/ajaxUsuario.php',
+			url: 'ajax/ajaxProducto.php',
 			type: 'POST',
 			data: datos,
 			processData: false,
@@ -15,10 +15,10 @@ $(document).ready(function(){
 					swal({
 					  type: 'success',
 					  title: 'Excelente',
-					  text: 'Usuario creada con éxito'
+					  text: 'Producto creado con éxito'
 					}).then((result) => {
 					  if (result.value) {
-					    window.location = "usuarios"
+					    window.location = "productos"
 					  }
 					})
 				}
@@ -28,13 +28,13 @@ $(document).ready(function(){
 
 	})
 	
-	$("#formu-editar-usuario").submit(function (e) {
+	$("#formu-editar-productos").submit(function (e) {
 		e.preventDefault()
 
 		var datos = new FormData($(this)[0])
 
 		$.ajax({
-			url: 'ajax/ajaxUsuario.php',
+			url: 'ajax/ajaxProducto.php',
 			type: 'POST',
 			data: datos,
 			processData: false,
@@ -44,10 +44,10 @@ $(document).ready(function(){
 					swal({
 					  type: 'success',
 					  title: 'Actualizado',
-					  text: 'Usuario actualizado con éxito'
+					  text: 'Producto actualizado con éxito'
 					}).then((result) => {
 					  if (result.value) {
-					    window.location = "usuarios"
+					    window.location = "productos"
 					  }
 					})
 				}
@@ -56,14 +56,14 @@ $(document).ready(function(){
 		})
 	})
 
-	$("body .table-dark").on("click", ".btnEditarUsuario", function(){
-		var idUsuario = $(this).attr("idUsuario")
+	$("body .table-dark").on("click", ".btnEditarProductos", function(){
+		var idProductos = $(this).attr("idProductos")
 		var datos = new FormData()
-		datos.append("id_admin", idUsuario)
-		datos.append("tipoOperacion", "editarUsuario")
+		datos.append("id", idProductos)
+		datos.append("tipoOperacion", "editarProducto")
 
 		$.ajax({
-			url: 'ajax/ajaxUsuario.php',
+			url: 'ajax/ajaxProducto.php',
 			type: 'POST',
 			data: datos,
 			processData: false,
@@ -71,12 +71,17 @@ $(document).ready(function(){
 			success: function(respuesta) {
 				var valor = JSON.parse(respuesta)
 
-				$('#formu-editar-usuario input[name="nombre_admin"]').val(valor.nombre_admin)
-				$('#formu-editar-usuario input[name="correo_admin"]').val(valor.correo_admin)
-				$('#formu-editar-usuario textarea[name="password_admin"]').val(valor.password_admin)
-				$('#formu-editar-usuario #avatar_admin').attr("src", valor.avatar_admin)
-				$('#formu-editar-usuario input[name="id_admin"]').val(valor.id_admin)
-				$('#formu-editar-usuario input[name="rutaActual"]').val(valor.avatar_admin)
+				$('#formu-editar-usuario input[name="ruta"]').val(valor.ruta)
+				$('#formu-editar-usuario input[name="titulo"]').val(valor.titulo)
+				$('#formu-editar-usuario textarea[name="descripcion"]').val(valor.descripcion)
+				$('#formu-editar-usuario input[name="detalle"]').val(valor.detalle)
+				$('#formu-editar-usuario input[name="precio"]').val(valor.precio)
+				$('#formu-editar-usuario input[name="oferta"]').val(valor.oferta)
+				$('#formu-editar-usuario input[name="preciooferta"]').val(valor.preciooferta)
+				$('#formu-editar-usuario input[name="descuento"]').val(valor.descuento)
+				$('#formu-editar-usuario input[name="finoferta"]').val(valor.finoferta)
+				$('#formu-editar-usuario input[name="idcategoria"]').val(valor.idcategoria)
+				$('#formu-editar-usuario input[name="idsubcategoria"]').val(valor.idsubcategoria)
 
 			}
 
@@ -84,13 +89,13 @@ $(document).ready(function(){
 
 	})
 
-	$("body .table-dark").on("click", ".btnEliminarUsuario", function(){
-		var idUsuario = $(this).attr("idUsuario")
+	$("body .table-dark").on("click", ".btnEliminarProductos", function(){
+		var idProductos = $(this).attr("idProductos")
 		var rutaImagen = $(this).attr("rutaImagen")
 		var datos = new FormData()
-		datos.append("id_admin", idUsuario)
-		datos.append("tipoOperacion", "eliminarUsuario")
-		datos.append("avatar_admin", rutaImagen)
+		datos.append("id", idUsuario)
+		datos.append("tipoOperacion", "eliminarproducto")
+		datos.append("ruta", rutaImagen)
     console.log("pasoporaca")
 		swal({
 		  title: '¿Estás seguro de eliminar?',
@@ -103,7 +108,7 @@ $(document).ready(function(){
 		}).then((result) => {
 		  if (result.value) {
 		  	$.ajax({
-				url: 'ajax/ajaxUsuario.php',
+				url: 'ajax/ajaxProducto.php',
 				type: 'POST',
 				data: datos,
 				processData: false,
@@ -116,7 +121,7 @@ $(document).ready(function(){
 					      'success'
 					    ).then((result) => {
 						  if (result.value) {
-						    window.location = "usuarios"
+						    window.location = "productos"
 						  }
 						})
 					}
@@ -131,8 +136,8 @@ $(document).ready(function(){
 
 		// PREVISUALIZAR IMAGENES
 
-		$("#imagenNuevaUsuario").change(previsualizarImg)
-		$("#imagenEditarUsuario").change(previsualizarImg)
+		$("#imagenNuevaProductos").change(previsualizarImg)
+		$("#imagenEditarProductos").change(previsualizarImg)
 	
 	
 		function previsualizarImg(e) {
@@ -152,7 +157,7 @@ $(document).ready(function(){
 					})
 				} 
 				if ( imgSlider["type"] > 2000000) {
-					$("#avatar_admin").val("")
+					$("#ruta").val("")
 	
 					swal({
 						type: "Error al subir la imagen",
@@ -163,7 +168,7 @@ $(document).ready(function(){
 				}
 	
 				else {
-					$("#avatar_admin").css("display", "block")
+					$("#ruta").css("display", "block")
 	
 					var datosImagen = new FileReader;
 						datosImagen.readAsDataURL(imgSlider);
@@ -172,7 +177,7 @@ $(document).ready(function(){
 	
 							var rutaImagen = event.target.result;
 	
-							$("." + identificador +" #avatar_admin").attr("src", rutaImagen);
+							$("." + identificador +" #ruta").attr("src", rutaImagen);
 						})
 				}
 	

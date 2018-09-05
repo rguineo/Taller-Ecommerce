@@ -1,13 +1,15 @@
 <?php
-require_once "../controllers/producto.controller.php";
-require_once "../models/producto.modelo.php";
+require_once "../controllers/productos.controller.php";
+require_once "../models/productos.modelo.php";
 
 Class ajaxProducto{
-	public $_id_producto;
+    public $_id_producto;
+    public $_ruta;
 	public $_titulo_producto;
 	public $_descripcion_producto;
 	public $_detalle_producto;
     public $_precio_producto;
+    public $_imagen;
     public $_oferta_producto;
     public $_precioOferta_producto;
     public $_descuento_producto;
@@ -17,10 +19,12 @@ Class ajaxProducto{
     public $_rutaActual;
 
     public function crearProducto(){
-		$datos = array(	"titulo"=>$this->_titulo_producto,
+		$datos = array(	"ruta"=>$this->_ruta,
+                        "titulo"=>$this->_titulo_producto,
                         "descripcion"=>$this->_descripcion_producto,
-                        "deatalle"=>$this->_detalle_producto,
+                        "detalle"=>$this->_detalle_producto,
                         "precio"=>$this->_precio_producto,
+                        "imagen"=>$this->_imagen,
                         "oferta"=>$this->_oferta_producto,
                         "preciooferta"=>$this->_precioOferta_producto,
                         "descuento"=>$this->_descuento_producto,
@@ -29,7 +33,7 @@ Class ajaxProducto{
                         "idsubcategoria"=>$this->_idSubCategoria_producto
                     );
 
-		$respuesta = (new ControllerProducto)->ctrCrearproducto($datos);
+		$respuesta = (new ControllerProducto)->ctrCrearProducto($datos);
 
 		echo $respuesta;
 	}
@@ -78,42 +82,48 @@ Class ajaxProducto{
 
     if($tipoOperacion == "insertarProducto") {
         $crearNuevoproducto = new ajaxProducto();
-        $crearNuevoproducto -> _titulo_producto = $_POST["nombre_admin"];
-        $crearNuevoproducto -> _descripcion_producto = $_POST["correo_admin"];
-        $crearNuevoproducto -> _detalle_producto = $_POST["password_admin"];
-        $crearNuevoproducto -> _precio_producto = $_POST["password_admin"];
-        $crearNuevoproducto -> _oferta_producto = $_POST["password_admin"];
-        $crearNuevoproducto -> _precioOferta_producto = $_POST["password_admin"];
-        $crearNuevoproducto -> _descuento_producto = $_POST["password_admin"];
-        $crearNuevoproducto -> _FinOferta_producto = $_POST["password_admin"];
-        $crearNuevoproducto -> _idCategoria_producto = $_POST["password_admin"];
-        $crearNuevoproducto -> _idSubCategoria_producto = $_POST["password_admin"];
-        
-        $crearNuevoproducto -> _avatar_admin = $_FILES["avatar_admin"];
+        $crearNuevoproducto -> _ruta = $_POST["rutaProductos"];
+        $crearNuevoproducto -> _titulo_producto = $_POST["tituloProductos"];
+        $crearNuevoproducto -> _descripcion_producto = $_POST["descripcionProductos"];
+        $crearNuevoproducto -> _detalle_producto = $_POST["detalleProductos"];
+        $crearNuevoproducto -> _precio_producto = $_POST["precioProductos"];
+        $crearNuevoproducto -> _imagen = $_POST["imagenNewProducto"];
+        $crearNuevoproducto -> _oferta_producto = $_POST["ofertaProductos"];
+        $crearNuevoproducto -> _precioOferta_producto = $_POST["precioOfertaProductos"];
+        $crearNuevoproducto -> _descuento_producto = $_POST["descuentoProductos"];
+        $crearNuevoproducto -> _FinOferta_producto = $_POST["finOfertaProductos"];
+        $crearNuevoproducto -> _idCategoria_producto = $_POST["idCategorias"];
+        $crearNuevoproducto -> _idSubCategoria_producto = $_POST["idSubCategorias"];        
         $crearNuevoproducto -> crearPproducto();
     }
     
     if ($tipoOperacion == "editarProducto") {
         $editarproducto = new ajaxProducto();
-        $editarproducto -> _id_admin = $_POST["id_admin"];
+        $editarproducto -> _id_admin = $_POST["id"];
         $editarproducto -> editarproducto();
     }
     
     if ($tipoOperacion == "actualizarProducto") {
         $actualizarproducto = new ajaxProducto();
-        $actualizarproducto -> _id_admin = $_POST["id_admin"];
-        $actualizarproducto -> _nombre_admin = $_POST["nombre_admin"];
-        $actualizarproducto -> _correo_admin = $_POST["correo_admin"];
-        $actualizarproducto -> _password_admin = $_POST["password_admin"];
-        $actualizarproducto -> _avatar_admin = $_FILES["avatar_admin"];
-        $actualizarproducto -> _rutaActual = $_POST["rutaActual"];
-        
+        $actualizarproducto -> _id_producto = $_POST["id"];
+        $actualizarproducto -> _ruta = $_POST["ruta"];
+        $actualizarproducto -> _titulo_producto = $_POST["titulo"];
+        $actualizarproducto -> _descripcion_producto = $_POST["descripcion"];
+        $actualizarproducto -> _detalle_producto = $_FILES["detalle"];
+        $actualizarproducto -> _precio_producto = $_POST["precio"];
+        $actualizarproducto -> _imagen = $_POST["imagen"];
+        $actualizarproducto -> _oferta_producto = $_FILES["oferta"];
+        $actualizarproducto -> _precioOferta_producto = $_POST["precioOferta"];
+        $actualizarproducto -> _descuento_producto = $_FILES["descuento"];
+        $actualizarproducto -> _FinOferta_producto = $_POST["finOferta"];
+        $actualizarproducto -> _idCategoria_producto = $_FILES["id_categoria"];
+        $actualizarproducto -> _idSubCategoria_producto = $_POST["id_subcategoria"];
         $actualizarproducto -> actualizarproducto();
     }
     if ($tipoOperacion == "eliminarproducto") {
         $eliminarproducto = new ajaxproducto();
-        $eliminarproducto -> id_admin = $_POST["id_admin"];
-        $eliminarproducto -> avatar_admin = $_POST["avatar_admin"];
+        $eliminarproducto -> _id_producto = $_POST["id"];
+        $eliminarproducto -> _ruta = $_POST["ruta"];
         $eliminarproducto -> eliminarproducto();
     }
     

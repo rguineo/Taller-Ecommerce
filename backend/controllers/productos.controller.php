@@ -1,15 +1,15 @@
 <?php 
 
-Class ControllerProductos {
+Class ControllerProducto {
 	
-	public function listarProductosCtr() {
+	public function listarProductoCtr() {
 		$tabla = "productos";
-		$respuesta = ModeloProductos::listarProductosMdl($tabla);
+		$respuesta = ModeloProducto::listarProductoMdl($tabla);
 
 		return $respuesta;
 	}
 
-	static public function ctrCrearProductos($datos) {
+	static public function ctrCrearProducto($datos) {
 		$tabla = "productos";
 
 		list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
@@ -59,7 +59,7 @@ Class ControllerProductos {
 
 	static public function ctrEliminarProducto($id_Producto, $ruta) {
 
-		$tabla = "Producto";
+		$tabla = "productos";
 
 		if ( unlink($ruta) ) {
 		
@@ -72,14 +72,14 @@ Class ControllerProductos {
 	}
 
 	static public function ctrEditarProducto($_idProducto) {
-		$tabla = "Producto";
+		$tabla = "productos";
 		$respuesta = ModeloProducto::mdlEditarProducto($tabla, $_idProducto);
 		return $respuesta;
 	}
 
 	static public function ctrActualizarProducto($datos) {
 		//Validamos si no viene imagen para actualizar solo la tabla
-		$tabla = "Producto";
+		$tabla = "productos";
 
 		if ($datos["imagen"]["error"] == 4) {
 			$rutaImagen = null;

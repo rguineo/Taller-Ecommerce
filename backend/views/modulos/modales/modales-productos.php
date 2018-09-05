@@ -1,3 +1,10 @@
+<?php
+
+  $categorias = new ControllerCategorias();
+  $respuesta = $categorias->listarCategoriasCtr();
+  $subcategorias = new ControllerSubCategorias();
+  $respuesta = $subcategorias->listarSubCategoriasCtr();
+?>
 <div class="modal fade" id="modal-insertar-productos"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -13,30 +20,33 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Categoría</label>
             <div class="col-sm-4">
-              <select class="form-control" name="" id="">
+              <select class="form-control" id="inputCategorias" name="idCategorias" required>
                 <option value="">Elija la Categoría</option>
-                <option value="">Opcion 1</option>
-                <option value="">Opcion 2</option>
+                <?php
+                    foreach ($respuesta as $key => $value) {
+                    echo "<option value=".$value["id"]." rutaImagenCat=".$value["imagen"].">".$value["categoria"]."</option>";
+                    }
+                ?>
               </select>
             </div>
             <label class="col-sm-2 col-form-label">SubCategoría</label>
             <div class="col-sm-4">
-              <select class="form-control" name="" id="">
+              <select class="form-control" id="inputSubCategorias" name="idSubCategorias">
                 <option value="">Elija la Sub-Categoría</option>
-                <option value="">Opcion 1</option>
-                <option value="">Opcion 2</option>
+                <?php
+                    foreach ($respuesta as $key => $value) {
+                    echo "<option value=".$value["id"]." rutaImagenCat=".$value["imagen"].">".$value["subcategoria"]."</option>";
+                    }
+                ?>
               </select>
             </div>
           </div>
-
-
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Titulo</label>
             <div class="col-sm-10">
               <input type="text" id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
             </div>
           </div>
-
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Ruta</label>
             <div class="col-sm-10">
@@ -93,7 +103,7 @@
               <input type="date" id="finOferta-productos"  class="form-control" placeholder="Fin Oferta Productos" onkeyup=""  required name="finOfertaProductos">
             </div>
           </div>
-          <input type="hidden" name="tipoOperacion" value="insertarProductos">
+          <input type="hidden" name="tipoOperacion" value="insertarProducto">
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -115,10 +125,10 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="formu-editar-categoria">
+        <form id="formu-editar-productos">
 
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Categoría</label>
+            <label class="col-sm-2 col-form-label">Producto</label>
             <div class="col-sm-10">
               <select name="" id="">
                 <option value="">Elija la Categoría</option>
@@ -140,36 +150,70 @@
           </div>
 
 
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Titulo</label>
+            <div class="col-sm-10">
+              <input type="text" id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Ruta</label>
+            <div class="col-sm-10">
+              <input type="text" id="ruta-productos" class="form-control" placeholder="Ruta amigable" name="rutaProductos" readonly>
+            </div>
+          </div>
 
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Título</label>
+            <label class="col-sm-2 col-form-label">Descripción</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Titulo" required name="tituloCategoria">
+              <input type="text" id="descripcion-productos"  class="form-control" placeholder="Descripcion Productos" onkeyup=""  required name="descripcionProductos">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Detalle</label>
+            <div class="col-sm-10">
+              <input type="text" id="detalle-productos"  class="form-control" placeholder="Detalle Productos" onkeyup=""  required name="detalleProductos">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Precio</label>
+            <div class="col-sm-10">
+              <input type="text" id="precio-productos"  class="form-control" placeholder="Precio Productos" onkeyup=""  required name="precioProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
-            <div class="col-sm-10 conteEditarImagen">
-              <input type="file" class="form-control"  id="imagenEditarCategoria" name="imagenCategoria">
-              <br>
-              <img src="" id="imagenCategoria" alt="" class="thumbnail" width="200">
-
+            <div class="col-sm-10 conteImagenProd">
+              <input type="file" class="form-control"  id="imagenNuevoProducto" name="imagenNewProducto"><br>
+              <img src="" id="imagenNewProducto" alt="" class="thumbnail" width="100" style="display: none">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Vínculo</label>
+            <label class="col-sm-2 col-form-label">Oferta</label>
             <div class="col-sm-10">
-              <input type="text"  class="form-control" placeholder="vínculo" required name="rutaCategoria">
+              <input type="text" id="oferta-productos"  class="form-control" placeholder="Oferta Productos" onkeyup=""  required name="ofertaProductos">
             </div>
           </div>
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Descripcion</label>
+            <label class="col-sm-2 col-form-label">Precio Oferta</label>
             <div class="col-sm-10">
-              <textarea class="form-control" placeholder="Texto descriptivo" required rows="5" name="descripcionSlider"></textarea>
+              <input type="text" id="precioOferta-productos"  class="form-control" placeholder="Precio Oferta Productos" onkeyup=""  required name="precioOfertaProductos">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Descuento</label>
+            <div class="col-sm-10">
+              <input type="text" id="descuento-productos"  class="form-control" placeholder="Descuento Productos" onkeyup=""  required name="descuentoProductos">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Fin Oferta</label>
+            <div class="col-sm-10">
+              <input type="date" id="finOferta-productos"  class="form-control" placeholder="Fin Oferta Productos" onkeyup=""  required name="finOfertaProductos">
             </div>
           </div>
        
-          <input type="hidden" name="tipoOperacion" value="actualizarCategoria">
+          <input type="hidden" name="tipoOperacion" value="actualizarProducto">
           <input type="hidden" name="rutaActual">
           <input type="hidden" name="id_slider">
       </div>

@@ -40,7 +40,7 @@
                           <tbody>
                           <?php 
                   
-                            $productos = ControllerProductos::listarProductosCtr();
+                            $productos = ControllerProducto::listarProductoCtr();
 
                             foreach ($productos as $key => $value) {
                               echo '

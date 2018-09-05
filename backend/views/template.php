@@ -71,6 +71,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="views/dist/js/categorias.js"></script>
 <script src="views/dist/js/usuario.js"></script>
 <script src="views/dist/js/subcategorias.js"></script>
+<script src="views/dist/js/productos.js"></script>
 
 <script src="views/dist/js/jquery.dataTables.min.js"></script>
 <script src="views/dist/js/dataTables.bootstrap.js"></script>
