@@ -49,11 +49,11 @@
                                   <td>'.$value["titulo"].'</td>
                                   <td>'.$value["ruta"].'</td>
                                   <td>'.$value["descripcion"].'</td>
-                                  <td>'.$value["precio"].'</td>
+                                  <td>$ '.number_format($value["precio"]).'</td>
                                   <td><img src="'.substr($value["imagen"], 3).'" id="imagenProductos" alt="" class="thumbnail" width="100"></td>
                                   <td>'.$value["oferta"].'</td>
-                                  <td>'.$value["precioOferta"].'</td>
-                                  <td>'.$value["descuento"].'</td>
+                                  <td>$ '.number_format($value["precioOferta"]).'</td>
+                                  <td>'.$value["descuento"].'%</td>
                                   <td>'.$value["finOferta"].'</td>
                                   <td width="100">
                                     <button class="btn btn-sm btn-info btnEditarProductos" idProductos="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-productos" rutaImagen="'.$value["imagen"].'">

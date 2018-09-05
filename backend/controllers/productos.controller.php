@@ -88,7 +88,7 @@ Class ControllerProducto {
 		// LA ACTUALIZACIÓN VIENE CON IMAGEN
 		else {
 
-			unlink($datos["rutaActual"]);
+			unlink("../".$datos["rutaActual"]);
 			
 			list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
 
@@ -127,13 +127,10 @@ Class ControllerProducto {
 				imagepng($destino, $rutaImagen);
 
 			}
-
-
-			
-			
+	
 		}
 
-		$respuesta = ModeloProducto::mdlActualizarProducto($tabla, $datos, $rutaImagen);
+		$respuesta = (new ModeloProducto)->mdlActualizarProducto($tabla, $datos, $rutaImagen);
 
 		return $respuesta;
 

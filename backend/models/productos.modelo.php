@@ -65,38 +65,36 @@ Class ModeloProducto {
 	static public function mdlActualizarProducto($tabla, $datos, $rutaImagen) {
 
 		if( is_null($rutaImagen)) {
-			$sql = Conexion::conectar()->prepare("UPDATE $tabla 
-			SET ruta = :ruta, titulo = :titulo, descripcion = :descripcion, detalle = :detalle, precio = :precio, imagen = :imagen, oferta = :oferta, precioOferta = :precioOferta, descuento = :descuento; finOferta = :finOferta, id_categoria = :id_categoria, id_subcategoria = :id_subcategoria, fecha = NOW() WHERE id = :id");
+			$sql = (new Conexion)->conectar()->prepare("UPDATE $tabla 
+			SET ruta = :ruta, titulo = :titulo, descripcion = :descripcion, detalle = :detalle, precio = :precio, oferta = :oferta, precioOferta = :precioOferta, descuento = :descuento; finOferta = :finOferta, fecha = NOW() WHERE id = :id");
 
-			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
-			$sql->bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
+			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
+			$sql->bindParam(":rutaProducto", $datos["ruta"], PDO::PARAM_STR);
+			$sql->bindParam(":tituloProducto", $datos["titulo"], PDO::PARAM_STR);
 			$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
-			$sql->bindParam(":detalle", $datos["detalle"], PDO::PARAM_INT);
-			$sql->bindParam(":precio", $datos["precio"], PDO::PARAM_STR);
-			$sql->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
-			$sql->bindParam(":oferta", $datos["oferta"], PDO::PARAM_STR);
+			$sql->bindParam(":detalle", $datos["detalle"], PDO::PARAM_STR);
+			$sql->bindParam(":precio", $datos["precio"], PDO::PARAM_INT);
+			$sql->bindParam(":oferta", $datos["oferta"], PDO::PARAM_INT);
 			$sql->bindParam(":precioOferta", $datos["precioOferta"], PDO::PARAM_INT);
-			$sql->bindParam(":descuento", $datos["descuento"], PDO::PARAM_STR);
+			$sql->bindParam(":descuento", $datos["descuento"], PDO::PARAM_INT);
 			$sql->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
-			$sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_STR);
-			$sql->bindParam(":id_subcategoria", $datos["id_subcategoria"], PDO::PARAM_INT);
 
 		} else {
-			$sql = Conexion::conectar()->prepare("UPDATE $tabla 
+			$sql = (new Conexion)->conectar()->prepare("UPDATE $tabla 
 			SET ruta = :ruta, titulo = :titulo, descripcion = :descripcion, detalle = :detalle, precio = :precio, imagen = :imagen, oferta = :oferta, precioOferta = :precioOferta, descuento = :descuento; finOferta = :finOferta, fecha = NOW() WHERE id = :id");
 
-			$sql->bindParam(":ruta", $datos["ruta"], PDO::PARAM_STR);
-			$sql->bindParam(":titulo", $datos["titulo"], PDO::PARAM_STR);
+			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
+			$sql->bindParam(":rutaProducto", $datos["ruta"], PDO::PARAM_STR);
+			$sql->bindParam(":tituloProducto", $datos["titulo"], PDO::PARAM_STR);
 			$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
-			$sql->bindParam(":detalle", $datos["detalle"], PDO::PARAM_INT);
-			$sql->bindParam(":precio", $datos["precio"], PDO::PARAM_STR);
-			$sql->bindParam(":imagen", $datos["imagen"], PDO::PARAM_STR);
-			$sql->bindParam(":oferta", $datos["oferta"], PDO::PARAM_STR);
+			$sql->bindParam(":detalle", $datos["detalle"], PDO::PARAM_STR);
+			$sql->bindParam(":precio", $datos["precio"], PDO::PARAM_INT);
+			$sql->bindParam(":imagen", $rutaImagen, PDO::PARAM_STR);
+			$sql->bindParam(":oferta", $datos["oferta"], PDO::PARAM_INT);
 			$sql->bindParam(":precioOferta", $datos["precioOferta"], PDO::PARAM_INT);
-			$sql->bindParam(":descuento", $datos["descuento"], PDO::PARAM_STR);
+			$sql->bindParam(":descuento", $datos["descuento"], PDO::PARAM_INT);
 			$sql->bindParam(":finOferta", $datos["finOferta"], PDO::PARAM_STR);
-			$sql->bindParam(":id_categoria", $datos["id_categoria"], PDO::PARAM_STR);
-			$sql->bindParam(":id_subcategoria", $datos["id_subcategoria"], PDO::PARAM_INT);
+
 		} 
 
 		if($sql->execute()) {

@@ -87,7 +87,7 @@ $(document).ready(function(){
 				$('#formu-editar-productos input[name="finOfertaProductos"]').val(valor.finOferta)
 				$('#formu-editar-productos input[name="idcategoria"]').val(valor.id_categoria)
 				$('#formu-editar-productos input[name="idsubcategoria"]').val(valor.id_subcategoria)
-				$('#formu-editar-productos input[name="rutaActual"]').val(valor.imagen)
+				$('#formu-editar-productos input[name="rutaActual"]').val(valor.imagenActual)
 
 
 			}
@@ -143,8 +143,8 @@ $(document).ready(function(){
 
 		// PREVISUALIZAR IMAGENES
 
-		$("#imagenNuevaProductos").change(previsualizarImg)
-		$("#imagenEditarProductos").change(previsualizarImg)
+		$("#imagenNuevoProducto").change(previsualizarImg)
+		$("#imagenNuevoProducto").change(previsualizarImg)
 	
 	
 		function previsualizarImg(e) {
@@ -164,7 +164,7 @@ $(document).ready(function(){
 					})
 				} 
 				if ( imgSlider["type"] > 2000000) {
-					$("#ruta").val("")
+					$("#imagenProducto").val("")
 	
 					swal({
 						type: "Error al subir la imagen",
@@ -175,7 +175,7 @@ $(document).ready(function(){
 				}
 	
 				else {
-					$("#ruta").css("display", "block")
+					$("#imagenProducto").css("display", "block")
 	
 					var datosImagen = new FileReader;
 						datosImagen.readAsDataURL(imgSlider);
@@ -184,7 +184,7 @@ $(document).ready(function(){
 	
 							var rutaImagen = event.target.result;
 	
-							$("." + identificador +" #ruta").attr("src", rutaImagen);
+							$("." + identificador +" #imagenProducto").attr("src", rutaImagen);
 						})
 				}
 	

@@ -76,8 +76,8 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10 conteImagenProd">
-              <input type="file" class="form-control"  id="imagenNuevoProducto" name="imagenNewProducto"><br>
-              <img src="" id="imagenNewProducto" alt="" class="thumbnail" width="100" style="display: none">
+              <input type="file" class="form-control"  id="imagenNuevoProducto" name="imagenNewProducto" required><br>
+              <img src="" id="imagenProducto" alt="" class="thumbnail" width="100" style="display: none">
             </div>
           </div>
           <div class="form-group row">
@@ -175,7 +175,7 @@
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10 conteImagenProd">
               <input type="file" class="form-control" id="imagenNuevoProducto" name="imagenEdProducto"><br>
-              <img src="" id="imagenEdProducto" alt="" class="thumbnail" width="100" name="EimagenProducto">
+              <img src="" id="imagenProducto" alt="" class="thumbnail" width="100" name="EimagenProducto">
             </div>
           </div>
           <div class="form-group row">
@@ -205,7 +205,8 @@
        
           <input type="hidden" name="tipoOperacion" value="actualizarProducto">
           <input type="hidden" name="rutaActual">
-          <input type="hidden" name="id_slider">
+          <input type="hidden" name="id_producto">
+          
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
