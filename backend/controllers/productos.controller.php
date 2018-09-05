@@ -73,7 +73,7 @@ Class ControllerProducto {
 
 	static public function ctrEditarProducto($_idProducto) {
 		$tabla = "productos";
-		$respuesta = ModeloProducto::mdlEditarProducto($tabla, $_idProducto);
+		$respuesta = (new ModeloProducto)->mdlEditarProducto($tabla, $_idProducto);
 		return $respuesta;
 	}
 

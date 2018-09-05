@@ -3,7 +3,7 @@ require_once "../controllers/productos.controller.php";
 require_once "../models/productos.modelo.php";
 
 Class ajaxProducto{
-    public $_id_producto;
+    public $_idProducto;
     public $_ruta;
 	public $_titulo_producto;
 	public $_descripcion_producto;
@@ -39,16 +39,24 @@ Class ajaxProducto{
 	}
 
 	public function editarProducto(){
-        $id_admin = $this->_id_admin;
+        $id = $this->_idProducto;
         
-        $respuesta = (new ControllerProducto)->ctrEditarproducto($id_admin);
+        $respuesta = (new ControllerProducto)->ctrEditarProducto($id);
 
-        $datos = array("id_admin"=>$respuesta["id_admin"],
-						"nombre_admin"=>$respuesta["nombre_admin"],
-                        "correo_admin"=>$respuesta["correo_admin"],
-                        "password_admin"=>$respuesta["password_admin"],
-						"avatar_admin"=>substr($respuesta["avatar_admin"], 3)
-						);
+        $datos = array("id"=>$respuesta["id"],
+						"titulo"=>$respuesta["titulo"],
+                        "ruta"=>$respuesta["ruta"],
+                        "descripcion"=>$respuesta["descripcion"],
+                        "detalle"=>$respuesta["detalle"],
+                        "precio"=>$respuesta["precio"],
+                        "imagen"=>substr($respuesta["imagen"], 3),
+                        "oferta"=>$respuesta["oferta"],
+                        "precioOferta"=>$respuesta["precioOferta"],
+                        "descuento"=>$respuesta["descuento"],
+                        "finOferta"=>$respuesta["finOferta"],
+                        "id_categoria"=>$respuesta["id_categoria"],
+                        "id_subcategoria"=>$respuesta["id_subcategoria"],                        
+                        );
 
         echo json_encode($datos);
 
@@ -68,10 +76,10 @@ Class ajaxProducto{
 	}
 
     public function eliminarproducto(){
-		$id_admin = $this->id_admin;
-		$ruta = $this->avatar_admin;
+		$id = $this->_idProducto;
+		$rutaActual = $this->_rutaActual;
 
-		$respuesta = ControllerProducto::ctrEliminarproducto($id_admin, $ruta);
+		$respuesta = ControllerProducto::ctrEliminarProducto($id, $rutaActual);
 
 		echo $respuesta;
 
@@ -99,8 +107,8 @@ Class ajaxProducto{
     
     if ($tipoOperacion == "editarProducto") {
         $editarproducto = new ajaxProducto();
-        $editarproducto -> _id_admin = $_POST["id"];
-        $editarproducto -> editarproducto();
+        $editarproducto -> _idProducto = $_POST["id"];
+        $editarproducto -> editarProducto();
     }
     
     if ($tipoOperacion == "actualizarProducto") {
@@ -120,10 +128,10 @@ Class ajaxProducto{
         $actualizarproducto -> _idSubCategoria_producto = $_POST["id_subcategoria"];
         $actualizarproducto -> actualizarproducto();
     }
-    if ($tipoOperacion == "eliminarproducto") {
+    if ($tipoOperacion == "eliminarProducto") {
         $eliminarproducto = new ajaxproducto();
-        $eliminarproducto -> _id_producto = $_POST["id"];
-        $eliminarproducto -> _ruta = $_POST["ruta"];
+        $eliminarproducto -> _idProducto = $_POST["id"];
+        $eliminarproducto -> _rutaActual = $_POST["rutaActual"];
         $eliminarproducto -> eliminarproducto();
     }
     

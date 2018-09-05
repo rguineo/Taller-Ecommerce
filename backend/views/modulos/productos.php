@@ -24,8 +24,8 @@
                           <thead style='text-align: center; background: #eaeaea;'>
                               <tr>
                                 <th scope="col">#</th>
-                                <th scope="col">Ruta</th>
                                 <th scope="col">Titulo</th>
+                                <th scope="col">Ruta</th>
                                 <th scope="col">Descripción</th>
                                 <th scope="col">Precio</th>
                                 <th scope="col">Imagen</th>
@@ -46,8 +46,8 @@
                               echo '
                                 <tr>
                                   <td scope="row">'.$value["id"].'</th>
-                                  <td>'.$value["ruta"].'</td>
                                   <td>'.$value["titulo"].'</td>
+                                  <td>'.$value["ruta"].'</td>
                                   <td>'.$value["descripcion"].'</td>
                                   <td>'.$value["precio"].'</td>
                                   <td><img src="'.substr($value["imagen"], 3).'" id="imagenProductos" alt="" class="thumbnail" width="100"></td>
@@ -56,10 +56,10 @@
                                   <td>'.$value["descuento"].'</td>
                                   <td>'.$value["finOferta"].'</td>
                                   <td width="100">
-                                    <button class="btn btn-sm btn-info btnEditarProductos" idProductos="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-productos">
+                                    <button class="btn btn-sm btn-info btnEditarProductos" idProductos="'.$value["id"].'" data-toggle="modal" data-target="#modal-editar-productos" rutaImagen="'.$value["imagen"].'">
                                       <i class="far fa-edit"></i>
                                     </button>
-                                    <button class="btn btn-sm btn-danger btnEliminarProductos" idProductos="'.$value["id"].'">
+                                    <button class="btn btn-sm btn-danger btnEliminarProductos" idProductos="'.$value["id"].'" rutaImagen="'.$value["imagen"].'">
                                       <i class="far fa-trash-alt"></i>
                                     </button>
                                   </td>

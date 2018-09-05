@@ -40,7 +40,7 @@ Class ModeloProducto {
 
 	static public function mdlEliminarProducto($tabla, $id) {
 
-		$sql = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
+		$sql = (new Conexion)->conectar()->prepare("DELETE FROM $tabla WHERE id = :id");
 
 		$sql->bindParam(":id", $id, PDO::PARAM_INT);
 
@@ -54,7 +54,7 @@ Class ModeloProducto {
 
 	static public function mdlEditarProducto($tabla, $id) {
 
-		$sql = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
+		$sql = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
 		$sql->bindParam(":id", $id, PDO::PARAM_INT);
 
 		$sql -> execute();

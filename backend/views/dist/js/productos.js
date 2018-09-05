@@ -58,9 +58,11 @@ $(document).ready(function(){
 
 	$("body .table-dark").on("click", ".btnEditarProductos", function(){
 		var idProductos = $(this).attr("idProductos")
+		var rutaImagen = $(this).attr("rutaImagen")
 		var datos = new FormData()
 		datos.append("id", idProductos)
 		datos.append("tipoOperacion", "editarProducto")
+		datos.append("rutaActual", rutaImagen)
 
 		$.ajax({
 			url: 'ajax/ajaxProducto.php',
@@ -71,17 +73,20 @@ $(document).ready(function(){
 			success: function(respuesta) {
 				var valor = JSON.parse(respuesta)
 
-				$('#formu-editar-usuario input[name="ruta"]').val(valor.ruta)
-				$('#formu-editar-usuario input[name="titulo"]').val(valor.titulo)
-				$('#formu-editar-usuario textarea[name="descripcion"]').val(valor.descripcion)
-				$('#formu-editar-usuario input[name="detalle"]').val(valor.detalle)
-				$('#formu-editar-usuario input[name="precio"]').val(valor.precio)
-				$('#formu-editar-usuario input[name="oferta"]').val(valor.oferta)
-				$('#formu-editar-usuario input[name="preciooferta"]').val(valor.preciooferta)
-				$('#formu-editar-usuario input[name="descuento"]').val(valor.descuento)
-				$('#formu-editar-usuario input[name="finoferta"]').val(valor.finoferta)
-				$('#formu-editar-usuario input[name="idcategoria"]').val(valor.idcategoria)
-				$('#formu-editar-usuario input[name="idsubcategoria"]').val(valor.idsubcategoria)
+				$('#formu-editar-productos input[name="rutaProductos"]').val(valor.ruta)
+				$('#formu-editar-productos input[name="tituloProductos"]').val(valor.titulo)
+				$('#formu-editar-productos input[name="descripcionProductos"]').val(valor.descripcion)
+				$('#formu-editar-productos input[name="detalleProductos"]').val(valor.detalle)
+				$('#formu-editar-productos input[name="precioProductos"]').val(valor.precio)
+				$('#formu-editar-productos #imagenEdProducto').attr("src", valor.imagen)
+				$('#formu-editar-productos input[name="ofertaProductos"]').val(valor.oferta)
+				$('#formu-editar-productos input[name="precioOfertaProductos"]').val(valor.precioOferta)
+				$('#formu-editar-productos input[name="descuentoProductos"]').val(valor.descuento)
+				$('#formu-editar-productos input[name="finOfertaProductos"]').val(valor.finOferta)
+				$('#formu-editar-productos input[name="idcategoria"]').val(valor.id_categoria)
+				$('#formu-editar-productos input[name="idsubcategoria"]').val(valor.id_subcategoria)
+				$('#formu-editar-productos input[name="rutaActual"]').val(valor.imagen)
+
 
 			}
 
@@ -93,10 +98,10 @@ $(document).ready(function(){
 		var idProductos = $(this).attr("idProductos")
 		var rutaImagen = $(this).attr("rutaImagen")
 		var datos = new FormData()
-		datos.append("id", idUsuario)
-		datos.append("tipoOperacion", "eliminarproducto")
-		datos.append("ruta", rutaImagen)
-    console.log("pasoporaca")
+		datos.append("id", idProductos)
+		datos.append("tipoOperacion", "eliminarProducto")
+		datos.append("rutaActual", rutaImagen)
+    console.log(rutaImagen)
 		swal({
 		  title: '¿Estás seguro de eliminar?',
 		  text: "Los cambios no son reversibles!",

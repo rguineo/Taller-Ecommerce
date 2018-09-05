@@ -115,8 +115,8 @@
   </div>
 </div>
 
-<!-- EDITAR SLIDER -->
-<div class="modal fade" id="modal-editar-categorias" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- EDITAR PRODUCTO -->
+<div class="modal fade" id="modal-editar-productos" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -154,13 +154,13 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Titulo</label>
             <div class="col-sm-10">
-              <input type="text" id="titulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
+              <input type="text" id="Etitulo-productos"  class="form-control" placeholder="Titulo" onkeyup=""  required name="tituloProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Ruta</label>
             <div class="col-sm-10">
-              <input type="text" id="ruta-productos" class="form-control" placeholder="Ruta amigable" name="rutaProductos" readonly>
+              <input type="text" id="Eruta-productos" class="form-control" placeholder="Ruta amigable" name="rutaProductos" readonly>
             </div>
           </div>
 
@@ -185,8 +185,8 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10 conteImagenProd">
-              <input type="file" class="form-control"  id="imagenNuevoProducto" name="imagenNewProducto"><br>
-              <img src="" id="imagenNewProducto" alt="" class="thumbnail" width="100" style="display: none">
+              <input type="file" class="form-control" id="imagenNuevoProducto" name="imagenEdProducto"><br>
+              <img src="" id="imagenEdProducto" alt="" class="thumbnail" width="100" name="EimagenProducto">
             </div>
           </div>
           <div class="form-group row">
