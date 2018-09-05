@@ -66,11 +66,11 @@ Class ModeloProducto {
 
 		if( is_null($rutaImagen)) {
 			$sql = (new Conexion)->conectar()->prepare("UPDATE $tabla 
-			SET ruta = :ruta, titulo = :titulo, descripcion = :descripcion, detalle = :detalle, precio = :precio, oferta = :oferta, precioOferta = :precioOferta, descuento = :descuento; finOferta = :finOferta, fecha = NOW() WHERE id = :id");
+			SET ruta = :rutaProducto, titulo = :tituloProducto, descripcion = :descripcion, detalle = :detalle, precio = :precio, oferta = :oferta, precioOferta = :precioOferta, descuento = :descuento; finOferta = :finOferta, fecha = NOW() WHERE id = :id");
 
 			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
-			$sql->bindParam(":rutaProducto", $datos["ruta"], PDO::PARAM_STR);
-			$sql->bindParam(":tituloProducto", $datos["titulo"], PDO::PARAM_STR);
+			$sql->bindParam(":rutaProducto", $datos["rutaProducto"], PDO::PARAM_STR);
+			$sql->bindParam(":tituloProducto", $datos["tituloProducto"], PDO::PARAM_STR);
 			$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 			$sql->bindParam(":detalle", $datos["detalle"], PDO::PARAM_STR);
 			$sql->bindParam(":precio", $datos["precio"], PDO::PARAM_INT);
@@ -81,11 +81,11 @@ Class ModeloProducto {
 
 		} else {
 			$sql = (new Conexion)->conectar()->prepare("UPDATE $tabla 
-			SET ruta = :ruta, titulo = :titulo, descripcion = :descripcion, detalle = :detalle, precio = :precio, imagen = :imagen, oferta = :oferta, precioOferta = :precioOferta, descuento = :descuento; finOferta = :finOferta, fecha = NOW() WHERE id = :id");
+			SET ruta = :rutaProducto, titulo = :tituloProducto, descripcion = :descripcion, detalle = :detalle, precio = :precio, imagen = :imagen, oferta = :oferta, precioOferta = :precioOferta, descuento = :descuento; finOferta = :finOferta, fecha = NOW() WHERE id = :id");
 
 			$sql->bindParam(":id", $datos["id"], PDO::PARAM_INT);
-			$sql->bindParam(":rutaProducto", $datos["ruta"], PDO::PARAM_STR);
-			$sql->bindParam(":tituloProducto", $datos["titulo"], PDO::PARAM_STR);
+			$sql->bindParam(":rutaProducto", $datos["rutaProducto"], PDO::PARAM_STR);
+			$sql->bindParam(":tituloProducto", $datos["tituloProducto"], PDO::PARAM_STR);
 			$sql->bindParam(":descripcion", $datos["descripcion"], PDO::PARAM_STR);
 			$sql->bindParam(":detalle", $datos["detalle"], PDO::PARAM_STR);
 			$sql->bindParam(":precio", $datos["precio"], PDO::PARAM_INT);

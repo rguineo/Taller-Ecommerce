@@ -70,7 +70,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Precio</label>
             <div class="col-sm-10">
-              <input type="text" id="precio-productos"  class="form-control" placeholder="Precio Productos" onkeyup=""  required name="precioProductos">
+              <input type="number" id="precio-productos"  class="form-control" placeholder="Precio Productos" onkeyup=""  required name="precioProductos">
             </div>
           </div>
           <div class="form-group row">
@@ -83,19 +83,19 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Oferta</label>
             <div class="col-sm-10">
-              <input type="text" id="oferta-productos"  class="form-control" placeholder="Oferta Productos" onkeyup=""  required name="ofertaProductos">
+              <input type="number" id="oferta-productos"  class="form-control" placeholder="Oferta Productos" onkeyup=""  required name="ofertaProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Precio Oferta</label>
             <div class="col-sm-10">
-              <input type="text" id="precioOferta-productos"  class="form-control" placeholder="Precio Oferta Productos" onkeyup=""  required name="precioOfertaProductos">
+              <input type="number" id="precioOferta-productos"  class="form-control" placeholder="Precio Oferta Productos" onkeyup=""  required name="precioOfertaProductos">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Descuento</label>
             <div class="col-sm-10">
-              <input type="text" id="descuento-productos"  class="form-control" placeholder="Descuento Productos" onkeyup=""  required name="descuentoProductos">
+              <input type="number" id="descuento-productos"  class="form-control" placeholder="Descuento Productos" onkeyup=""  required name="descuentoProductos">
             </div>
           </div>
           <div class="form-group row">
