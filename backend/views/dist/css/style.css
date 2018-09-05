@@ -1,0 +1,12 @@
+.form-edit-prod {
+    font-size: 16px;
+    color: green;
+}
+
+
+.form-edit-prod span {
+    font-size: 11px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 3px;
+    color: blue;
+}

@@ -73,6 +73,8 @@ $(document).ready(function(){
 			success: function(respuesta) {
 				var valor = JSON.parse(respuesta)
 
+				$('#formu-editar-productos input[name="EdCategoria"]').val(valor.categoria)
+				$('#formu-editar-productos input[name="EdSubCategoria"]').val(valor.subcategoria)
 				$('#formu-editar-productos input[name="rutaProductos"]').val(valor.ruta)
 				$('#formu-editar-productos input[name="tituloProductos"]').val(valor.titulo)
 				$('#formu-editar-productos input[name="descripcionProductos"]').val(valor.descripcion)
@@ -187,4 +189,16 @@ $(document).ready(function(){
 				}
 	
 		}
+
+		$(".edit-cat").on("click", function(){
+		
+			alert("editar Categoria")
+		})
+
+
+		$(".edit-sub").on("click", function(){
+		
+			alert("editar SubCategoria")
+		})
+
 })

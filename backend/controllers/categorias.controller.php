@@ -139,6 +139,13 @@ Class ControllerCategorias {
 
 	}
 
+	static public function ctrBuscarCategoria($id){
+		$tabla = "categorias";
+
+		$respuesta = (new ModeloCategorias)->mdlBuscarCategoria($tabla, $id);
+		return $respuesta;
+	}
+
 }
 
 

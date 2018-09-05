@@ -12,6 +12,13 @@ Class ModeloCategorias {
 
 	}
 
+	static public function mdlBuscarCategoria($tabla, $id){
+		$sql = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE id = :id");
+		$sql->bindParam(":id", $id, PDO::PARAM_INT);
+		$sql -> execute();
+		return $sql -> fetch();		
+	}
+
 	static public function mdlCrearCategoria($tabla, $datos, $rutaImagen) {
 
 		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 

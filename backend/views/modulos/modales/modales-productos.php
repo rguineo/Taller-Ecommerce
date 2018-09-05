@@ -129,24 +129,13 @@
         <form id="formu-editar-productos">
 
           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Producto</label>
-            <div class="col-sm-10">
-              <select name="" id="">
-                <option value="">Elija la Categoría</option>
-                <option value="">Opcion 1</option>
-                <option value="">Opcion 2</option>
-              </select>
+            <label class="col-sm-2 col-form-label">Categoría</label>
+            <div class="col-sm-4">
+              <input type="text" id="EdCategoria" name="EdCategoria" class="form-control" readonly>
             </div>
-          </div>
-
-           <div class="form-group row">
-            <label class="col-sm-2 col-form-label">Sub-Categoría</label>
-            <div class="col-sm-10">
-              <select name="" id="">
-                <option value="">Elija la Sub-Categoría</option>
-                <option value="">Opcion 1</option>
-                <option value="">Opcion 2</option>
-              </select>
+            <label class="col-sm-2 col-form-label">SubCategoría</label>
+            <div class="col-sm-4">
+            <input type="text" id="EdSubCategoria" name="EdSubCategoria" class="form-control" readonly>
             </div>
           </div>
 

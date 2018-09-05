@@ -1,6 +1,11 @@
 <?php
 require_once "../controllers/productos.controller.php";
+require_once "../controllers/categorias.controller.php";
+require_once "../controllers/subcategorias.controller.php";
+
 require_once "../models/productos.modelo.php";
+require_once "../models/categorias.modelo.php";
+require_once "../models/subcategorias.modelo.php";
 
 Class ajaxProducto{
     public $_idProducto;
@@ -43,6 +48,12 @@ Class ajaxProducto{
         
         $respuesta = (new ControllerProducto)->ctrEditarProducto($id);
 
+        $idCat = $respuesta["id_categoria"];  
+        $categoria = (new ControllerCategorias)->ctrBuscarCategoria($idCat);
+
+        $idSubCat = $respuesta["id_subcategoria"];
+        $subcategoria = (new ControllerSubCategorias)->ctrBuscarSubCategoria($idSubCat);
+
         $datos = array("id"=>$respuesta["id"],
 						"titulo"=>$respuesta["titulo"],
                         "ruta"=>$respuesta["ruta"],
@@ -55,7 +66,9 @@ Class ajaxProducto{
                         "descuento"=>$respuesta["descuento"],
                         "finOferta"=>$respuesta["finOferta"],
                         "id_categoria"=>$respuesta["id_categoria"],
-                        "id_subcategoria"=>$respuesta["id_subcategoria"],                        
+                        "id_subcategoria"=>$respuesta["id_subcategoria"],
+                        "categoria"=>$categoria["categoria"],
+                        "subcategoria"=>$subcategoria["subcategoria"]                        
                         );
 
         echo json_encode($datos);

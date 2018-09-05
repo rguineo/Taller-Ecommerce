@@ -8,6 +8,12 @@
             return $respuesta;
         }
 
+        static public function ctrBuscarSubCategoria($id){
+            $tabla = "subcategorias";
+            $respuesta = (new ModeloSubCategorias)->mdlBuscarSubCategorias($tabla, $id);
+            return $respuesta;
+        }
+
         static public function ctrEliminarSubCategorias($id, $ruta) {
 
             $tabla = "subcategorias";
