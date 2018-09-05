@@ -26,6 +26,15 @@ require_once "conexion.php";
 
         }
 
+        static public function mdlBuscarSubCat($tabla, $idCat){
+
+            $sql = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE id_categoria = :id");
+
+		    $sql->bindParam(":id", $idCat, PDO::PARAM_INT);
+            $sql -> execute();
+            return $sql -> fetchAll();
+
+        }
         static public function mdlEliminarSubCategorias($tabla, $id) {
 
 		    $sql = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id = :id");

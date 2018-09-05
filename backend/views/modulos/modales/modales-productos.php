@@ -3,8 +3,8 @@
   $categorias = new ControllerCategorias();
   $respCat = $categorias->listarCategoriasCtr();
 
-  $subcategorias = new ControllerSubCategorias();
-  $respSubCat = $subcategorias->listarSubCategoriasCtr();
+  // $subcategorias = new ControllerSubCategorias();
+  // $respSubCat = $subcategorias->buscarSubCategoriasCat($respCat["id"]);
 ?>
 <div class="modal fade" id="modal-insertar-productos"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -32,13 +32,8 @@
             </div>
             <label class="col-sm-2 col-form-label">SubCategoría</label>
             <div class="col-sm-4">
-              <select class="form-control" id="inputSubCategorias" name="idSubCategorias">
-                <option value="">Elija la Sub-Categoría</option>
-                <?php
-                    foreach ($respSubCat as $key => $value) {
-                    echo "<option value=".$value["id"]." rutaImagenCat=".$value["imagen"].">".$value["subcategoria"]."</option>";
-                    }
-                ?>
+              <select class="form-control" id="inputSubCategorias" name="idSubCategorias" disabled="true">
+
               </select>
             </div>
           </div>

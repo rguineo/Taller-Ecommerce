@@ -190,15 +190,22 @@ $(document).ready(function(){
 	
 		}
 
-		$(".edit-cat").on("click", function(){
-		
-			alert("editar Categoria")
-		})
+		$("#inputCategorias").on("change", function(){
+			$("#inputSubCategorias").prop("disabled", false);
 
+			var idCategoria=$("#inputCategorias").val();
+	
+			$.ajax({
+					url: 'ajax/ajaxSubCategorias.php',
+					data: {idCategoria: idCategoria},
+					type: 'POST',
+					success: function (data)
+					{
+							$("#inputSubCategorias").html(data);
+					}
+			})
+	
+	})
 
-		$(".edit-sub").on("click", function(){
-		
-			alert("editar SubCategoria")
-		})
 
 })

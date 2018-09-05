@@ -59,6 +59,19 @@ Class ajaxSubCategorias{
 
 	}
 
+	public function buscarSubCategoria(){
+		$idCategoria = $this->_idCategoria;
+
+		$respueta = (new ControllerSubCategorias)->buscarSubCategoriasCat($idCategoria);
+
+		$subCategoria = "<option> Elija la SubCategoria </option>";
+		foreach ($respueta as $key => $value) {
+			$subCategoria .= "<option value=".$value["id"].">".$value["subcategoria"]."</option>";
+		}
+		echo $subCategoria;
+
+	}
+
 
 }
 
@@ -96,5 +109,11 @@ Class ajaxSubCategorias{
 		$actualizarSubCategoria -> _idCategoria = $_POST["id_categoria"];
 		$actualizarSubCategoria -> actualizarSubCategorias();
 	}
+
+	if (isset($_POST["idCategoria"])){
+		$buscarSubCategorias = new ajaxSubCategorias;
+		$buscarSubCategorias -> _idCategoria = $_POST["idCategoria"];
+		$buscarSubCategorias -> buscarSubCategoria();
+    }
 ?>
 

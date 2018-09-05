@@ -8,9 +8,14 @@
             return $respuesta;
         }
 
-        static public function ctrBuscarSubCategoria($id){
+        static public function ctrBuscarSubCategoria($id){ //Buscar Subcategoria a partir de la id de la SubCategoria
             $tabla = "subcategorias";
             $respuesta = (new ModeloSubCategorias)->mdlBuscarSubCategorias($tabla, $id);
+            return $respuesta;
+        }
+        static public function buscarSubCategoriasCat($idCat){//Buscar Subcategoria a partir de la id de la Categoria
+            $tabla = "subcategorias";
+            $respuesta = (new ModeloSubCategorias)->mdlBuscarSubCat($tabla, $idCat);
             return $respuesta;
         }
 
