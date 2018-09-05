@@ -91,7 +91,7 @@ Class ajaxProducto{
         $crearNuevoproducto -> _oferta_producto = $_POST["ofertaProductos"];
         $crearNuevoproducto -> _precioOferta_producto = $_POST["precioOfertaProductos"];
         $crearNuevoproducto -> _descuento_producto = $_POST["descuentoProductos"];
-        $crearNuevoproducto -> _FinOferta_producto = $_POST["finOfertaProductos"];
+        $crearNuevoproducto -> _FinOferta_producto = date($_POST["finOfertaProductos"]);
         $crearNuevoproducto -> _idCategoria_producto = $_POST["idCategorias"];
         $crearNuevoproducto -> _idSubCategoria_producto = $_POST["idSubCategorias"];        
         $crearNuevoproducto -> crearProducto();
