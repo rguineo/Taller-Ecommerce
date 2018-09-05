@@ -174,7 +174,7 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Imagen</label>
             <div class="col-sm-10 conteImagenProd">
-              <input type="file" class="form-control" id="imagenNuevoProducto" name="imagenEdProducto"><br>
+              <input type="file" class="form-control" id="imagenEdProducto" name="imagenEdProducto"><br>
               <img src="" id="imagenProducto" alt="" class="thumbnail" width="100" name="EimagenProducto">
             </div>
           </div>

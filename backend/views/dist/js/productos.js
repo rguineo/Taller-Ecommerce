@@ -80,7 +80,7 @@ $(document).ready(function(){
 				$('#formu-editar-productos input[name="descripcionProductos"]').val(valor.descripcion)
 				$('#formu-editar-productos input[name="detalleProductos"]').val(valor.detalle)
 				$('#formu-editar-productos input[name="precioProductos"]').val(valor.precio)
-				$('#formu-editar-productos #imagenEdProducto').attr("src", valor.imagen)
+				$('#formu-editar-productos #imagenProducto').attr("src", valor.imagen)
 				$('#formu-editar-productos input[name="ofertaProductos"]').val(valor.oferta)
 				$('#formu-editar-productos input[name="precioOfertaProductos"]').val(valor.precioOferta)
 				$('#formu-editar-productos input[name="descuentoProductos"]').val(valor.descuento)
@@ -144,7 +144,7 @@ $(document).ready(function(){
 		// PREVISUALIZAR IMAGENES
 
 		$("#imagenNuevoProducto").change(previsualizarImg)
-		$("#imagenNuevoProducto").change(previsualizarImg)
+		$("#imagenEdProducto").change(previsualizarImg)
 	
 	
 		function previsualizarImg(e) {

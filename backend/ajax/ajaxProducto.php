@@ -144,6 +144,7 @@ Class ajaxProducto{
         $actualizarproducto -> _precioOferta_producto = $_POST["precioOfertaProductos"];
         $actualizarproducto -> _descuento_producto = $_POST["descuentoProductos"];
         $actualizarproducto -> _FinOferta_producto = $_POST["finOfertaProductos"];
+        $actualizarproducto -> _rutaActual = $_POST["rutaActual"];
         $actualizarproducto -> actualizarProducto();
     }
     if ($tipoOperacion == "eliminarProducto") {
