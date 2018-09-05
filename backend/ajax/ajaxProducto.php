@@ -26,11 +26,11 @@ Class ajaxProducto{
                         "precio"=>$this->_precio_producto,
                         "imagen"=>$this->_imagen,
                         "oferta"=>$this->_oferta_producto,
-                        "preciooferta"=>$this->_precioOferta_producto,
+                        "precioOferta"=>$this->_precioOferta_producto,
                         "descuento"=>$this->_descuento_producto,
-                        "finoferta"=>$this->_FinOferta_producto,
-                        "idcategoria"=>$this->_idCategoria_producto,
-                        "idsubcategoria"=>$this->_idSubCategoria_producto
+                        "finOferta"=>$this->_FinOferta_producto,
+                        "id_categoria"=>$this->_idCategoria_producto,
+                        "id_subcategoria"=>$this->_idSubCategoria_producto
                     );
 
 		$respuesta = (new ControllerProducto)->ctrCrearProducto($datos);
@@ -87,7 +87,7 @@ Class ajaxProducto{
         $crearNuevoproducto -> _descripcion_producto = $_POST["descripcionProductos"];
         $crearNuevoproducto -> _detalle_producto = $_POST["detalleProductos"];
         $crearNuevoproducto -> _precio_producto = $_POST["precioProductos"];
-        $crearNuevoproducto -> _imagen = $_POST["imagenNewProducto"];
+        $crearNuevoproducto -> _imagen = $_FILES["imagenNewProducto"];
         $crearNuevoproducto -> _oferta_producto = $_POST["ofertaProductos"];
         $crearNuevoproducto -> _precioOferta_producto = $_POST["precioOfertaProductos"];
         $crearNuevoproducto -> _descuento_producto = $_POST["descuentoProductos"];
@@ -109,14 +109,14 @@ Class ajaxProducto{
         $actualizarproducto -> _ruta = $_POST["ruta"];
         $actualizarproducto -> _titulo_producto = $_POST["titulo"];
         $actualizarproducto -> _descripcion_producto = $_POST["descripcion"];
-        $actualizarproducto -> _detalle_producto = $_FILES["detalle"];
+        $actualizarproducto -> _detalle_producto = $_POST["detalle"];
         $actualizarproducto -> _precio_producto = $_POST["precio"];
-        $actualizarproducto -> _imagen = $_POST["imagen"];
-        $actualizarproducto -> _oferta_producto = $_FILES["oferta"];
+        $actualizarproducto -> _imagen = $_FILES["imagen"];
+        $actualizarproducto -> _oferta_producto = $_POST["oferta"];
         $actualizarproducto -> _precioOferta_producto = $_POST["precioOferta"];
-        $actualizarproducto -> _descuento_producto = $_FILES["descuento"];
+        $actualizarproducto -> _descuento_producto = $_POST["descuento"];
         $actualizarproducto -> _FinOferta_producto = $_POST["finOferta"];
-        $actualizarproducto -> _idCategoria_producto = $_FILES["id_categoria"];
+        $actualizarproducto -> _idCategoria_producto = $_POST["id_categoria"];
         $actualizarproducto -> _idSubCategoria_producto = $_POST["id_subcategoria"];
         $actualizarproducto -> actualizarproducto();
     }
