@@ -16,7 +16,7 @@ Class ControllerSesion {
 				$_SESSION["autenticar"] = "ok";
 				$_SESSION["nombre"] = $respuesta["nombre_admin"];
 				$_SESSION["id"] = $respuesta["id_admin"];
-				$_SESSION["avatar"] = $respuesta["avatar_admin"];
+				$_SESSION["avatar"] = substr($respuesta["avatar_admin"], 3);
 
 				echo '
 					<script>
