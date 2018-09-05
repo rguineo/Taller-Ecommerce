@@ -94,7 +94,7 @@ Class ajaxProducto{
         $crearNuevoproducto -> _FinOferta_producto = $_POST["finOfertaProductos"];
         $crearNuevoproducto -> _idCategoria_producto = $_POST["idCategorias"];
         $crearNuevoproducto -> _idSubCategoria_producto = $_POST["idSubCategorias"];        
-        $crearNuevoproducto -> crearPproducto();
+        $crearNuevoproducto -> crearProducto();
     }
     
     if ($tipoOperacion == "editarProducto") {
