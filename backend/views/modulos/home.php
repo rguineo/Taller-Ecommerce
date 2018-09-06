@@ -60,6 +60,51 @@ $respuesta = (new ControllerProducto)->ctrCuentaProductos();
         <!-- /.info-box -->
       </div>
 
+
+      <!-- grafico -->
+
+      <div id="container" style="width:100%; height:400px;"></div>
+
+
+
+      
+      <!-- <div id="grafico" data-highcharts-chart="0">
+      </div>
+      
+      <div id="tablaDatos" class="tabla">
+        <table id="datatable" class="table table-responsive datatable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Juan</th>
+              <th>Pedro</th>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <th>manzana</th>
+              <td>10</td>
+              <td>50</td>
+            </tr>
+
+            <tr>
+              <th>peras</th>
+              <td>15</td>
+              <td>45</td>
+            </tr>
+            
+            <tr>
+              <th>sandia</th>
+              <td>20</td>
+              <td>35</td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div> -->
+
     </section>
     <!-- /.content -->
   </div>
