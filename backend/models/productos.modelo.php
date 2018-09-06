@@ -119,7 +119,13 @@ Class ModeloProducto {
         $sql = Conexion::conectar()->prepare("SELECT * FROM $table");
         $sql -> execute();
         return $sql->fetchAll();
-    }
+	}
+	
+	public function mdlCuentaProductos($tabla){
+        $sql = (new Conexion)->conectar()->prepare("SELECT count(titulo) as cuenta FROM $tabla");
+        $sql -> execute();
+        return $sql->fetch();
+	}
 
 }
 ?>

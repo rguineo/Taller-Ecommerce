@@ -142,6 +142,13 @@ Class ControllerProducto {
 
 	}
 
+
+	public function ctrCuentaProductos(){
+		$tabla = "productos";
+		$respuesta = (new ModeloProducto)->mdlCuentaProductos($tabla);
+		return $respuesta;
+	}
+
 }
 
 

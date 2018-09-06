@@ -1,3 +1,9 @@
+<?php
+$respuesta = (new ControllerProducto)->ctrCuentaProductos();
+
+?>
+
+
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -16,10 +22,12 @@
       <div class="col-lg-3">
         <div class="info-box">
           <!-- Apply any bg-* class to to the icon to color it -->
-          <span class="info-box-icon bg-red"><i class="fa fa-star-o"></i></span>
+          <span class="info-box-icon bg-green"><i class="fab fa-product-hunt"></i></span>
           <div class="info-box-content">
-            <span class="info-box-text">Likes</span>
-            <span class="info-box-number">93,139</span>
+            <span class="info-box-text">Cantidad Productos</span>
+            <span class="info-box-number"><?php echo $respuesta["cuenta"]; ?></span>
+            <a href="productos">ver más</a>
+            
           </div>
           <!-- /.info-box-content -->
         </div>
@@ -38,7 +46,7 @@
         </div>
         <!-- /.info-box -->
       </div>
-      
+
       <div class="col-lg-3">
         <div class="info-box">
           <!-- Apply any bg-* class to to the icon to color it -->
