@@ -19,9 +19,20 @@ Class ModeloCategorias {
 		return $sql -> fetch();		
 	}
 
+	static public function mdlValidarCategoria($tabla, $categoria){
+		$valida = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE categoria = '$categoria'");
+		$valida -> execute();
+		if ( $valida->fetch() ){
+			return "error";
+		} else {
+			return "vacio";
+		}
+	}
+
+
 	static public function mdlCrearCategoria($tabla, $datos, $rutaImagen) {
 
-		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 
+		$sql = (new Conexion)->conectar()->prepare("INSERT INTO $tabla() 
 				VALUES (NULL, :categoria, :ruta, :imagen, NOW())");
 		
 		$sql->bindParam(":categoria", $datos["categoria"], PDO::PARAM_STR);
@@ -33,7 +44,6 @@ Class ModeloCategorias {
 		} else {
 			return "error";
 		}
-
 	}
 
 	static public function mdlEliminarCategoria($tabla, $idCategoria) {

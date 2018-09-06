@@ -21,7 +21,17 @@ $(document).ready(function(){
                             window.location = "categorias"
                         }
 					})
-				}
+				}else if (respuesta == "error"){
+                    swal({
+                        type: 'warning',
+                        title: 'Malas Noticias',
+                        text: 'La Categoría ya existe. Intente Nuevamente'
+					}).then((result) => {
+                        if (result.value) {
+                            window.location = "categorias"
+                        }
+					})                   
+                }
 			}
 
 		})

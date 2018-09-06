@@ -11,49 +11,56 @@ Class ControllerCategorias {
 
 	static public function ctrCrearCategorias($datos) {
 		$tabla = "categorias";
+		$categoria = $datos["categoria"];
 
-		list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
+		$validar = (new ModeloCategorias)->mdlValidarCategoria($tabla, $categoria);
 
-		$nuevoAncho = 1024;
-		$nuevoAlto = 768;
+		if ($validar == "error"){
+			return $validar;
+		} else {
 
-		$directorio = "../views/dist/img/categoria";
+			list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
 
-		if($datos["imagen"]["type"] == "image/jpeg"){
+			$nuevoAncho = 1024;
+			$nuevoAlto = 768;
 
-			$rutaImagen = $directorio."/".md5($datos["imagen"]["tmp_name"]).".jpeg";
+			$directorio = "../views/dist/img/categoria";
 
-			$origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
-			$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+			if($datos["imagen"]["type"] == "image/jpeg"){
 
-			imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+				$rutaImagen = $directorio."/".md5($datos["imagen"]["tmp_name"]).".jpeg";
 
-			imagejpeg($destino, $rutaImagen);
+				$origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
+				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
+				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+				imagejpeg($destino, $rutaImagen);
+
+			}
+
+			if($datos["imagen"]["type"] == "image/png"){
+
+				$rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".png";
+
+				$origen = imagecreatefrompng($datos["imagen"]["tmp_name"]);						
+
+				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+				imagealphablending($destino, FALSE);
+		
+				imagesavealpha($destino, TRUE);
+
+				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+				imagepng($destino, $rutaImagen);
+
+			}
+
+			$respuesta = ModeloCategorias::mdlCrearCategoria($tabla, $datos, $rutaImagen);
+
+			return $respuesta;
 		}
-
-		if($datos["imagen"]["type"] == "image/png"){
-
-			$rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".png";
-
-			$origen = imagecreatefrompng($datos["imagen"]["tmp_name"]);						
-
-			$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-			imagealphablending($destino, FALSE);
-	
-			imagesavealpha($destino, TRUE);
-
-			imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-			imagepng($destino, $rutaImagen);
-
-		}
-
-
-		$respuesta = ModeloCategorias::mdlCrearCategoria($tabla, $datos, $rutaImagen);
-
-		return $respuesta;
 
 	}
 
