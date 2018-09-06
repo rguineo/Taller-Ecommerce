@@ -127,12 +127,13 @@ Class ModeloProducto {
         return $sql->fetch();
 	}
 
-	public function mdlCantidadProducto($tabla){
-		$sql = (new Conexion)->conectar()->prepare("SELECT categorias.categoria, count(productos.titulo) 
-		FROM productos 
-		INNER JOIN categorias 
-		ON categorias.id = productos.id_categoria
-		GROUP BY categorias.categoria");
+	public function mdlCantidadProducto($tabla1, $tabla2){
+		$sql = (new Conexion)->conectar()->prepare("SELECT $tabla2.categoria, count($tabla1.titulo) as cantidad 
+		FROM $tabla1 
+		INNER JOIN $tabla2 
+		ON $tabla2.id = $tabla1.id_categoria
+		GROUP BY $tabla2.categoria");
+
 		$sql -> execute();
 		
         return $sql->fetchAll();

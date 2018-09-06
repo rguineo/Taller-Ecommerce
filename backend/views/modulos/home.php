@@ -1,6 +1,6 @@
 <?php
 $respuesta = (new ControllerProducto)->ctrCuentaProductos();
-
+$grafico = (new ControllerProducto)->ctrCantidadProducto();
 ?>
 
 
@@ -60,51 +60,46 @@ $respuesta = (new ControllerProducto)->ctrCuentaProductos();
         <!-- /.info-box -->
       </div>
 
+      <div class="col-lg-3">
+        <div class="info-box">
+          <!-- Apply any bg-* class to to the icon to color it -->
+          <span class="info-box-icon bg-yellow"><i class="fa fa-star-o"></i></span>
+          <div class="info-box-content">
+            <span class="info-box-text">Likes</span>
+            <span class="info-box-number">93,139</span>
+          </div>
+          <!-- /.info-box-content -->
+        </div>
+        <!-- /.info-box -->
+      </div>
 
       <!-- grafico -->
 
-      <div id="container" style="width:100%; height:400px;"></div>
+    <div id="grafico" style="col-lg-12"></div>
 
-
-
-      
-      <!-- <div id="grafico" data-highcharts-chart="0">
-      </div>
-      
-      <div id="tablaDatos" class="tabla">
-        <table id="datatable" class="table table-responsive datatable">
+    <div class="col-sm-6">
+      <table id="datatable" class="table table-responsive">
           <thead>
-            <tr>
-              <th>#</th>
-              <th>Juan</th>
-              <th>Pedro</th>
-            </tr>
+              <tr>
+                  <th>Productos</th>
+                  <th>Categorias</th>
+
+              </tr>
           </thead>
-
           <tbody>
-
-            <tr>
-              <th>manzana</th>
-              <td>10</td>
-              <td>50</td>
-            </tr>
-
-            <tr>
-              <th>peras</th>
-              <td>15</td>
-              <td>45</td>
-            </tr>
-            
-            <tr>
-              <th>sandia</th>
-              <td>20</td>
-              <td>35</td>
-            </tr>
-
+            <?php 
+              foreach ($grafico as $key => $value) {
+                echo "            
+                <tr>
+                  <th>".$value["categoria"]."</th>
+                  <td>".$value["cantidad"]."</td>
+                </tr>";
+              }
+              ?>
           </tbody>
-        </table>
-      </div> -->
-
+      </table>
+    </div>  	
+  
     </section>
     <!-- /.content -->
   </div>

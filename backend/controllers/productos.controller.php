@@ -150,9 +150,10 @@ Class ControllerProducto {
 	}
 
 	public function ctrCantidadProducto(){
-		$tabla = "productos";
-		$respuesta = (new ModeloProducto)->mdlCantidadProducto($tabla);
-		echo json_encode($respuesta);
+		$tabla1 = "productos";
+		$tabla2 = "categorias";
+		$respuesta = (new ModeloProducto)->mdlCantidadProducto($tabla1, $tabla2);
+		return $respuesta;
 	}
 
 }
