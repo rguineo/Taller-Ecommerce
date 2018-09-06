@@ -144,6 +144,12 @@
     color: green;
 }
 
+.cardImg {
+
+	height: 300px;
+
+}
+
 @media(max-width: 991px) {
 	.carrito, .deseos, .cuenta {
 		border-top: 1px solid #999;

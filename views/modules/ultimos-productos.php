@@ -15,7 +15,7 @@ echo '
 	<div class="row">';
     foreach ($lastProductos as $key => $value) {
         echo '<div class="col-lg-3 col-md-6 col-sm-12 cardProductos">
-                <div class="card h-100" style="width: 18rem;">
+                <div class="card h-100" style="width: 18rem">
                     <img class="cardImg" src="'.$ruta.substr($value["imagen"], 3).'">';
                         if ($value["oferta"] == 1){
                             echo ' 
