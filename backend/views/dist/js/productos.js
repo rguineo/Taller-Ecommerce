@@ -21,9 +21,18 @@ $(document).ready(function(){
 					    window.location = "productos"
 					  }
 					})
-				}
+				} else if (respuesta == "error"){
+					swal({
+							type: 'warning',
+							title: 'Malas Noticias',
+							text: 'El Producto ya existe. Intente Nuevamente'
+					}).then((result) => {
+							if (result.value) {
+									window.location = "productos"
+							}
+						})                   
+					}
 			}
-
 		})
 
 	})

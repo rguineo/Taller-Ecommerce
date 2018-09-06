@@ -12,6 +12,16 @@ Class ModeloProducto {
 
 	}
 
+	static public function mdlValidarProducto($tabla, $titulo){
+		$valida = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE titulo = '$titulo'");
+		$valida -> execute();
+		if ( $valida->fetch() ){
+			return "error";
+		} else {
+			return "vacio";
+		}
+	}
+
 	static public function mdlCrearProducto($tabla, $datos, $rutaImagen) {
 
 		$sql = Conexion::conectar()->prepare("INSERT INTO $tabla() 

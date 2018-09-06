@@ -4,57 +4,63 @@ Class ControllerProducto {
 	
 	public function listarProductoCtr() {
 		$tabla = "productos";
-		$respuesta = ModeloProducto::listarProductoMdl($tabla);
+		$respuesta = (new ModeloProducto)->listarProductoMdl($tabla);
 
 		return $respuesta;
 	}
 
 	static public function ctrCrearProducto($datos) {
 		$tabla = "productos";
+		$titulo = $datos["titulo"];
 
-		list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
+		$validar = (new ModeloProducto)->mdlValidarProducto($tabla, $titulo);
 
-		$nuevoAncho = 1024;
-		$nuevoAlto = 768;
+		if ($validar == "error"){
+			return $validar;
+		} else {
+			list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
 
-		$directorio = "../views/dist/img/productos";
+			$nuevoAncho = 1024;
+			$nuevoAlto = 768;
 
-		if($datos["imagen"]["type"] == "image/jpeg"){
+			$directorio = "../views/dist/img/productos";
 
-			$rutaImagen = $directorio."/".md5($datos["imagen"]["tmp_name"]).".jpeg";
+			if($datos["imagen"]["type"] == "image/jpeg"){
 
-			$origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
-			$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+				$rutaImagen = $directorio."/".md5($datos["imagen"]["tmp_name"]).".jpeg";
 
-			imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+				$origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
+				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
 
-			imagejpeg($destino, $rutaImagen);
+				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
 
+				imagejpeg($destino, $rutaImagen);
+
+			}
+
+			if($datos["imagen"]["type"] == "image/png"){
+
+				$rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".png";
+
+				$origen = imagecreatefrompng($datos["imagen"]["tmp_name"]);						
+
+				$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+
+				imagealphablending($destino, FALSE);
+		
+				imagesavealpha($destino, TRUE);
+
+				imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+
+				imagepng($destino, $rutaImagen);
+
+			}
+
+
+			$respuesta = ModeloProducto::mdlCrearProducto($tabla, $datos, $rutaImagen);
+
+			return $respuesta;
 		}
-
-		if($datos["imagen"]["type"] == "image/png"){
-
-			$rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".png";
-
-			$origen = imagecreatefrompng($datos["imagen"]["tmp_name"]);						
-
-			$destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-
-			imagealphablending($destino, FALSE);
-	
-			imagesavealpha($destino, TRUE);
-
-			imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-
-			imagepng($destino, $rutaImagen);
-
-		}
-
-
-		$respuesta = ModeloProducto::mdlCrearProducto($tabla, $datos, $rutaImagen);
-
-		return $respuesta;
-
 	}
 
 	static public function ctrEliminarProducto($id_Producto, $ruta) {

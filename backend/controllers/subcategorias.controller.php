@@ -35,9 +35,9 @@
 
         static public function ctrCrearSubCategorias($datos) {
             $tabla = "subcategorias";
-            $categoria = $datos["subcategoria"];
+            $subcategoria = $datos["subcategoria"];
     
-            $validar = (new ModeloSubCategorias)->mdlValidarSubCategoria($tabla, $categoria);
+            $validar = (new ModeloSubCategorias)->mdlValidarSubCategoria($tabla, $subcategoria);
     
             if ($validar == "error"){
                 return $validar;
