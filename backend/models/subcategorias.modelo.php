@@ -26,6 +26,16 @@ require_once "conexion.php";
 
         }
 
+        static public function mdlValidarSubCategoria($tabla, $subcategoria){
+            $valida = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE subcategoria = '$subcategoria'");
+            $valida -> execute();
+            if ( $valida->fetch() ){
+                return "error";
+            } else {
+                return "vacio";
+            }
+        }
+
         static public function mdlBuscarSubCat($tabla, $idCat){
 
             $sql = (new Conexion)->conectar()->prepare("SELECT * FROM $tabla WHERE id_categoria = :id");

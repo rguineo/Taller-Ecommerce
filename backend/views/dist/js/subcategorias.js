@@ -23,11 +23,20 @@ $(document).ready(function(){
 							window.location = "subcategorias"
 						}
 					})
-				}
-			}
+				}else if (cadena == "er"){
+                    swal({
+                        type: 'warning',
+                        title: 'Malas Noticias',
+                        text: 'La SubCategoría ya existe. Intente Nuevamente'
+					}).then((result) => {
+                        if (result.value) {
+                            window.location = "subcategorias"
+                        }
+					})                   
+                }
 
+			}
 		})
-		
 	})
 
     $("body .table-dark").on("click", ".btnEliminarSubCategorias", function(){

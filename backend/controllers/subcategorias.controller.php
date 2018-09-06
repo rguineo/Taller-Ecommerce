@@ -35,50 +35,57 @@
 
         static public function ctrCrearSubCategorias($datos) {
             $tabla = "subcategorias";
+            $categoria = $datos["subcategoria"];
     
-            list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
+            $validar = (new ModeloSubCategorias)->mdlValidarSubCategoria($tabla, $categoria);
     
-            $nuevoAncho = 1024;
-            $nuevoAlto = 768;
-    
-            $directorio = "../views/dist/img/subcategoria";
-    
-            if($datos["imagen"]["type"] == "image/jpeg"){
-    
-                $rutaImagen = $directorio."/".md5($datos["imagen"]["tmp_name"]).".jpeg";
-    
-                $origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
-                $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-    
-                imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-    
-                imagejpeg($destino, $rutaImagen);
-    
-            }
-    
-            if($datos["imagen"]["type"] == "image/png"){
-    
-                $rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".png";
-    
-                $origen = imagecreatefrompng($datos["imagen"]["tmp_name"]);						
-    
-                $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
-    
-                imagealphablending($destino, FALSE);
+            if ($validar == "error"){
+                return $validar;
+            } else {
+
+                list($ancho, $alto) = getimagesize($datos["imagen"]["tmp_name"]);	
         
-                imagesavealpha($destino, TRUE);
-    
-                imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
-    
-                imagepng($destino, $rutaImagen);
-    
-            }
-    
-    
-            $respuesta = (new ModeloSubCategorias)->mdlCrearSubCategoria($tabla, $datos, $rutaImagen);
+                $nuevoAncho = 1024;
+                $nuevoAlto = 768;
+        
+                $directorio = "../views/dist/img/subcategoria";
+        
+                if($datos["imagen"]["type"] == "image/jpeg"){
+        
+                    $rutaImagen = $directorio."/".md5($datos["imagen"]["tmp_name"]).".jpeg";
+        
+                    $origen = imagecreatefromjpeg($datos["imagen"]["tmp_name"]);						
+                    $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+        
+                    imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+        
+                    imagejpeg($destino, $rutaImagen);
+        
+                }
+        
+                if($datos["imagen"]["type"] == "image/png"){
+        
+                    $rutaImagen = $directorio."/".md5($datos["imagen"]["name"]).".png";
+        
+                    $origen = imagecreatefrompng($datos["imagen"]["tmp_name"]);						
+        
+                    $destino = imagecreatetruecolor($nuevoAncho, $nuevoAlto);
+        
+                    imagealphablending($destino, FALSE);
             
-            return $respuesta;
-    
+                    imagesavealpha($destino, TRUE);
+        
+                    imagecopyresized($destino, $origen, 0, 0, 0, 0, $nuevoAncho, $nuevoAlto, $ancho, $alto);
+        
+                    imagepng($destino, $rutaImagen);
+        
+                }
+        
+        
+                $respuesta = (new ModeloSubCategorias)->mdlCrearSubCategoria($tabla, $datos, $rutaImagen);
+                
+                return $respuesta;
+            }
         }
 
         public function ctrEditarSubCategoria($id){

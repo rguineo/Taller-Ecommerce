@@ -11,6 +11,7 @@ $(document).ready(function(){
 			processData: false,
             contentType: false,
 			success: function(respuesta) {
+                var cadena = respuesta.substr(0,2)
 				if (respuesta == "ok") {
 					swal({
                         type: 'success',
@@ -21,7 +22,7 @@ $(document).ready(function(){
                             window.location = "categorias"
                         }
 					})
-				}else if (respuesta == "error"){
+				}else if (respuesta == "er"){
                     swal({
                         type: 'warning',
                         title: 'Malas Noticias',
@@ -33,9 +34,7 @@ $(document).ready(function(){
 					})                   
                 }
 			}
-
 		})
-
     })
 
 // PREVISUALIZAR IMAGENES
