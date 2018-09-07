@@ -25,7 +25,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="views/dist/css/style.css">
   
   <script src="https://code.highcharts.com/highcharts.js"></script>
-  <script src="http://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/data.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini login-page">
@@ -82,6 +84,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="views/dist/js/dataTables.bootstrap.js"></script>
 <script src="views/dist/js/recursos.js"></script>
 
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/data.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
 
 <!-- <script src="views/dist/js/highcharts.js"></script> -->
 <script src="views/dist/js/exporting.js"></script>

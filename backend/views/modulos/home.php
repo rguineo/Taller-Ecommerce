@@ -81,8 +81,8 @@ $grafico = (new ControllerProducto)->ctrCantidadProducto();
       <table id="datatable" class="table table-responsive">
           <thead>
               <tr>
-                  <th>Productos</th>
                   <th>Categorias</th>
+                  <th>Productos</th>
 
               </tr>
           </thead>
