@@ -53,8 +53,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     
     
   ?>
-<!-- <script src="views/bower_components/jquery/dist/jquery.min.js"></script> -->
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="views/bower_components/jquery/dist/jquery.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
 <script src="views/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="views/dist/js/adminlte.min.js"></script>
 <script src="views/dist/plugins/iCheck/icheck.min.js"></script>
@@ -80,12 +80,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="views/dist/js/jquery.dataTables.min.js"></script>
 <script src="views/dist/js/dataTables.bootstrap.js"></script>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script> -->
 
-<script src="views/dist/js/graficos.js"></script>
+<!-- <script src="views/dist/js/graficos.js"></script> -->
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.11/dist/sweetalert2.all.min.js"></script></body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.26.11/dist/sweetalert2.all.min.js"></script>
+
+</body>
 </html>

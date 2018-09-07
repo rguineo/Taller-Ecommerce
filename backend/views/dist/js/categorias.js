@@ -12,7 +12,7 @@ $(document).ready(function(){
             contentType: false,
 			success: function(respuesta) {
                 var cadena = respuesta.substr(0,2)
-				if (respuesta == "ok") {
+				if (cadena == "ok") {
 					swal({
                         type: 'success',
                         title: 'Excelente',
@@ -22,7 +22,7 @@ $(document).ready(function(){
                             window.location = "categorias"
                         }
 					})
-				}else if (respuesta == "er"){
+				}else if (cadena == "er"){
                     swal({
                         type: 'warning',
                         title: 'Malas Noticias',
