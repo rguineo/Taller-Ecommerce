@@ -72,10 +72,8 @@ Class ControllerUsuario {
 	}
 
 	static public function ctrEditarUsuario($id_admin) {
-
 		$tabla = "administrador";
 		$respuesta = (new ModeloUsuario)->mdlEditarUsuario($tabla, $id_admin);
-
 
 		return $respuesta;
 	}

@@ -77,7 +77,7 @@ $grafico = (new ControllerProducto)->ctrCantidadProducto();
 
     <div id="grafico" style="col-lg-12"></div>
 
-    <div class="col-sm-6">
+    <div class="col-sm-6" style="height: 300px;">
       <table id="datatable" class="table table-responsive">
           <thead>
               <tr>

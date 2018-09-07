@@ -1,8 +1,3 @@
-jQuery.noConflict();
-				var example = 'column-parsed', 
-					theme = 'default';
-				(function($){ // encapsulate jQuery
-					
 Highcharts.chart('grafico', {
     data: {
         table: 'datatable'
@@ -25,4 +20,5 @@ Highcharts.chart('grafico', {
                 this.point.y + ' ' + this.point.name.toLowerCase();
         }
     }
-});				})(jQuery);
+});
+
